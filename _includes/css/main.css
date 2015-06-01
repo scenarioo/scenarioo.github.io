@@ -19,10 +19,11 @@ html { box-sizing: border-box; }
   {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
   {% capture bg %}{% if site.colors[node.bg] %}{{ site.colors[node.bg] }}{% else %}{{ node.bg }}{% endif %}{% endcapture %}
   {% capture fg %}{% if site.colors[node.color] %}{{ site.colors[node.color] }}{% else %}{{ node.color }}{% endif %}{% endcapture %}
+  {% capture titleColor %}{% if site.colors[node.titleColor] %}{{ site.colors[node.titleColor] }}{% else %}{{ node.titleColor }}{% endif %}{% endcapture %}
   nav .p-{{id}} { border-color: {{ bg }}; }
   #{{id}} { background-color: {{ bg }} !important; color: {{ fg }}; }
   #{{id}} a { color: {{ fg }}; }
-  #{{id}} .sectiondivider { color: {{ bg }}; }
+  #{{id}} .sectiondivider { color: {{ titleColor }}; }
 {% endfor %}
 
 
@@ -197,6 +198,7 @@ nav ul li:hover, nav ul li.active {
   -webkit-border-radius:50%;
   box-shadow: 0px 1px 15px rgba(0,0,0,0.05);
   background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAF0lEQVQIHWP8//+/MQMaYELjg7kUCgIASm8DOqGzfp8AAAAASUVORK5CYII=);
+  font-color:
 }
 
 .sectiondivider {
