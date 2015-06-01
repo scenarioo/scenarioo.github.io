@@ -78,7 +78,7 @@ hr {
   padding: 0 5%;
 }
 .container ol, .container ul { padding: 0 8%; }
-.container p:first-of-type {
+.container > p:first-child {
     margin-top: 40px;
 }
 
