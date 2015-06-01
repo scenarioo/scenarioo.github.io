@@ -18,6 +18,7 @@ highlighter: pygments
 title:       "Scenarioo - Automated Documentation with UI Tests"
 keywords:    "Scenarioo, Open Source, Documentation, User Interface, UI Tests, Automated Documentation, Living Documentation, Testing, User Scenario, Use Case, Webapplication, Desktop, Mobile, Selenium, Github"
 description: "With Scenarioo you can turn the UI tests of your application into a powerful documentation about the functionalities of your application, that is helpful for all involved people in your project. Users can browse the tested user scenarios of all use cases with the current screenshots and additional information. "
+source_link: "https://github.com/scenarioo"
 favicon:     #put a path like: "img/favicon.ico"
 touch_icon:  #put a path like: "img/apple-touch-icon.png"
 google_analytics_key: ## put YOUR key here to enable tracking! (blank to disable)
