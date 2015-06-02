@@ -74,6 +74,11 @@ hr {
   text-align: center;
   padding: 0 4%;
 }
+
+.container .left-aligned h3 {
+	text-align: left;
+} 
+
 .container p, .container ol, .container ul {
   font-size: 17px;
   padding: 0 5%;
@@ -223,6 +228,13 @@ nav ul li:hover, nav ul li.active {
   position: static;
   margin-top: -8px;
 }
+
+/**
+.sectiondivider .fa-stack .smaller-fa-section-icon {
+	font-size: 110px;		
+}
+*/
+
 .sectiondivider .fa-circle { color: #fff; }
 
 .sectiondivider h5 {
@@ -268,7 +280,7 @@ nav ul li:hover, nav ul li.active {
   font-family:arial,sans-serif;
   text-align:center;
   font-weight:700;
-  font-size:1rem;
+  font-size:1.5rem;
   line-height:2rem;
   position:relative;
   transition:.5s;

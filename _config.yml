@@ -32,6 +32,7 @@ colors:
   purple:    '#c869bf'
   orange:    '#fab125'
   turquoise: '#0fbfcf'
+  gray:      '#666666'
   lightGray: '#f0f0f0'
-  sectionTitleColor: '#333333'
+  sectionTitleColor: '#555555'
   
