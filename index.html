@@ -30,9 +30,10 @@
   <div id="main">
 
     <nav><ul>
+      <li class="pull-left"><a href="/"><img src="img/LogoScenariooWhite.png" width="100px"/></a></li>
       {% for node in site.posts reversed %}
         {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
-        <li class="p-{{id}}"><a href="#{{id}}">{{node.title}}</a></li>
+        <li class="p-{{id}} on-same-site"><a href="#{{id}}">{{node.title}}</a></li>
       {% endfor %}
       <li class="p-tutorial"><a href="tutorial.html">Tutorial</a></li>
     </ul></nav>
@@ -73,5 +74,5 @@
 {% include analytics.html %}
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="main_page_nav_scroller.js"></script>
+<script src="site.js"></script>
 </html>

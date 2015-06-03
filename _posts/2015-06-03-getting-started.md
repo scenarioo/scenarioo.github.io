@@ -7,9 +7,7 @@ titleColor: sectionTitleColor
 style: center
 ---
 
-### Get Started
+### Start Your Engines ...
 
-Start your engines ...
-
-All information about how to use Scenarioo is in our **[WIKI](http://github.com/scenarioo/scenarioo/wiki)**
+All information about how to use Scenarioo is in our **[Tutorial](tutorial.html)**
 
