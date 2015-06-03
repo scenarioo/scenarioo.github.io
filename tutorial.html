@@ -46,7 +46,7 @@
     {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
     <div id="{{id}}" class="section p-{{id}}">
 	    <div class="container {{ page.style }}">
-	          <h3 class="icon-title">{{ page.title }}</h5>    
+	          {{ page.content }}  
 	    </div>
     </div>
     {% endfor %}
