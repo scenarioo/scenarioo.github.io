@@ -27,39 +27,93 @@
 	{% if site.touch_icon %}<link rel="apple-touch-icon" href="{{ site.touch_icon }}">{% endif %}
 </head>
 <body>
-  <div id="main">
-  
-    <nav>	    	
-	    <ul>
-	      <li class="pull-left"><a href="/"><img src="img/LogoScenariooWhite.png" width="100px"/></a></li>
-	      {% for node in site.posts reversed %}
-	        {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
-	        <li class="p-{{id}}"><a href="/#{{id}}">{{node.title}}</a></li>
-	      {% endfor %}
-	      <li class="p-tutorial"><a href="/tutorial.html">Tutorial</a></li>
-	    </ul>    
-    </nav>
- 	
-    {% for page in site.tutorial_sections reversed %}
-    {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
-    <div id="{{id}}" class="section p-{{id}}">
-	    <div class="container {{ page.style }}">
-	          {{ page.content }}  
-	    </div>
-    </div>
-    {% endfor %}
-    
+	<div id="main">
 
+		<nav>
+			<ul>
+				<li class="pull-left"><a href="/"><img
+						src="img/LogoScenariooWhite.png" width="100px" /></a></li>
+				{% for node in site.posts reversed %} 
+					{% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
+					<li class="p-{{id}}"><a href="/#{{id}}">{{node.title}}</a></li> 
+				{% endfor %}
+				<li class="p-tutorial"><a href="/tutorial.html">Tutorial</a></li>
+			</ul>
+		</nav>
+		
+		<div class="section">
 
-    <div id="footer" class="section text-white">
-      <div class="container">
-        {% capture foottext %} {% include footer.md %} {% endcapture %}
-        {{ foottext | markdownify }}
-      </div>
-    </div>
-  </div>
+			<div class="container">
+	
+				<div class="row">
+				
+					<div class="col-md-12">
+	
+	
+						{% for page in site.tutorial_sections reversed %} 
+						{% capture id	%}{{ page.id | remove:'/' | downcase }}{% endcapture %}
+						
+						<div id="{{id}}" class="p-{{id}} {{ page.style }}">{{ page.content }}</div>
+						
+						{% endfor %}
+	
+	
+						<!-- maybe later ... some previous next nav ...		    
+								    
+								     <div class="section-nav">
+								     <div class="left align-right">
+								          
+								            <span class="prev disabled">Back</span>
+								          
+								      </div>
+								      <div class="right align-left">
+								          
+								            
+								            
+								            <a href="/docs/quickstart/" class="next">Next</a>
+								          
+								      </div>
+								    </div>
+								    <div class="clear"></div>
+								    
+								     -->
+	
+					</div>
+	
+					<!--  prapared for section menu later (set other col to col-md-10!!!) ... 
+	
+					<div class="col-md-2 hidden-xs hidden-sm">
+						
+						<div class="section-navr">
+	
+							<h4>Menu</h4>
+		
+							<ul>
+								<li class="current"><a href="/docs/home/">Welcome</a></li>
+								<li class="current"><a href="/docs/home/">Bla bla bla</a></li>
+							</ul>
+						
+						</div>
+	
+					</div>
+					
+					-->
+	
+				</div>
+	
+			</div>
+			
+		</div>
 
-{% include analytics.html %}
+		<div id="footer" class="section text-white">
+			<div class="container">
+				{% capture foottext %} {% include footer.md %} {% endcapture %}
+			 	{{ foottext | markdownify }}
+			 </div>
+		</div>
+	</div>
+
+	{% include analytics.html %}
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </html>

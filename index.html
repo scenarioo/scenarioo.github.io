@@ -9,6 +9,7 @@
 	<meta name="keywords" content="{{ site.keywords }}">
 	<meta name="description" content="{{ site.description }}">
   
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
   
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -37,6 +38,8 @@
       {% endfor %}
       <li class="p-tutorial"><a href="tutorial.html">Tutorial</a></li>
     </ul></nav>
+    
+   <script src="nav_single_page_scroller.js"></script>
 
 
     {% for page in site.posts reversed %}
@@ -64,7 +67,7 @@
 
 
     <div id="footer" class="section text-white">
-      <div class="container">
+      <div class="section">
         {% capture foottext %} {% include footer.md %} {% endcapture %}
         {{ foottext | markdownify }}
       </div>
@@ -73,6 +76,4 @@
 
 {% include analytics.html %}
 </body>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="nav_single_page_scroller.js"></script>
 </html>
