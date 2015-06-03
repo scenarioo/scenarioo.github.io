@@ -29,37 +29,28 @@
 <body>
   <div id="main">
 
-    <nav><ul>
-      {% for node in site.posts reversed %}
-        {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
-        <li class="p-{{id}}"><a href="#{{id}}">{{node.title}}</a></li>
-      {% endfor %}
-      <li class="p-tutorial"><a href="tutorial.html">Tutorial</a></li>
-    </ul></nav>
+    <nav>
+    
+	    <ul>
+	    	<li><a href="/">Back to Webpage</a></li>
+	    	
+	      
+	    </ul>
+    
+    </nav>
 
-
-    {% for page in site.posts reversed %}
-      {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
-      <div id="{{id}}" class="section p-{{id}}">
-        {% if page.icon %}
-        <div class="subtlecircle sectiondivider imaged">
-          <img src="{{page.icon}}" alt="section icon" />
-          <h5 class="icon-title">{{ page.title }}</h5>
-        </div>
-        {% elsif page.fa-icon %}
-        <div class="subtlecircle sectiondivider faicon">
-          <span class="fa-stack">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-{{ page.fa-icon }} fa-stack-1x smaller-fa-section-icon"></i>
-          </span>
-          <h5 class="icon-title">{{ page.title }}</h5>
-        </div>
-        {% endif %}
-        <div class="container {{ page.style }}">
-          {{ page.content }}
-        </div>
-      </div>
+	
+	
+	
+    {% for page in site.tutorial_sections reversed %}
+    {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
+    <div id="{{id}}" class="section p-{{id}}">
+	    <div class="container {{ page.style }}">
+	          <h3 class="icon-title">{{ page.title }}</h5>    
+	    </div>
+    </div>
     {% endfor %}
+    
 
 
     <div id="footer" class="section text-white">
@@ -73,5 +64,4 @@
 {% include analytics.html %}
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="main_page_nav_scroller.js"></script>
 </html>

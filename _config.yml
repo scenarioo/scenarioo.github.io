@@ -23,6 +23,10 @@ favicon:     #put a path like: "img/favicon.ico"
 touch_icon:  #put a path like: "img/apple-touch-icon.png"
 google_analytics_key: ## put YOUR key here to enable tracking! (blank to disable)
 
+collections:
+  tutorial_sections:
+    output: false    
+
 ### template colors, used site-wide via css ###
 colors:
   black:     '#111111'
