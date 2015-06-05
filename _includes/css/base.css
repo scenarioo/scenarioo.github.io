@@ -92,8 +92,9 @@
 
 /* #Links
 ================================================== */
-	a, a:visited { text-decoration: underline; outline: 0; }
-	a:hover, a:focus { }
+	a, a:visited { opacity: 0.7; text-decoration: underline; outline: 0; }
+	a:hover, a:focus { opacity: 0.5;  text-decoration: underline; outline:0; }
+	a.no-opacity-effect, a.no-opacity-effect:hover, a.no-opacity-effect:visited, a.no-opacity-effect:focus { opacity: 1.0; }	 
 	p a, p a:visited { line-height: inherit; }
 
 
