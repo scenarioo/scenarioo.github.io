@@ -237,12 +237,6 @@ nav ul li.no-border:hover, nav ul li.active.no-border {
   margin-top: -8px;
 }
 
-/**
-.sectiondivider .fa-stack .smaller-fa-section-icon {
-	font-size: 110px;		
-}
-*/
-
 .sectiondivider .fa-circle { color: #fff; }
 
 .sectiondivider h5 {
@@ -362,7 +356,6 @@ nav ul li.no-border:hover, nav ul li.active.no-border {
     height:180px;
   }
   .sectiondivider .fa-stack {
-    border-top:{{navborder}}px solid;
     font-size:100px;
     margin-top:-14px;
   }
