@@ -1,6 +1,6 @@
 ---
 title: "Downloads"
-bg: lightGray
+bg: orange
 color: black
 fa-icon: download
 titleColor: sectionTitleColor
@@ -10,11 +10,20 @@ style: left
 <div class="row left-aligned">
       <div class="col-md-6">
         <h3>Docu Reader Webapp</h3>
-        <p>Insall the webapplication for browsing your generated documentations ... </p>
-        <p><a href="...">Download as WAR"</a> - <a href="...">Donwload as Docker Image</a></p>
+        <p>Install the Scenarioo Webapplication for browsing your generated documentations.</p>
+        <p><a target="_blank" href="...">Download as WAR</a></p>
+        <p><a target="_blank" href="...">Donwload as Docker Image</a></p>
+                        
       </div>
+      
       <div class="col-md-6">
         <h3>Docu Writer Libraries</h3>
-        <p>Use the docu writer in your UI tests to generate documentations ... </p>
+        <p>Use the Scenarioo API in your UI tests to generate documentation.</p>
+        <p>For Java: <a target="_blank" href="...">Download as JAR</a> - <a target="_blank" href="...">Maven-Repo</a></p>
+        <p>For C#: <a target="_blank" href="...">Download from NuGet</a></p>
+        <p>For JavaScript: <a target="_blank" href="...">Download from GitHub</a></p> 
+        <p>For other languages: <br/>
+        <a target="_blank" href="...">Implement your own writer</a></p>
+        
       </div>
 </div>
