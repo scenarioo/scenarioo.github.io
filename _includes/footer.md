@@ -3,6 +3,8 @@ Scenarioo Open Source Project:
  &mdash;
 <a href="https://twitter.com/search?q=%23scenarioo" target="_blank">Twitter</a>
  &mdash;
-<a onClick="javascript:sendContactEmail();" href="">Email</a>
+<a onclick="javascript:sendContactEmail();return false" href="javascript:void(0);">Email</a>
  &mdash;
- Webdesign based on <a href="https://github.com/t413/SinglePaged" target="_blank">SinglePaged theme</a>
+Webdesign based on <a href="https://github.com/t413/SinglePaged" target="_blank">SinglePaged theme</a>
+
+
