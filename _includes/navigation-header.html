@@ -1,0 +1,34 @@
+			
+	<nav>
+    
+	    {% if include.home-page %}	
+			{% capture homeBaseUrl %}{% endcapture %}
+	    {% else %}
+	    	{% capture homeBaseUrl %}/{% endcapture %}
+	    {% endif %}
+    
+	    <div class="row">
+	    	
+	    	<div class="col-md-2 hidden-xs hidden-sm">	    	
+	    		<a class="scenarioo-nav-logo no-opacity-effect" href="/"><img src="img/LogoScenariooWhite.png" width="120px" title="Scenarioo Opensource Project - Automated Documentation with UI Tests"/></a>	    	
+	    	</div>
+	    	
+	    	<div class="col-md-8">	    
+			    <ul>
+			      {% for node in site.posts reversed %}
+			        {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
+			        <li class="p-{{id}} on-same-site"><a href="{{homeBaseUrl}}#{{id}}">{{node.title}}</a></li>
+			      {% endfor %}
+			      <li class="p-tutorial"><a href="/tutorial.html">Tutorial</a></li>
+			      <li class="p-demo border-blue"><a target="_blank" href="http://demo.scenarioo.org">Demo</a></li>
+			      <li class="p-github border-white"><a target="_blank" href="http://github.com/scenarioo">Github</a></li>
+			    </ul>
+			 </div>
+			 
+			 <div class="col-md-2 hidden-xs hidden-sm">
+			 	<!-- just an empty placeholder for centering the main menu -->	    		
+	         </div>		 
+	    
+	    </div>   
+    
+    </nav>

@@ -1,8 +1,1 @@
-
-
-Design by Tim O'Brien [t413.com](http://t413.com/)
-&mdash;
-[SinglePaged theme](https://github.com/t413/SinglePaged)
-&mdash;
-this site is [open source]({{ site.source_link }})
-
+Scenarioo Open Source Project: <a href="https://github.com/scenarioo" target="_blank">Github</a> &mdash;  <a href="https://twitter.com/search?q=%23scenarioo" target="_blank">Twitter</a> &mdash; [Email](javascript:sendContactEmail();) &mdash; Webdesign based on <a href="https://github.com/t413/SinglePaged" target="_blank">SinglePaged theme</a>

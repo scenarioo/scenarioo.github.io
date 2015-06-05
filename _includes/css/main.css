@@ -12,6 +12,7 @@ html { box-sizing: border-box; }
 .text-{{c[0]}}   { color: {{ c[1] }}; }
 .text-{{c[0]}} a { color: {{ c[1] }}; }
 .bg-{{c[0]}}     { background-color: {{ c[1] }} !important; }
+nav .border-{{c}} { border-color: {{ c }}; }
 {% endfor %}
 
 /* ----- per-post colors! ----- */
@@ -20,7 +21,7 @@ html { box-sizing: border-box; }
   {% capture bg %}{% if site.colors[node.bg] %}{{ site.colors[node.bg] }}{% else %}{{ node.bg }}{% endif %}{% endcapture %}
   {% capture fg %}{% if site.colors[node.color] %}{{ site.colors[node.color] }}{% else %}{{ node.color }}{% endif %}{% endcapture %}
   {% capture titleColor %}{% if site.colors[node.titleColor] %}{{ site.colors[node.titleColor] }}{% else %}{{ node.titleColor }}{% endif %}{% endcapture %}
-  nav .p-{{id}} { border-color: {{ bg }}; }
+  nav .p-{{id}} { border-color: {{ bg }}; }  
   #{{id}} { background-color: {{ bg }} !important; color: {{ fg }}; }
   #{{id}} a { color: {{ fg }}; }
   #{{id}} .sectiondivider { color: {{ titleColor }}; }
@@ -152,6 +153,10 @@ nav ul li {
   margin:0;
 }
 
+nav ul li.no-border {
+	border-top:none;
+}
+
 nav ul li a, nav ul li a:visited {
   display:block;
   color:#fff;
@@ -161,13 +166,17 @@ nav ul li a, nav ul li a:visited {
 }
 
 nav ul li a:hover {
+  text-decoration:none;
   opacity:1
 }
 nav ul li:hover, nav ul li.active {
-  border-top-width: {{navborder_active}}px;
-  padding-top: 0;
+  border-top-width:{{navborder_active}}px;
+  padding-top:0;
 }
 
+nav ul li.no-border:hover, nav ul li.active.no-border {
+	border-top:none;
+}
 
 /* ----- sections/articles ----- */
 
@@ -203,7 +212,6 @@ nav ul li:hover, nav ul li.active {
   -webkit-border-radius:50%;
   box-shadow: 0px 1px 15px rgba(0,0,0,0.05);
   background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAF0lEQVQIHWP8//+/MQMaYELjg7kUCgIASm8DOqGzfp8AAAAASUVORK5CYII=);
-  font-color:
 }
 
 .sectiondivider {
@@ -354,8 +362,9 @@ nav ul li:hover, nav ul li.active {
     height:180px;
   }
   .sectiondivider .fa-stack {
-    font-size: 100px;
-    margin-top: -14px;
+    border-top:{{navborder}}px solid;
+    font-size:100px;
+    margin-top:-14px;
   }
   .sectiondivider h5 {
     font-size:15px;

@@ -28,19 +28,9 @@
 </head>
 <body>
 	<div id="main">
-
-		<nav>
-			<ul>
-				<li class="pull-left"><a href="/"><img
-						src="img/LogoScenariooWhite.png" width="100px" /></a></li>
-				{% for node in site.posts reversed %} 
-					{% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
-					<li class="p-{{id}}"><a href="/#{{id}}">{{node.title}}</a></li> 
-				{% endfor %}
-				<li class="p-tutorial"><a href="/tutorial.html">Tutorial</a></li>
-			</ul>
-		</nav>
-		
+	
+		{% include navigation-header.html %}
+						
 		<div class="section">
 
 			<div class="container">
