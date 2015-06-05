@@ -9,5 +9,5 @@ function sendContactEmail() {
 		return "mailto:" + n1 + n2 + "@" + d1 + d2 + d3;
 	}
 
-    return true;
+    return false;
 }
