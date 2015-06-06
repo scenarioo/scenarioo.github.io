@@ -11,8 +11,8 @@ style: left
       <div class="col-md-6">
         <h3>Docu Reader Webapp</h3>
         <p>Install the Scenarioo Webapplication for browsing your generated documentations.</p>
-        <p><a target="_blank" href="...">Download as WAR</a></p>
-        <p><a target="_blank" href="...">Donwload as Docker Image</a></p>
+        <p><a target="_blank" href="https://github.com/scenarioo/scenarioo/releases">Download WAR</a></p>
+        <p><a target="_blank" href="https://github.com/scenarioo/scenarioo/wiki/Scenarioo-Docu-Viewer-Docker-Image">Run as Docker Image</a></p>
                         
       </div>
       
