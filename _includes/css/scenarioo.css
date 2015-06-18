@@ -22,8 +22,9 @@ nav .row {
 #carousel-scenarioo h3, #carousel-scenarioo p {
     color: #555555;
     text-align:center;
+    font-weight: bold;
 }
 
 .carousel-caption {
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.6);
 }
