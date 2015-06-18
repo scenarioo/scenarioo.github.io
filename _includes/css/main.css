@@ -21,7 +21,7 @@ nav .border-{{c}} { border-color: {{ c }}; }
   {% capture bg %}{% if site.colors[node.bg] %}{{ site.colors[node.bg] }}{% else %}{{ node.bg }}{% endif %}{% endcapture %}
   {% capture fg %}{% if site.colors[node.color] %}{{ site.colors[node.color] }}{% else %}{{ node.color }}{% endif %}{% endcapture %}
   {% capture titleColor %}{% if site.colors[node.titleColor] %}{{ site.colors[node.titleColor] }}{% else %}{{ node.titleColor }}{% endif %}{% endcapture %}
-  nav .p-{{id}} { border-color: {{ bg }}; }  
+  nav .p-{{id}} { border-color: {{ bg }}; }
   #{{id}} { background-color: {{ bg }} !important; color: {{ fg }}; }
   #{{id}} a { color: {{ fg }}; }
   #{{id}} .sectiondivider { color: {{ titleColor }}; }
@@ -78,11 +78,11 @@ hr {
 
 .container .left-aligned h3 {
 	text-align: left;
-} 
+}
 
 .container p, .container ol, .container ul {
   font-size: 17px;
-  padding: 0 5%;
+  padding: 0 4%;
 }
 .container ol, .container ul { padding: 0 8%; }
 .container > p:first-child {
