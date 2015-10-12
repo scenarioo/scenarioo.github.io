@@ -5,6 +5,8 @@ Scenarioo Open Source Project:
  &mdash;
 <a href="https://groups.google.com/forum/#!forum/scenarioo-news/join" target="_blank">Newsletter</a>
  &mdash;
+<a href="https://github.com/scenarioo/scenarioo/issues/new?labels=feedback" target="_blank">Feedback</a> 
+ &mdash;
 <a onclick="return sendContactEmail();" href="javascript:">Email</a>
  &mdash;
 Webdesign based on <a href="https://github.com/t413/SinglePaged" target="_blank">SinglePaged theme</a>
