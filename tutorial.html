@@ -44,10 +44,13 @@
 	
 	
 						{% for page in site.tutorial_sections reversed %} 
-						{% capture id	%}{{ page.id | remove:'/' | downcase }}{% endcapture %}
-						
-						<div id="{{id}}" class="p-{{id}} {{ page.style }}">{{ page.content }}</div>
-						
+							
+							{% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
+							
+							<h1> test </h1>
+							
+							<div id="{{id}}" class="p-{{id}} {{ page.style }}">{{ page.content }}</div>
+							
 						{% endfor %}
 	
 	
