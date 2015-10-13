@@ -47,7 +47,7 @@
 							
 							{% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
 							
-							<h1> test </h1>
+							<h2>{{page.title}}</h2>
 							
 							<div id="{{id}}" class="p-{{id}} {{ page.style }}">{{ page.content }}</div>
 							
