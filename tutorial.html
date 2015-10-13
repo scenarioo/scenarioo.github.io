@@ -43,7 +43,7 @@
 					<div class="col-md-12">
 	
 	
-						{% for page in site.tutorial_sections reversed %} 
+						{% for page in site.tutorial_sections %} 
 							
 							{% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
 							
