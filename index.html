@@ -38,9 +38,9 @@
 
   <div id="main">
 
-    {% assign posts = site.collections | where: "label", "posts" | first %}
-
   	{% include navigation-header.html home-page=true %}
+
+    {% assign posts = site.collections | where: "label", "posts" %}
 
     {% for page in posts %}
       {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
