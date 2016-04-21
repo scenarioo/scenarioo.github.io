@@ -1,9 +1,7 @@
----
 
-source: .
 port: 4000
 host: 0.0.0.0
-safe: false
+safe: true
 
 ### site serving configuration ###
 exclude: [CNAME, README.md, .gitignore]
