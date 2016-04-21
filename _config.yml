@@ -25,10 +25,6 @@ favicon:     "img/favicon.ico"
 touch_icon:  "img/touchicon.png"
 google_analytics_key: "UA-21795453-5"
 
-collections:
-  tutorial_sections:
-    output: true
-
 ### template colors, used site-wide via css ###
 colors:
   black:     '#111111'
@@ -37,13 +33,3 @@ colors:
   green:     '#9bcf2f'
   purple:    '#c869bf'
   orange:    '#fab125'
-  turquoise: '#0fbfcf'
-  gray:      '#666666'
-  lightGray: '#f0f0f0'
-  sectionTitleColor: '#555555'
-
-
-
-kramdown:
-  input: GFM
-  auto_ids:  false
