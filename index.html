@@ -42,7 +42,9 @@
 
   	{% include navigation-header.html home-page=true %}
 
-    {% for page in site.posts reversed %}
+
+    {% assign posts = site.collections | where: "label", "posts" | first %}
+    {% for page in posts %}
       {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
       <div id="{{id}}" class="section p-{{id}}">
         {% if page.icon %}
