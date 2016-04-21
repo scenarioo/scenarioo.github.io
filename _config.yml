@@ -13,6 +13,12 @@ lsi: false
 markdown: kramdown
 highlighter: pygments
 
+kramdown:
+  input: GFM
+
+gems:
+  - jekyll-paginate
+
 
 ### content configuration ###
 title:       "Scenarioo - Automated Documentation with UI Tests"
