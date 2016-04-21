@@ -38,6 +38,8 @@
 
   <div id="main">
 
+    {% assign posts = site.collections | where: "label", "posts" | first &}
+
   	{% include navigation-header.html home-page=true %}
 
     {% for page in posts %}
