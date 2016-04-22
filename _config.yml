@@ -12,10 +12,6 @@ lsi: false
 markdown: kramdown
 highlighter: rouge
 
-gems:
-  - jekyll-paginate
-
-
 ### content configuration ###
 title:       "Scenarioo - Automated Documentation with UI Tests"
 keywords:    "Scenarioo, Open Source, Documentation, User Interface, UI Tests, Automated Documentation, Living Documentation, Testing, User Scenario, Use Case, Webapplication, Desktop, Mobile, Selenium, Github"
@@ -37,4 +33,3 @@ colors:
   gray:      '#666666'
   lightGray: '#f0f0f0'
   sectionTitleColor: '#555555'
-

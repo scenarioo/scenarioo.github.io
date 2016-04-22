@@ -40,7 +40,7 @@
 
   	{% include navigation-header.html home-page=true %}
 
-    {% assign posts = site.collections | where: "label", "posts" %}
+    {% assign posts = site.collections | where: "label", "posts" | First %}
 
     {% for page in posts %}
       {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
