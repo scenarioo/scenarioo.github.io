@@ -22,9 +22,9 @@ nav .border-{{c}} { border-color: {{ c }}; }
   {% capture fg %}{% if site.colors[node.color] %}{{ site.colors[node.color] }}{% else %}{{ node.color }}{% endif %}{% endcapture %}
   {% capture titleColor %}{% if site.colors[node.titleColor] %}{{ site.colors[node.titleColor] }}{% else %}{{ node.titleColor }}{% endif %}{% endcapture %}
   nav .p-{{id}} { border-color: {{ bg }}; }
-  #{{id}} { background-color: {{ bg }} !important; color: {{ fg }}; }
-  #{{id}} a { color: {{ fg }}; }
-  #{{id}} .sectiondivider { color: {{ titleColor }}; }
+  #section-{{id}} { background-color: {{ bg }} !important; color: {{ fg }}; }
+  #section-{{id}} a { color: {{ fg }}; }
+  #section-{{id}} .sectiondivider { color: {{ titleColor }}; }
 {% endfor %}
 
 
