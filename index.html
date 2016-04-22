@@ -40,7 +40,7 @@
 
   	{% include navigation-header.html home-page=true %}
 
-    {% for page in site.posts %}
+    {% for page in site.posts reversed %}
       {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
       <div id="{{id}}" class="section p-{{id}}">
         {% if page.icon %}
