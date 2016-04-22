@@ -40,9 +40,7 @@
 
   	{% include navigation-header.html home-page=true %}
 
-    {% assign posts = site.collections | where: "label", "posts" | First %}
-
-    {% for page in posts %}
+    {% for page in site.posts %}
       {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
       <div id="{{id}}" class="section p-{{id}}">
         {% if page.icon %}
