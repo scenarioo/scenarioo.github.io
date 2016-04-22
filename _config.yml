@@ -21,6 +21,10 @@ favicon:     "img/favicon.ico"
 touch_icon:  "img/touchicon.png"
 google_analytics_key: "UA-21795453-5"
 
+collections:
+  tutorial_sections:
+    output: true
+
 ### template colors, used site-wide via css ###
 colors:
   black:     '#111111'
