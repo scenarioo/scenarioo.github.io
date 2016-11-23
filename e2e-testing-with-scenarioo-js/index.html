@@ -1,0 +1,1011 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>scenarioo-js-ctd-session</title>
+
+    <meta name="description" content="Effective E2E Tests with Scenarioo JS">
+    <meta name="author" content="Rolf Bruderer, Michael Werner, Dominic Langenegger">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="css/highlight/styles/solarized-light.css" id="highlight-theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <link rel="stylesheet" href="css/custom.css">
+
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides"><section id="chapter-introduction" class="chapter">
+<section id="introduction-title" class="slide" data-background-image="images/CTD_Intro.png" data-background="black" data-background-size="cover" data-has-notes="true">
+<h2>Effective UI/E2E Testing</h2><h3><span class="noUppercase">with ScenariooJS and Protractor</span></h3><p><img src="images/scenarioo_bright.png"></p>
+<p>Dominic Langenegger, Michael Werner, Rolf Bruderer</p>
+<p><a href="https://github.com/scenarioo/scenarioo-js">github.com/scenarioo/scenarioo-js</a></p><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="introduction-goals" class="slide" data-has-notes="true">
+<h2>What is it about?</h2><ul>
+<li>E2E/UI-Testing and Documentation of Applications</li>
+<li>Structuring and Designing Test Suites</li>
+<li>Using Protractor and ScenariooJS</li>
+<li>Practical Hints and Examples from real Projects</li>
+</ul>
+<div class="horizontal-3">
+<img src="images/dola_sw.jpg" alt="">
+<img src="images/miwe_sw.jpg" alt="">
+<img src="images/rbr_sw.jpg" alt="">
+</div><aside class="notes"><p>rolf</p></aside>
+</section>
+</section>
+
+<section id="chapter-motivation" class="chapter">
+<section id="motivation-why-e2e-tests" class="slide" data-background-video="images/misc/no-integration-tests.mp4" data-background="black" data-background-video-loop="true" data-has-notes="true">
+<h2>UI/E2E-Tests? WHY?</h2><p>My Architect told me to only do Unit Tests!</p><aside class="notes"><p>dola</p>
+<p>rolf has done so many projects that he knows how 
+developers think...</p></aside>
+</section>
+
+<section id="motivation-real-hackers-dont-need-tests" class="darkBox slide" data-background-image="images/pexels.com/source-code-90807.jpeg" data-background="black" data-has-notes="true">
+<h2>Real Hackers</h2><ul>
+<li class="fragment">Okay, let&#39;s implement &quot;Foo&quot;!</li>
+<li class="fragment">I refactor X, Y and Z and all usages of them</li>
+<li class="fragment">I know it also impacts features A and B</li>
+<li class="fragment">I do some manual testing</li>
+<li class="fragment">It works! Done!</li>
+<li class="fragment">Let&#39;s release it!</li>
+</ul><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="motivation-real-projects" class="darkBox slide" data-background-image="images/pexels.com/source-code-90807.jpeg" data-background="black" data-background-size="25%" data-background-repeat="repeat" data-has-notes="true">
+<h2>Reality</h2><p>Imagine 10 Coders doing this in parallel ...</p>
+<ul>
+<li class="fragment">In Same Code Base</li>
+<li class="fragment">Without Knowing All System Functionalities</li>
+<li class="fragment">Under Project Pressure</li>
+<li class="fragment">In Untyped Javascript Code</li>
+<li class="fragment">Without Automated Tests</li>
+</ul><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="motivation-my-code-works" class="darkBox slide" data-background-image="images/pixabay.com/screw-clamp.jpg" data-background="black" data-background-size="contain" data-background-repeat="no-repeat" data-has-notes="true">
+<h2>&quot;I write Code that works&quot;</h2><div class="fragment">
+<br>
+<br>
+<br>
+Yes!<br>
+<br>
+<br>
+<br>
+So let&#39;s make sure <br>
+your colleagues won&#39;t break it!
+</div><aside class="notes"><p>dola</p>
+<p>clamp holds it all together</p></aside>
+</section>
+
+<section id="motivation-climbing-with-ropes" class="slide" data-background-image="images/pexels.com/person-hand-park-adventure-17605.jpg" data-background="black" data-has-notes="true">
+<h2>Coder&#39;s Ropes and Slidelocks</h2><aside class="notes"><p>dola</p>
+<p>safety in entire project. Secures the whole team</p>
+<p>tell stoy about climbing together in the mountains (you never know about &quot;crevasse&quot; = &quot;Gletscherspalte&quot;)</p>
+<p>Established: We should write tests. This brings us to the next question...</p></aside>
+</section>
+
+<section id="motivation-who-writes-e2e-tests" class="darkBox slide" data-background-image="images/pixabay.com/silos.jpg" data-background="black" data-background-size="cover" data-background-repeat="no-repeat" data-has-notes="true">
+<h2>Who Should Write Tests?</h2><ul>
+<li>Only Special E2E Tester / Testing Team ?</li>
+</ul><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="motivation-who-writes-e2e-tests" class="darkBox slide" data-background-image="images/pixabay.com/silos.jpg" data-background="black" data-background-size="cover" data-background-repeat="no-repeat" data-has-notes="true">
+<h2>Who Should Write Tests?</h2><ul>
+<li><p>ONLY Special E2E Tester / Testing Team ?</p>
+<ul>
+<li>NO! </li>
+<li>Beware of unnecessary Silos!</li>
+<li>Silos are for Farmers not for Software Engineers
+<a href="https://creativeheldstab.com/silos-are-for-farmers/">https://creativeheldstab.com/silos-are-for-farmers/</a></li>
+</ul>
+</li>
+<li><p><strong>Tests are a Tool for the Developers!</strong></p>
+</li>
+</ul><aside class="notes"><p>rolf</p>
+<p>michael adds story from project</p></aside>
+</section>
+
+<section id="motivation-06_tests-for-devs" class="darkBox slide" data-background-image="images/pixabay.com/silos.jpg" data-background="black" data-background-size="cover" data-background-repeat="no-repeat" data-has-notes="true">
+<h2>Tests for Developers</h2><ul>
+<li>Developer can verify his changes</li>
+<li>Developer gets feedback if tests broken</li>
+<li>Developer can adjust tests to his changes</li>
+<li>Developer keeps tests green when refactoring<ul>
+<li>Red tests = broken window syndrome</li>
+</ul>
+</li>
+<li>Tests are best written by Developers</li>
+</ul><aside class="notes"><p>michael</p>
+<p>current project -&gt; only way to test proprietary frontend solution</p></aside>
+</section>
+
+<section id="motivation-07_dedicated-testers" class="darkBox slide" data-background-image="images/pixabay.com/silos.jpg" data-background="black" data-background-size="cover" data-background-repeat="no-repeat" data-has-notes="true">
+<h2>What do Dedicated Testers do?</h2><ul>
+<li>Manual testing</li>
+<li>Review automated tests</li>
+<li>Help the dev team <ul>
+<li>build infrastructure for testing</li>
+<li>write automated test suites</li>
+</ul>
+</li>
+</ul><aside class="notes"><p>michael</p></aside>
+</section>
+
+<section id="motivation-08_no-time-to-write-tests" class="slide" data-background-image="images/misc/tobusytoimprove.jpg" data-background="white" data-background-size="contain" data-background-repeat="no-repeat" data-has-notes="true">
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/></p>
+<h2>No Time to Write Tests?</h2><p class="footnote">Source: <a href="http://change-challenge.blogspot.ch/2016/05/my-favourite-coaching-tools-no-time-to.html">http://change-challenge.blogspot.ch</a></p><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="motivation-test-pyramid" class="slide" data-has-notes="true">
+<h2>Test Pyramid</h2><p><img src="../../images/test-pyramid.png" alt=""></p><aside class="notes"><p>dola</p>
+<p>widely known. often looks a bit different</p>
+<p>E2E =&gt; general use cases. not all edge cases</p></aside>
+</section>
+
+<section id="motivation-e2e-tests" class="slide" data-has-notes="true">
+<h2>End-to-End Tests</h2><div class="horizontal-2">
+<div>
+    <ul>
+        <li>Registration of new User
+            <ol>
+                <li>Open Application</li>
+                <li>Click Registration Link</li>
+                <li>Fill out Form</li>
+                <li>Hit Registration Button</li>
+                <li class="checkmark">Check if user in DB</li>
+            </ol>
+        </li>
+    </ul>
+</div>
+<div>
+    <img src="images/application-architecture.png">
+</div>
+</div><aside class="notes"><p>dola</p>
+<p>Typical Scenario through a Use Case</p></aside>
+</section>
+</section>
+
+<section id="chapter-scenarioo" class="chapter">
+<section id="scenarioo-scenarioo" class="darkBox slide" data-background-image="images/pixabay.com/cameras-and-review.jpg" data-background="black" data-background-size="cover" data-has-notes="false">
+<h2>Scenarioo</h2><ul>
+<li>Continuous Documentation</li>
+<li>Tests as Living Documentation</li>
+<li>Visible for everybody involved!</li>
+<li>Reviewing Tests</li>
+<li>Analysing Tests</li>
+<li>Gather Information from Tests</li>
+<li>How this works</li>
+</ul>
+</section>
+
+<section id="scenarioo-one-app-many-questions" class="darkBox slide" data-background-image="images/pixabay.com/application-user.jpg" data-background="black" data-background-size="cover" data-has-notes="true">
+<h2>One App - Many Questions</h2><p><img src="images/one-app-many-questions.png" alt="">
+Scenarioo helps answer these questions ...</p><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="scenarioo-tests-as-documentation" class="slide" data-has-notes="true">
+<h2>Documentation - Famous Words</h2><blockquote>
+<p>Working Software over comprehensive Documentation</p>
+<p>Documentation is in the Code</p>
+<p>Code IS the Documentation</p>
+<p><strong>Tests are Documentation</strong></p>
+</blockquote>
+<div class="hint fragment">
+Yes ... but ... you have to make it visible!
+</div><aside class="notes"><p>dola</p></aside>
+</section>
+
+<section id="scenarioo-scenarioo-how-it-works" class="slide" data-has-notes="true">
+<h2>Scenarioo - How it works ...</h2><p><img src="images/scenarioo-docu-generation-overview.png" width="80%"></p><aside class="notes"><p>dola</p></aside>
+</section>
+
+<section id="scenarioo-scenarioo-architecture" class="slide" data-has-notes="true">
+<h2>ScenariooJS Architecture Overview</h2><p><img src="images/draw.io/ScenariooJSTestArchitecture.svg" width="80%"></p><aside class="notes"><p>dola</p></aside>
+</section>
+
+<section id="scenarioo-scenarioo-viewer-and-demo" class="slide" data-has-notes="true">
+<h2>Scenarioo Viewer</h2><p>Jump through User Scenarios like a Kangaroo ...<br><a href="http://demo.scenarioo.org">demo.scenarioo.org</a></p>
+<p><a href="http://demo.scenarioo.org"><img src="images/scenarioo-webapp.png" alt=""></a></p><aside class="notes"><p>dola</p>
+<p>plus demo in Rolfs project code</p></aside>
+</section>
+
+<section id="scenarioo-stakeholders" class="slide" data-has-notes="true">
+<h2>For all Stakeholders</h2><p><img src="images/scenarioo-stakeholders.png" alt=""></p><aside class="notes"><p>dola</p></aside>
+</section>
+</section>
+
+<section id="chapter-test-architecture" class="chapter">
+<section id="test-architecture-test_architecture" class="darkBox slide" data-background-image="images/pixabay.com/architecture.jpg" data-background="black" data-background-size="cover" data-background-repeat="no-repeat" data-has-notes="true">
+<h2>E2E Test Architecture</h2><ul>
+<li>What are my Ends?</li>
+<li>Test Setup</li>
+<li>Other Systems</li>
+<li>Test Data</li>
+</ul><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="test-architecture-choosing-the_ends" class="slide" data-has-notes="true">
+<h2>E2E - What are my Ends?</h2><div class="horizontal-2">
+<div>
+    Choose Ends wisely ...
+    <ul>
+        <li><p>What have the developers in your team under their control?</p></li>
+        <li><p>If the test is broken, the developer must be able to fix it!</p></li><br>    </ul>
+</div>
+<div>
+    <img src="images/application-architecture.png">
+</div>
+</div><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="test-architecture-e2e-test-setup" class="slide" data-has-notes="true">
+<h2>E2E Test Setup</h2><p><img src="../../images/test-setup.png" alt="E2E Test Setup">
+Subsystem not under your control: fake it!</p><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="test-architecture-fake-what-you-not-control" class="slide" data-has-notes="true">
+<h2>Fake what you don&#39;t control!</h2><div class="horizontal-2">
+<div>
+    <ul>
+        <li>DB: well defined test data set<br/></li>
+        <li>Other Systems: Stub / Fake / Mock / Test Fixture</li><br>        <li>Define it in your source repository in a well maintainable way</li><br>    </ul>
+</div>
+<div>
+    <img src="images/test-setup.png">
+</div>
+</div><aside class="notes"><p>rolf</p>
+<p>michael comment from his project</p></aside>
+</section>
+
+<section id="test-architecture-control-your-ends" class="slide" data-has-notes="true">
+<h2>Control your Ends</h2><p>Document Expectations about other Systems</p>
+<pre><code class="lang-json">{
+    <span class="hljs-attr">"stringValue"</span>: <span class="hljs-string">"Our UI can display generic string values!"</span>,
+    <span class="hljs-attr">"dateValue"</span>: <span class="hljs-string">"1978-06-13"</span>    
+}
+</code></pre>
+<p>A <strong>Specification by Example</strong> of what our system can consume</p><aside class="notes"><p>rolf</p>
+<p>Show examples from mocking data in Ent cloud Project:
+e.g. &quot;Product UI Definitions of Generic UIs&quot;</p>
+<ul>
+<li>also helpful to document what we support</li>
+<li>markdown overview docu for it</li>
+<li>even contains a screenshot of the ui test (linked through scenarioo)</li>
+<li>references our example UI definition files that we also use for the e2e tests</li>
+<li>the poor guys who have to write those UIs were really happy to get these files</li>
+</ul></aside>
+</section>
+
+<section id="test-architecture-maintain-test-data-becomes-pain" class="slide" data-has-notes="true">
+<h2>Test Data becomes difficult to maintain</h2><ul>
+<li>Engineer it!    <ul>
+<li>Design and structure your test data well</li>
+<li>Only as little test data as needed</li>
+<li>Write Generators to define maintainable test data</li>
+<li>NOT use snapshots from testing systems</li>
+</ul>
+</li>
+</ul><aside class="notes"><p>rolf</p></aside>
+</section>
+</section>
+
+<section id="chapter-design-tests" class="chapter">
+<section id="design-tests-test-design" class="darkBox slide" data-background-image="images/pixabay.com/features-and-flow.jpg" data-background="black" data-background-size="cover" data-background-repeat="no-repeat" data-has-notes="true">
+<h2>E2E Test Design</h2><ul>
+<li>How to structure your test suites?</li>
+<li>How to choose good test scenarios?</li>
+<li>Tests as Functional System Documentation</li>
+<li>Tests as <em>Specification by Example</em></li>
+</ul><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="design-tests-good-test-scenarios" class="slide" data-has-notes="true">
+<h2>Good E2E Test Scenarios</h2><ul>
+<li>Test System Functionalities</li>
+<li>Concrete Usage Scenarios</li>
+<li>Full E2E Usage Process</li>
+<li>From User&#39;s point of view</li>
+<li>Written in Business / User Language</li>
+<li>NOT test Components in isolation!</li>
+</ul><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="design-tests-example-test-scenario" class="slide" data-has-notes="true">
+<h2>An Example Scenario</h2><ul>
+<li>Order Virtual Machine on System<ul>
+<li>Choose System where you want to Create it</li>
+<li>Open Machine Creation Wizard</li>
+<li>Enter Configuration Data</li>
+<li>Check Order Confirmation and Price</li>
+<li>Submit Order</li>
+<li>Expect that the correct Order has been sent</li>
+</ul>
+</li>
+</ul><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="design-tests-usecases_and_scenarios" class="slide" data-background-image="images/puml/use_case_scenarios.png" data-background-size="20%" data-background-position="right" data-background-repeat="no-repeat" data-has-notes="true">
+<h2>Use Cases and Scenarios</h2><p>Structure Scenarios by Use Case</p>
+<ul>
+<li><p>Use Case</p>
+<ul>
+<li>A goal the user wants to achieve</li>
+<li>Usually an action = verb and subject(s)</li>
+<li>Not too fine granular! <ul>
+<li>Boss Test</li>
+<li>Coffee Break Test</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Scenario = Test Case = One flow through the use case</p>
+</li>
+</ul><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="design-tests-usecases-good-examples" class="slide" data-background-image="images/pixabay.com/positive.png" data-background-size="20%" data-background-position="left" data-background-repeat="no-repeat" data-has-notes="true">
+<h2>Good Use Cases Examples</h2><ul>
+<li>Open Account</li>
+<li>Create Task</li>
+<li>Edit Person</li>
+<li>Virtual Machine - Add Disk</li>
+<li>Virtual Machine - View</li>
+</ul><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="design-tests-usecases-bad-examples" class="slide" data-background-image="images/pixabay.com/negative.png" data-background-size="20%" data-background-position="left" data-background-repeat="no-repeat" data-has-notes="true">
+<h2>Bad Use Case Examples</h2><ul>
+<li>Login</li>
+<li>Select Birthdate for Person</li>
+<li>Validate Date Fields</li>
+<li>Autocomplete Addresses </li>
+<li>Browse User Navigation</li>
+</ul><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="design-tests-group-usecases-by-subject" class="slide" data-background-image="images/puml/use_case_scenarios.png" data-background-size="20%" data-background-position="right" data-background-repeat="no-repeat" data-has-notes="false">
+<h2>Group Usecases by Subject</h2><ul>
+<li>User<ul>
+<li>Create Account</li>
+<li>View Profile</li>
+<li>Edit Profile </li>
+</ul>
+</li>
+<li>Task<ul>
+<li>Create</li>
+<li>Edit</li>
+<li>Assign</li>
+<li>Mark Done</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="design-tests-scenarios" class="slide" data-background-image="images/puml/use_case_scenarios.png" data-background-size="20%" data-background-position="right bottom" data-background-repeat="no-repeat" data-has-notes="false">
+<h2>Scenarios per Use Case</h2><p>A hand full of scenarios per use case:</p>
+<ul>
+<li>Most Important Happy Scenario<ul>
+<li>Only with minimal &quot;required properties&quot;</li>
+</ul>
+</li>
+<li>Most Important Alternative Happy Scenarios<ul>
+<li>at least one with all optional fields set</li>
+</ul>
+</li>
+<li>Special Validation Scenario<ul>
+<li>first enter wrong</li>
+<li>check for validation messages</li>
+<li>then correct it    </li>
+</ul>
+</li>
+<li>Error Scenarios?<ul>
+<li>e.g. when the backend blocks</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="design-tests-scenarios-examples" class="slide" data-background-image="images/pixabay.com/positive.png" data-background-size="20%" data-background-position="left" data-background-repeat="no-repeat" data-has-notes="false">
+<h2>Good Scenario Examples</h2><p>Use Case &quot;Task - Create&quot;</p>
+<ul>
+<li>Task in Project</li>
+<li>Sub-Task</li>
+<li>Task with all Options</li>
+<li>Task with Validation</li>
+<li>Fail on Project Closed</li>
+</ul>
+</section>
+
+<section id="design-tests-scenarios-bad-examples" class="slide" data-background-image="images/pixabay.com/negative.png" data-background-size="20%" data-background-position="right" data-background-repeat="no-repeat" data-has-notes="false">
+<h2>Bad Scenario Examples</h2><p>Use Case &quot;Player - Find&quot;</p>
+<ul>
+<li>Find by exact Name</li>
+<li>Find by Name with Special Characters</li>
+<li>Find by similar Name entered</li>
+<li>Find by partial Name &amp; Nationality</li>
+<li>Find by partial Name &amp; Birthdate</li>
+<li>Find by partial Name and Birthdate only matches Birthyear</li>
+<li>Find by Name and Birthdate, also if month and day in birthdate exchanged</li>
+</ul>
+</section>
+
+<section id="design-tests-avoid-e2e-test-creep" class="slide" data-has-notes="true">
+<h2>Balance well!</h2><div class="horizontal-2">
+    <div>
+        <ul>
+            <li><p>Avoid E2E-Testing Creep</p></li>
+            <li><p>1 hand full of scenarios per use case</p></li>
+            <li><p>focus on high-level business functionality</p></li>
+        </ul><br>    </div>
+    <div>
+      <img src="../../images/test-pyramid.png" alt="">
+    </div>
+</div><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="design-tests-well-balanced-test-pyramid" class="slide" data-has-notes="true">
+<h2>Balance well!</h2><div class="horizontal-2">
+    <div>
+        <ul>
+            <li><p>DON&#39;T test all details of complex logic in E2E tests</p>
+                <ul>
+                <li><p>Extract that logic into a Component / Service / Class / Function</p></li>
+                <li><p>Extensively test that Logic in <strong>Unit Tests</strong></p></li>
+                </ul>
+            </li>
+        </ul><br>    </div>
+    <div>
+      <img src="../../images/test-pyramid.png" alt="">
+    </div>
+</div><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="design-tests-exercise-in-your-application" class="slide" data-background-image="images/puml/use_case_scenarios.png" data-background-size="20%" data-background-position="right" data-background-repeat="no-repeat" data-has-notes="true">
+<h2>Exercise &amp; Discuss</h2><p>Think about your Application ...</p>
+<ul>
+<li>What are your Subjects &amp; Use Cases?</li>
+<li>Define Scenarios for one Use Case </li>
+<li>What should be tested as E2E Test?</li>
+<li>Discuss in Small Groups</li>
+</ul><aside class="notes"><p>Small exercise in groups to find out what typical use cases in your project are</p>
+<p>Pick out one group/person to quickly present his/her use cases or interesting discussion points?</p>
+<p>Ask about problems ot discussions in groups?</p></aside>
+</section>
+</section>
+
+<section id="chapter-writing-ui-tests" class="chapter">
+<section id="writing-ui-tests-how-to-write-tests" class="darkBox slide" data-background-image="images/pixabay.com/lego.jpg" data-background="black" data-background-size="cover" data-background-repeat="no-repeat" data-has-notes="true">
+<h2>Writing E2E tests</h2><ul>
+<li>Protractor and Jasmine 2</li>
+<li>Write Maintainable and Stable Tests</li>
+<li>Go well together with ScenariooJS (later!)</li>
+</ul><aside class="notes"><p>michael</p></aside>
+</section>
+
+<section id="writing-ui-tests-a-simple-protractor-test" class="slide" data-has-notes="true">
+<h2>A simple test</h2><pre><code class="lang-js">describe(<span class="hljs-string">'Example Use Case'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  it(<span class="hljs-string">'Example Scenario'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    browser.get(<span class="hljs-string">'/index.html'</span>);
+    element(by.css(<span class="hljs-string">'li#item_one'</span>)).click();
+    expect(element(by.id(<span class="hljs-string">'selected'</span>)).getText()).toEqual(<span class="hljs-string">'one'</span>);
+  });
+});
+</code></pre>
+<p>So far so good, let&#39;s look at a bigger example.</p><aside class="notes"><p>michael</p>
+<ul>
+<li>Exmplain the structure of a Jasmine test (describe, it)</li>
+<li>Explain expect (promises), like assertions</li>
+<li>Explain protractor</li>
+</ul></aside>
+</section>
+
+<section id="writing-ui-tests-not-so-simple-test" class="slide" data-has-notes="true">
+<h2>A not so simple test</h2><pre><code class="lang-js">describe(<span class="hljs-string">'Example Use Case'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  it(<span class="hljs-string">'Example Scenario'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    browser.get(<span class="hljs-string">'/index.html'</span>);
+    <span class="hljs-keyword">var</span> firstname = by.id(<span class="hljs-string">'#firstname'</span>);
+    element(firstname).sendKeys(<span class="hljs-string">'Stephen'</span>);
+
+    <span class="hljs-keyword">var</span> lastname = by.id(<span class="hljs-string">'lastname'</span>);
+    element(lastname).sendKeys(<span class="hljs-string">'Strange'</span>);
+    element(by.id(<span class="hljs-string">'#submit'</span>)).click();
+
+    expect(element(by.id(<span class="hljs-string">'#message'</span>))).getText()
+      .toEqual(<span class="hljs-string">'Registration successful!'</span>);
+  });
+});
+</code></pre>
+<p>Cool, but it&#39;s starting to get a bit messy...</p><aside class="notes"><p>michael</p></aside>
+</section>
+
+<section id="writing-ui-tests-problems" class="slide" data-has-notes="true">
+<h2>Soon problems arise</h2><ul>
+<li>What page am I on?</li>
+<li>What distinct user actions are possible?</li>
+<li>What if elements reappear on other pages?</li>
+<li>Are these tests maintainable?</li>
+</ul><aside class="notes"><p>michael</p></aside>
+</section>
+
+<section id="writing-ui-tests-introducing-page-objects" class="slide" data-has-notes="true">
+<h2>The solution? Page objects!</h2><p><img class="noborder" src="images/page-objects.png" /></p><aside class="notes"><p>michael</p></aside>
+</section>
+
+<section id="writing-ui-tests-advantages-of-page-objects" class="slide" data-has-notes="true">
+<h2>Page Objects ...</h2><ul>
+<li>... provide an interface driven by tested functionality</li>
+<li>... hide the complexity of UI interactions</li>
+<li>... enable reusable logic for reoccurring components</li>
+<li>... make nicer code :-)</li>
+</ul><aside class="notes"><p>michael</p></aside>
+</section>
+
+<section id="writing-ui-tests-example-page-object" class="slide" data-has-notes="true">
+<h2>Example page object</h2><pre><code class="lang-js"><span class="hljs-keyword">var</span> RegistrationPage = {
+  <span class="hljs-keyword">var</span> firstnameTextbox = element(by.id(<span class="hljs-string">'#firstname'</span>));
+  <span class="hljs-keyword">var</span> lastnameTextbox = element(by.id(<span class="hljs-string">'#lastname'</span>));
+  <span class="hljs-keyword">var</span> registerButton = element(by.id(<span class="hljs-string">'#submit'</span>));
+
+  <span class="hljs-keyword">this</span>.register = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">firstname, lastname</span>) </span>{
+    firstnameTextbox.clear();
+    firstnameTextbox.setText(firstname);
+    lastnameTextbox.clear();
+    lastnameTextbox.setText(lastname);
+
+    registerButton.click();
+  };
+}
+</code></pre><aside class="notes"><p>michael</p></aside>
+</section>
+
+<section id="writing-ui-tests-reusable-components" class="slide" data-has-notes="true">
+<h2>Reusable components</h2><pre><code class="lang-js"><span class="hljs-keyword">var</span> TextBox = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element</span>) </span>{
+  <span class="hljs-keyword">this</span>.element = element;
+
+  <span class="hljs-keyword">this</span>.set = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{
+    element.clear();
+    element.sendKeys(value);
+  }
+
+  <span class="hljs-keyword">this</span>.clear = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{
+    element.clear();
+  }
+}
+</code></pre><aside class="notes"><p>michael</p></aside>
+</section>
+
+<section id="writing-ui-tests-reusable-components-revisited" class="slide" data-has-notes="true">
+<h2>Reusable components</h2><pre><code class="lang-js"><span class="hljs-keyword">var</span> RegistrationPage = {
+  <span class="hljs-keyword">var</span> firstnameTextbox = <span class="hljs-keyword">new</span> TextBox(element(by.id(<span class="hljs-string">'#firstname'</span>)));
+  <span class="hljs-keyword">var</span> lastnameTextbox = <span class="hljs-keyword">new</span> TextBox(element(by.id(<span class="hljs-string">'#lastname'</span>)));
+  <span class="hljs-keyword">var</span> registerButton = element(by.id(<span class="hljs-string">'#submit'</span>));
+
+  <span class="hljs-keyword">this</span>.register = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">firstname, lastname</span>) </span>{
+    firstnameTextbox.set(firstname);
+    lastnameTextbox.set(lastname);
+    registerButton.click();
+  };
+}
+</code></pre><aside class="notes"><p>michael</p></aside>
+</section>
+
+<section id="writing-ui-tests-example-revisited" class="slide" data-has-notes="true">
+<h2>Let&#39;s revisit our example</h2><pre><code class="lang-js">describe(<span class="hljs-string">'Example Use Case'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  it(<span class="hljs-string">'Example Scenario'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    registrationPage.open()
+        .register(<span class="hljs-string">'Stephen'</span>, <span class="hljs-string">'Strange'</span>);
+
+    confirmationPage.expectRegistrationSuccessful();
+  });
+});
+</code></pre>
+<p>The intention of the code becomes visible.</p><aside class="notes"><p>michael</p></aside>
+</section>
+
+<section id="writing-ui-tests-summary" class="slide" data-has-notes="true">
+<h2>Summary</h2><ul>
+<li>Start early with defining page objects and components</li>
+<li>Interface of page objects is functional<ul>
+<li>Not technical</li>
+<li>Not driven by UI structure</li>
+</ul>
+</li>
+<li>Keep tests short</li>
+<li>Don&#39;t test too much stuff</li>
+</ul><aside class="notes"><p>michael</p>
+<p>rolf: </p>
+<ul>
+<li>enough time to run a short demo test?</li>
+<li>maybe show how a test fails (something goes wrong in a page object?)?</li>
+<li>otherwise continue and dig into code later</li>
+</ul></aside>
+</section>
+</section>
+
+<section id="chapter-bringing-in-scenarioo" class="chapter">
+<section id="bringing-in-scenarioo-bringing-in-scenarioo" class="darkBox slide" data-background-image="images/the_candle_on_the_cake.png" data-background="black" data-background-size="cover" data-background-repeat="no-repeat" data-has-notes="true">
+<h2>Bringing in Scenarioo</h2><p>OK cool, but how do I activate this Scenarioo now?</p><aside class="notes"><p>michael</p></aside>
+</section>
+
+<section id="bringing-in-scenarioo-installation" class="slide" data-has-notes="true">
+<h2>Bringing in Scenarioo</h2><p>For installation and configuration see:
+<a href="https://github.com/scenarioo/scenarioo-js/blob/develop/README.md">https://github.com/scenarioo/scenarioo-js/blob/develop/README.md</a></p><aside class="notes"><p>michael</p>
+<ul>
+<li>Refer to version notice!</li>
+</ul></aside>
+</section>
+
+<section id="bringing-in-scenarioo-configuration" class="slide" data-has-notes="true">
+<h2>Protractor configuration</h2><pre><code class="lang-js">onPrepare: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onPrepare</span>(<span class="hljs-params"></span>) </span>{
+    global.scenarioo = <span class="hljs-built_in">require</span>(<span class="hljs-string">'scenarioo-js'</span>);
+    scenarioo.setupJasmineReporter(jasmine, {
+      <span class="hljs-attr">targetDirectory</span>: <span class="hljs-string">'./scenariooReports'</span>,
+      <span class="hljs-attr">recordLastStepForStatus</span>: {
+         <span class="hljs-attr">failed</span>: <span class="hljs-literal">true</span>,
+         <span class="hljs-attr">success</span>: <span class="hljs-literal">true</span>
+      },
+      ...
+  }
+</code></pre>
+<p><a href="https://github.com/scenarioo/scenarioo-js#configuration">https://github.com/scenarioo/scenarioo-js#configuration</a></p><aside class="notes"><p>michael</p></aside>
+</section>
+
+<section id="bringing-in-scenarioo-slight-changes-to-test" class="slide" data-has-notes="true">
+<h2>And with some slight changes...</h2><pre><code class="lang-js">describe(<span class="hljs-string">'Example Use Case'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+
+  afterEach(scenarioo.saveLastStep);
+
+  it(<span class="hljs-string">'Example Scenario'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    registrationPage.open()
+        .register(<span class="hljs-string">'Stephen'</span>, <span class="hljs-string">'Strange'</span>);
+
+    confirmationPage.expectRegistrationSuccessful();
+  });
+});
+</code></pre><aside class="notes"><p>michael</p></aside>
+</section>
+
+<section id="bringing-in-scenarioo-documentation-activated" class="slide" data-has-notes="true">
+<h2>Documentation activated!</h2><ul>
+<li>One use case per <code>describe</code></li>
+<li>One scenario per <code>it</code></li>
+<li>Step saved <ul>
+<li>at end of each scenario</li>
+<li>on expectations failing</li>
+<li>on each call to <code>scenarioo.saveStep(...)</code></li>
+</ul>
+</li>
+</ul><aside class="notes"><p>michael</p></aside>
+</section>
+
+<section id="bringing-in-scenarioo-scenarioo-steps-in-between" class="slide" data-has-notes="true">
+<h2>Defining scenarioo steps</h2><pre><code class="lang-js"><span class="hljs-keyword">var</span> RegistrationPage = {
+  <span class="hljs-keyword">var</span> firstnameText = <span class="hljs-keyword">new</span> TextBox(element(by.id(<span class="hljs-string">'#firstname'</span>)));
+  <span class="hljs-keyword">var</span> lastnameText = <span class="hljs-keyword">new</span> TextBox(element(by.id(<span class="hljs-string">'#lastname'</span>)));
+  <span class="hljs-keyword">var</span> registerButton = element(by.id(<span class="hljs-string">'#submit'</span>));
+
+  <span class="hljs-keyword">this</span>.open = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    browser.get(<span class="hljs-string">'/registration.html'</span>);
+    scenarioo.saveStep(<span class="hljs-string">'Registration page opened'</span>);
+  };
+  <span class="hljs-keyword">this</span>.register = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">firstname, lastname</span>) </span>{
+    firstnameTextbox.set(firstname);
+    lastnameTextbox.set(lastname);
+    scenarioo.saveStep(<span class="hljs-string">'Registration data entered'</span>);
+    registerButton.click();
+  };
+}
+</code></pre>
+<p><strong>Define steps inside of page objects!</strong></p><aside class="notes"><p>michael</p>
+<ul>
+<li>Mention that it would also be possible to hook saveStep to protracator functions</li>
+</ul></aside>
+</section>
+
+<section id="bringing-in-scenarioo-but-wait-theres-more" class="slide" data-has-notes="true">
+<h2>But wait, there&#39;s more</h2><ul>
+<li>Scenarioo Fluent DSL</li>
+<li>Cleaner syntax</li>
+<li>Additional information can be defined easily</li>
+</ul><aside class="notes"><p>michael</p></aside>
+</section>
+
+<section id="bringing-in-scenarioo-example-with-fluent-dsl" class="slide" data-has-notes="true">
+<h2>Example with fluent DSL</h2><pre><code class="lang-js">useCase(<span class="hljs-string">'Register User'</span>)
+  .labels(<span class="hljs-string">'mobile'</span>)
+  .describe(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+
+    scenario(<span class="hljs-string">'Register new user'</span>)
+      .labels(<span class="hljs-string">'happy'</span>)
+      .it(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        registrationPage.open()
+            .register(<span class="hljs-string">'Stephen'</span>, <span class="hljs-string">'Strange'</span>);
+
+        confirmationPage.expectRegistrationSuccessful();
+  });
+});
+</code></pre><aside class="notes"><p>michael</p></aside>
+</section>
+
+<section id="bringing-in-scenarioo-real-code" class="slide" data-has-notes="true">
+<h2>Time to dig into Real Code</h2><ul>
+<li>Subjects, Use Cases, Scenarios   </li>
+<li>Tests &amp; Page Objects</li>
+<li>Json for Test Data</li>
+<li>Steps inside Page Objects<ul>
+<li>Labels for Steps (for special topics)</li>
+</ul>
+</li>
+<li>Intercept Backend Calls for Verification  </li>
+<li>Test Setup:<ul>
+<li>Scenarioo</li>
+<li>Well defined Screen Size</li>
+<li>Animations Turned Off       </li>
+</ul>
+</li>
+<li>Test End:<ul>
+<li>Fail Test on Console Errors</li>
+</ul>
+</li>
+</ul><aside class="notes"><ul>
+<li>Rolf shows the structure and some example tests from his project</li>
+<li>and most of the listed practical hint and tips</li>
+</ul></aside>
+</section>
+</section>
+
+<section id="chapter-practical-hints" class="chapter">
+<section id="practical-hints-practical-hints" class="darkBox slide" data-background-image="images/pixabay.com/mountain-tour.jpg" data-background="black" data-background-size="cover" data-background-repeat="no-repeat" data-has-notes="true">
+<h2>Practical Hints</h2><ul>
+<li>Keeping Tests Pass</li>
+<li>Definition of Done</li>
+<li>Beware From Pitfalls</li>
+<li>More Topics if Time</li>
+</ul><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="practical-hints-keep-tests-green" class="slide" data-background-image="images/pull-request.png" data-background-size="contain" data-background-position="right" data-background-repeat="no-repeat" data-has-notes="true">
+<h2>How to Keep Tests Green?</h2><p><strong>Feature Branches and Pull Requests</strong></p>
+<ul>
+<li>Failed tests on feature Branches are ok!</li>
+<li><p>Failed tests on master / develop disturb others!</p>
+</li>
+<li><p>Let CI Build System verify your Pull Requests </p>
+<ul>
+<li>automatically run all tests!</li>
+<li>no merge when tests fail!</li>
+<li>use it also for <em>Code Reviews</em>!</li>
+</ul>
+</li>
+<li><p>Short Demo</p>
+</li>
+</ul><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="practical-hints-definition-of-done" class="slide" data-has-notes="true">
+<h2>Definition of Done?</h2><pre><code class="lang-md"> # Definition of Done
+
+ * Feature is covered by tests
+</code></pre>
+<p>Any better ideas?</p><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="practical-hints-definition-of-done" class="slide" data-has-notes="true">
+<h2>Definition of Done</h2><p>Our Definition of Done in our <em>Markdown Documentation</em>:</p>
+<pre><code class="lang-md"><span class="hljs-section"># Definition of Done</span>
+
+<span class="hljs-bullet">* </span>Feature is documented in Scenarioo
+</code></pre>
+<ul>
+<li>Do <em>Story Reviews</em> in Scenarioo</li>
+<li>This includes allready that there must be a test covering it</li>
+</ul><aside class="notes"><p>rolf</p></aside>
+</section>
+
+<section id="practical-hints-pitfalls-protractor-asynchronous" class="slide" data-has-notes="false">
+<h2>Protractor &amp; Promises &amp; Asynchronous Event Queue</h2><p>   What is wrong?</p>
+<pre><code class="lang-js"><span class="hljs-keyword">if</span> (element.isPresent()) {
+  element.click();
+}
+</code></pre>
+<p><div class="fragment">
+Should be:</p>
+<pre><code class="lang-js">element.isPresent().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">present</span>) </span>{
+    <span class="hljs-keyword">if</span> (present) {
+        element.click();
+    }
+};
+</code></pre>
+<p>Methods on <em>element</em> return a <em>Promise</em>!</p>
+<div>
+</section>
+
+<section id="practical-hints-pitfalls-tooling" class="slide" data-has-notes="false">
+<h2>Tooling Pittfalls</h2><ul>
+<li>Browser &amp; Protractor &amp; Webdriver must be compatible<ul>
+<li>At least one of them is installed globally</li>
+<li>Rolf&#39;s recommendations:<ul>
+<li>Install Protractor and Webdriver also globally</li>
+<li>Let developer control when to update</li>
+<li>Causes less dependency problems for developers</li>
+</ul>
+</li>
+<li>Other Option: use a versioned docker image to run tests</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="practical-hints-pitfalls-internet-explorer" class="slide" data-has-notes="false">
+<h2>Internet Explorer Testing</h2><ul>
+<li>Selenium for Internet Explorer is most unstable version   </li>
+<li>IE testing is very hard!<ul>
+<li>writing working web pages for IE is allready hard</li>
+<li>writing stable web tests for IE is even harder</li>
+<li>you will fight with problems of the IE tooling</li>
+<li>these are problems that are no &quot;real bugs&quot;!</li>
+</ul>
+</li>
+<li>Is it worth to go that extra mile?   <ul>
+<li>we recommend to focus on functional web tests with most stable tooling</li>
+<li>prefer to use Firefox or Chrome for automated testing</li>
+<li>cover IE by using it for additional manual tests</li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="practical-hints-more-topics" class="slide" data-has-notes="false">
+<h2>More Topics (if Time)</h2><ul>
+<li>Debugging Protractor Tests </li>
+<li>Mocking &amp; Proxy Engine for Backend</li>
+<li>Other Questions?</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-wrapup" class="chapter">
+<section id="wrapup-wrapup" class="darkBox slide" data-background-image="images/pixabay.com/zipper.jpg" data-background="black" data-background-size="cover" data-background-repeat="no-repeat" data-has-notes="false">
+<h2>Wrap Up</h2><ul>
+<li>Compare with Scenarioo for C&sharp; and Java</li>
+<li>Outlook</li>
+<li>Feedback</li>
+</ul>
+</section>
+
+<section id="wrapup-other-environments" class="slide" data-has-notes="true">
+<h2>Scenarioo in Other Environments</h2><p><img src="images/java-logo.png" width="200px">
+<img src="images/NET-logo.png" wdith="300px"></p>
+<p><a href="https://github.com/scenarioo/scenarioo-java">https://github.com/scenarioo/scenarioo-java</a>
+<a href="https://github.com/scenarioo/scenarioo-cs">https://github.com/scenarioo/scenarioo-cs</a></p>
+<ul>
+<li>do not depend on any Testing Toolkit</li>
+<li>integration with Selenium up to the user</li>
+<li>more flexibile and additional data can be written</li>
+</ul><aside class="notes"><p>dola</p></aside>
+</section>
+
+<section id="wrapup-differences-between-writer-libraries" class="slide" data-has-notes="true">
+<h2>Scenarioo-JS versus Scenarioo-Java/C&sharp;</h2><ul>
+<li><strong>Advantages of ScenariooJS</strong><ul>
+<li>Integrates easy with Protractor and Jasmine 2</li>
+<li>Comes with comfortable Fluent DSL</li>
+<li>Automatic Step on Error and Success</li>
+<li>Protractor is easy to write tests  </li>
+<li>JSON is handy for passing data to page objects</li>
+</ul>
+</li>
+<li><strong>Disadvantages of ScenariooJS</strong><ul>
+<li>No support for additional App-specific detail data yet</li>
+<li>Difficult to integrate with other testing toolkits</li>
+</ul>
+</li>
+</ul><aside class="notes"><p>dola</p></aside>
+</section>
+
+<section id="wrapup-outlook" class="darkBox slide" data-background-image="images/pixabay.com/road.jpg" data-background-size="cover" data-background-repeat="no-repeat" data-background="black" data-has-notes="true">
+<h2>Outlook</h2><ul>
+<li><p><strong>New Features in Scenarioo 3.0</strong><br/>
+Release 1st December 2016</p>
+<ul>
+<li>Diff Viewer</li>
+<li>Full Text Search</li>
+<li>ScenariooJS for Jasmine 2</li>
+<li>see <strong><a href="http://demo.scenarioo.org/scenarioo-develop/">Release Candidate Demo</a></strong></li>
+</ul>
+</li>
+<li><p><strong>Planned Features 2017</strong></p>
+<ul>
+<li>Improved Documentation Format</li>
+<li>Support for Additional Data in all Writers</li>
+<li>Tell us your wishes: <a href="https://github.com/scenarioo/scenarioo/issues/new?labels=feedback">Feedback as Issues</a></li>
+</ul>
+</li>
+</ul><aside class="notes"><p>dola</p>
+<p>Quickly show example of diff Viewer and Search</p></aside>
+</section>
+
+<section id="wrapup-feedback" class="darkBox slide" data-background-image="images/pixabay.com/postit.jpg" data-background-size="cover" data-background-repeat="no-repeat" data-background="black" data-has-notes="true">
+<h2>Wrap Up</h2><ul>
+<li>What are your learnings from this session?</li>
+<li>Where would you like to know more?</li>
+<li>Is this useful in your project?</li>
+</ul>
+<p><a href="http://scenarioo.org">www.scenarioo.org</a></p>
+<p>Feedback: 
+<a href="https://github.com/scenarioo/scenarioo/issues/new?labels=feedback">https://github.com/scenarioo/scenarioo/issues/new?labels=feedback</a></p><aside class="notes"><p>dola</p>
+<p>post-its two colors: 2 minutes to gather notes</p>
+<ul>
+<li>one color: learning</li>
+<li>other color: questions, open points</li>
+</ul>
+<p>open discussion</p></aside>
+</section>
+</section></div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: Reveal.getQueryHash().transition || 'slide', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [
+        //{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        //{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        //{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+      ]
+    });
+    </script>
+
+    <script src="js/dynamic-theme.js"></script><script src="js/custom.js"></script>
+
+  </body>
+</html>

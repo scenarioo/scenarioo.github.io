@@ -1,0 +1,85 @@
+/* custom styles can go here */
+
+#chapter-foo p {
+	text-transform: uppercase;
+}
+
+/* images without border by default: */
+img {
+	border: none !important;
+	box-shadow: none !important;
+	background: transparent !important;
+}
+
+img.border {
+	border: 4px solid #222;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.noUppercase {
+	text-transform: none;
+}
+
+/** light shadow for titles, which make them more readable over background images. */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+	text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+.darkBox {
+	background: rgba(0,0,0,0.4);
+}
+
+.lightBox {
+	background: rgba(255,255,255,0.4);
+}
+
+div.horizontal-2, div.horizontal-3 {
+	overflow: hidden;
+}
+
+div.horizontal-3>img, div.horizontal-3>div {
+	float: left;
+	width: 28%;
+	margin: 2%;
+}
+
+div.horizontal-2>img, div.horizontal-2>div {
+	float: left;
+	width: 45%;
+	margin: 2%;
+}
+
+div.horizontal-2>div {
+	padding-top: 10px;
+}
+
+div.hint {
+	padding: 30px 40px;
+	background-color: rgb(255, 130, 10);
+	color: white;
+	font-weight: bold;
+	width: 70%;
+	margin: 0 auto;
+}
+
+
+ol, ul {
+	padding-left: 0;
+	margin-left: 1em;
+	position: relative;
+}
+
+li.checkmark {
+	list-style: none;
+}
+
+li.checkmark:before {
+	position: absolute;
+	left: -1em;
+	width: 1em;
+	content: "✔";
+}
+
+code {
+  	background: #f8f8f8;
+}

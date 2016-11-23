@@ -1,0 +1,9 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "Subject" {
+  [Use Case] --> "*" [Scenario]
+}
+
+@enduml
