@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Diff Viewer User Guide · GitBook</title>
+        <title>Diff Viewer Setup Instructions · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="setup.html" />
+    <link rel="next" href="../../contribute/" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="user-guide.html" />
     
 
     </head>
@@ -347,7 +347,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.3.1" data-path="user-guide.html">
+        <li class="chapter " data-level="1.4.3.1" data-path="user-guide.html">
             
                 <a href="user-guide.html">
             
@@ -360,7 +360,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3.2" data-path="setup.html">
+        <li class="chapter active" data-level="1.4.3.2" data-path="setup.html">
             
                 <a href="setup.html">
             
@@ -601,7 +601,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Diff Viewer User Guide</a>
+        <a href="../.." >Diff Viewer Setup Instructions</a>
     </h1>
 </div>
 
@@ -616,65 +616,207 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="diff-viewer-user-guide">Diff Viewer User Guide</h1>
-<p>This guide describes how to use the Scenarioo Diff Viewer feature.</p>
-<p>The Diff Viewer feature makes it possible to compare two different builds against each other.</p>
-<h2 id="preconditions">Preconditions</h2>
+                                <h1 id="diff-viewer-installation-and-configuration-guide">Diff Viewer Installation and Configuration Guide</h1>
+<p>This guide describes how you can set up the Diff Viewer feature.
+The Diff Viewer feature makes it possible to compare two different builds against each other.
+In three easy step, you are ready to compare your own builds:</p>
+<ol>
+<li><a href="#1-install-graphicsmagick">Install  GraphicsMagick</a></li>
+<li><a href="#2-add-a-comparison-configuration">Add a comparison configuration</a></li>
+<li><a href="#3-start-comparison">Start comparison</a></li>
+<li><a href="#4-delete-a-comparison">Delete a comparison</a></li>
+</ol>
+<p>After that you are ready to use the Diff Viewer feature. Check out the <a href="user-guide.html">Diff Viewer User Guide</a> for further details.</p>
+<h2 id="1-install-graphicsmagick">1. Install <a href="http://www.graphicsmagick.org/" target="_blank">GraphicsMagick</a></h2>
+<p>The <a href="http://www.graphicsmagick.org/" target="_blank">GraphicsMagick Image Processing System</a> calls itself the swiss army knife of image processing. It is used by Diff Viewer feature to perform screenshot comparisons.</p>
+<h3 id="installation-on-linux">Installation on Linux</h3>
+<p>Diff Viewer is successfully tested on Ubuntu 14.04.3 LTS with GraphicsMagick Version 1.3.18:</p>
+<p>Simply run the following command:</p>
+<pre><code>   sudo apt-get install graphicsmagick
+</code></pre><p>If there is any error, add the ppa:dhor/myway repository:</p>
+<pre><code>   sudo add-apt-repository ppa:dhor/myway
+   sudo apt-get update
+   sudo apt-get install graphicsmagick
+</code></pre><p>For more information refer to <a href="http://www.graphicsmagick.org/INSTALL-unix.html" target="_blank">http://www.graphicsmagick.org/INSTALL-unix.html</a></p>
+<h3 id="installation-on-windows">Installation on Windows</h3>
+<p>Download and run the GraphicsMagick installer for Windows with administrator privileges.
+Diff Viewer is successfully tested on Windows 10 with GraphicsMagick Version 1.3.23:
+ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/windows/GraphicsMagick-1.3.22-windows-source.7z</p>
+<p>Follow the installation Guide:</p>
 <ul>
-<li>Make sure your scenarioo-server has the appropriate Diff Viewer configuration as described in the <a href="setup.html">Diff Viewer Installation and Configuration Guide</a></li>
-<li>At least one build should have been compared to generate Diff Information data</li>
+<li>You can leave the default settings.</li>
+<li>After completing the installation, reopen all console windows/eclipse, so that they load the updated path variable.</li>
 </ul>
-<h2 id="select-a-comparison">Select a Comparison</h2>
-<p>If all the [preconditions] (#Preconditions) are met, you can start the Diff Viewer feature by selecting a comparison in the comparison menu. The comparison menu is located in the header next to the build selection menu. The name of the comparison was defined during the <a href="setup.html#2-add-a-comparison-configuration">comparison configuration</a>. If no comparison menu is shown, then no comparison is available or the [preconditions] (#Preconditions) are not fulfilled.</p>
-<p>You can change the selected comparison at any time, on every layer. It does not matter if you are on the page view or on the use case overview. The Diff Viewer will show the difference between the two builds immediately. The selected comparison will be stored in your browser. Therefore you can reload the page without loosing your selected comparison.</p>
-<p>The following screenshot shows the comparison menu on our <a href="http://demo.scenarioo.org/scenarioo-fork-diffviewer/" target="_blank">Demo Site</a>
-<img src="images/SelectComparison.png" alt="SelectComparison"></p>
-<h2 id="interpret-changes">Interpret Changes</h2>
-<p>Diff Information is integrated into existing pages. You will see the Diff Information right next to each associated item. The information is displayed in a progress-bar like diff icon.</p>
-<p>The following screenshot shows a diff icon example:</p>
-<p><img src="images/DiffIcon.png" alt="DiffIcon"></p>
-<p><strong>Color legend</strong></p>
+<p>Detailed process:</p>
+<p><strong>Welcome</strong></p>
 <ul>
-<li><strong>green:</strong> Number of new elements</li>
-<li><strong>orange:</strong> Number of changed elements</li>
-<li><strong>red:</strong> Number of removed elements</li>
+<li>click [next]</li>
 </ul>
-<p><strong>Change Rate</strong></p>
-<p>The percent number we use to call Change Rate. 
-The Change Rate is an average value of all changes in the underlying elements.
-Added or removed elements will be calculated as 100% changed.</p>
-<p>The length of the entire progress bar corresponds to the change rate.
-The length of each color progress bar corresponds to the number of changed elements.</p>
-<p><strong>Added and Removed Elements</strong></p>
-<p>Furthermore, added or removed elements are labeled accordingly. To ensure you recognize these elements immediately they are highlighted as in the following screenshot:</p>
-<p><img src="images/AddedDeleted.png" alt="AddedDeleted"></p>
-<h2 id="compare-screenshots">Compare Screenshots</h2>
-<p>You can open the screenshot comparison in the step view with a click on the tab named comparison.</p>
-<p><strong>Views</strong></p>
-<p>Diff Viewer provides you different views to compare a screenshot. You can switch between these two views:</p>
-<p>Side by side view
-<img src="images/StepSideBySide.png" alt="SideBySideView"></p>
-<p>Single page view
-<img src="images/StepSinglePage.png" alt="StepSInglePageView"></p>
-<p><strong>Naming</strong></p>
+<p><strong>License Agreement</strong></p>
 <ul>
-<li><strong>Selected screenshot:</strong> The screenshot of the selected build</li>
-<li><strong>Comparison screenshot:</strong> The screenshot of the selected comparison build</li>
+<li>Select<ul>
+<li>[x] I accept the agreement</li>
+<li>[ ] I do not accept the agreement</li>
 </ul>
-<p>Refer to the <a href="glossary.md">glossary</a> for further details: </p>
-<p><strong>Options</strong></p>
+</li>
+<li>click [next]</li>
+</ul>
+<p><strong>Information</strong></p>
 <ul>
-<li><strong>Side by side view:</strong> Show the screenshots next to each other</li>
-<li><strong>Single page view:</strong> Show one large screenshot</li>
-<li><strong>Show highlights:</strong> Highlight differences between the screenshot</li>
-<li><strong>Hide highlights:</strong> Do not show the highlighting</li>
-<li><strong>Switch to selected screenshot:</strong> Show the selected screenshot in large</li>
-<li><strong>Switch to comparison screenshot:</strong> Show the comparison screenshot in large</li>
+<li>click [Next&gt;]</li>
 </ul>
-<h2 id="disable-diff-viewer">Disable Diff Viewer</h2>
-<p>On the same place where you [selected a comparison] (#select-a-comparison), you can disable the diff viewer feature.
-Simply select &apos;disable&apos; in the comparison selection menu:</p>
-<p><img src="images/DisableComparison.png" alt="DisableComparison"></p>
+<p><strong>Select Destination Location</strong></p>
+<ul>
+<li>Browse to your preferred installation folder</li>
+<li>click [Next&gt;]</li>
+</ul>
+<p><strong>Select Start Menu Folder</strong></p>
+<ul>
+<li>Browse to your preferred start menu folder</li>
+<li>click [Next&gt;]</li>
+</ul>
+<p><strong> Select Additional Tasks</strong></p>
+<ul>
+<li>Select <ul>
+<li>[ ] Create a desktop icon </li>
+<li>[X] <strong>Update executable search path (IMPORTANT!)</strong></li>
+<li>[ ] Associate supported file extensions</li>
+<li>[ ] Install PerlMagick for ActiveState Perl v...</li>
+<li>[ ] Install ImageMagickObject OLE Control for VBscript, Visual Basic, and WSH</li>
+</ul>
+</li>
+<li>click [Next&gt;]</li>
+</ul>
+<p><strong>Ready to Install</strong></p>
+<ul>
+<li>Check your selected folders</li>
+<li>click [Next&gt;]</li>
+</ul>
+<p><strong>Information</strong></p>
+<ul>
+<li>click [Next&gt;]</li>
+</ul>
+<p><strong>Completing ...</strong></p>
+<ul>
+<li>[ ] View index.html</li>
+<li>click [Finish&gt;]</li>
+</ul>
+<p><strong>Reopen all cmd windows or eclipse, so that they get the new path variables</strong></p>
+<p>For more information refer to <a href="http://www.graphicsmagick.org/INSTALL-windows.html" target="_blank">http://www.graphicsmagick.org/INSTALL-windows.html</a></p>
+<h2 id="2-add-a-comparison-configuration">2. Add a comparison configuration</h2>
+<p>In your config.xml file you can edit the comparison configuration.
+It is possible to add one or more comparison configurations. On each import, all the configured comparisons get compared.
+You can delete a comparisonConfiguration, then it will not be compared in the feature. 
+The old comparisons will not be deleted automatically. Check out <a href="#4-delete-a-comparison">Delete a comparison</a> for further details.</p>
+<p>Each comparisonConfiguration has the following settings:</p>
+<ul>
+<li><strong>name</strong>: Name of this specific comparison. The name gets displayed in the comparison selection menu.</li>
+<li><strong>baseBranchName</strong>: Name of the base Branch. The comparison build gets only compared to the builds of this branch. It is possible to use branch aliases. </li>
+<li><strong>comparisonBranchName</strong>: Name of the comparison branch.</li>
+<li><strong>comparisonBuildName</strong>: Name of the comparison build. This build gets compared to all builds in the defined baseBranch.<ul>
+<li>It is possible to compare to the following comparisons:<ul>
+<li>last successful: The last successful build gets compared</li>
+<li>most recent: The most recent build gets compared</li>
+<li>the original buildname. For example &apos;2014-01-20&apos;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Refer to the glossary for further details: <a href="https://github.com/magitnu/scenarioo/blob/develop/documentation/diff-viewer/glossary.md" target="_blank">https://github.com/magitnu/scenarioo/blob/develop/documentation/diff-viewer/glossary.md</a></p>
+<p>Sample configuration:</p>
+<pre><code>    ...
+    &lt;branchAliases/&gt;
+
+    &lt;comparisonConfigurations&gt;
+
+        &lt;comparisonConfiguration&gt;
+            &lt;name&gt;To last successful&lt;/name&gt;
+            &lt;baseBranchName&gt;wikipedia-docu-example-dev&lt;/baseBranchName&gt;
+            &lt;comparisonBranchName&gt;wikipedia-docu-example&lt;/comparisonBranchName&gt;
+            &lt;comparisonBuildName&gt;last successful&lt;/comparisonBuildName&gt;
+        &lt;/comparisonConfiguration&gt;
+
+        &lt;comparisonConfiguration&gt;
+            &lt;name&gt;To most recent&lt;/name&gt;
+            &lt;baseBranchName&gt;wikipedia-docu-example-dev&lt;/baseBranchName&gt;
+            &lt;comparisonBranchName&gt;Production&lt;/comparisonBranchName&gt;
+            &lt;comparisonBuildName&gt;most recent&lt;/comparisonBuildName&gt;
+        &lt;/comparisonConfiguration&gt;
+
+        &lt;comparisonConfiguration&gt;
+            &lt;name&gt;To Projectstart&lt;/name&gt;
+            &lt;baseBranchName&gt;wikipedia-docu-example-dev&lt;/baseBranchName&gt;
+            &lt;comparisonBranchName&gt;Production&lt;/comparisonBranchName&gt;
+            &lt;comparisonBuildName&gt;2014-01-20&lt;/comparisonBuildName&gt;
+        &lt;/comparisonConfiguration&gt;
+
+    &lt;/comparisonConfigurations&gt;
+
+
+    &lt;labelConfigurations/&gt;
+    ...
+</code></pre><h2 id="3-start-comparison">3. Start comparison</h2>
+<p>To start the build comparison you have two options:</p>
+<ul>
+<li>Reimport an existing build:<ul>
+<li>Scenario Viewer &gt; Manage &gt; Click on the reimport symbol next to the preferred build</li>
+<li>NOTE: The &quot;Import &amp; Update Builds&quot; Button will only start a comparison if a build gets imported for the first time</li>
+</ul>
+</li>
+<li>Restart the scenarioo-server. The new builds are getting compared on server startup right after the import.</li>
+</ul>
+<p>If any problems occur during the comparison, check out the log file for detailed error information.
+You can find the log file in the following place:</p>
+<blockquote>
+<p>scenarioo-application-data\diffViewer\\<basebranchname>\\<basebuildname>\\<comparisonname>\comparison.derived.log</comparisonname></basebuildname></basebranchname></p>
+</blockquote>
+<p>In future versions, there might be the possibility to start and configure comparisons in the web client.</p>
+<h2 id="4-delete-a-comparison">4. Delete a comparison</h2>
+<p>All comparisons are stored in the following folder:</p>
+<blockquote>
+<p>scenarioo-application-data\diffViewer</p>
+</blockquote>
+<p>To delete a comparison you only have to delete the appropriate folder. 
+You have the following options:</p>
+<ul>
+<li>Delete all the comparisons at once</li>
+<li>Delete selected comparisons</li>
+</ul>
+<p>A filestructure as example:</p>
+<ul>
+<li>[Root Folder]<ul>
+<li>[branchName1]<ul>
+<li>[buildName1]<ul>
+<li>[useCaseName1]<ul>
+<li>[scenarioName1]<ul>
+<li>...</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[branchName2]</li>
+<li>[scenarioo-application-data]<ul>
+<li>[diffViewer] &gt; Delete this folder to remove all comparisons<ul>
+<li>[baseBranchName1] &gt; Delete this folder to remove all comparisons from one branch<ul>
+<li>[baseBuildName1] &gt; Delete this folder to remove all comparisons from one build<ul>
+<li>[comparisonName1] &gt; Delete this folder to remove a specific comparison</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>builds.states.derived.xml</li>
+</ul>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -702,12 +844,12 @@ Simply select &apos;disable&apos; in the comparison selection menu:</p>
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Diff Viewer">
+                <a href="user-guide.html" class="navigation navigation-prev " aria-label="Previous page: Diff Viewer User Guide">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="setup.html" class="navigation navigation-next " aria-label="Next page: Diff Viewer Setup Instructions">
+                <a href="../../contribute/" class="navigation navigation-next " aria-label="Next page: Contributor Guide">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -718,7 +860,7 @@ Simply select &apos;disable&apos; in the comparison selection menu:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Diff Viewer User Guide","level":"1.4.3.1","depth":3,"next":{"title":"Diff Viewer Setup Instructions","level":"1.4.3.2","depth":3,"path":"features/diff-viewer/setup.md","ref":"features/diff-viewer/setup.md","articles":[]},"previous":{"title":"Diff Viewer","level":"1.4.3","depth":2,"path":"features/diff-viewer/README.md","ref":"features/diff-viewer/README.md","articles":[{"title":"Diff Viewer User Guide","level":"1.4.3.1","depth":3,"path":"features/diff-viewer/user-guide.md","ref":"features/diff-viewer/user-guide.md","articles":[]},{"title":"Diff Viewer Setup Instructions","level":"1.4.3.2","depth":3,"path":"features/diff-viewer/setup.md","ref":"features/diff-viewer/setup.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["puml","expandable-chapters","livereload"],"pluginsConfig":{"puml":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"features/diff-viewer/user-guide.md","mtime":"2016-11-24T11:08:53.869Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-07T21:53:04.755Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Diff Viewer Setup Instructions","level":"1.4.3.2","depth":3,"next":{"title":"Contributor Guide","level":"1.5","depth":1,"path":"contribute/README.md","ref":"contribute/README.md","articles":[{"title":"Development Environment Setup","level":"1.5.1","depth":2,"path":"contribute/Development-Environment-with-IntelliJ.md","ref":"contribute/Development-Environment-with-IntelliJ.md","articles":[]},{"title":"Developer Guide","level":"1.5.2","depth":2,"path":"contribute/Developer-Guide.md","ref":"contribute/Developer-Guide.md","articles":[]},{"title":"Code of Conduct: Rules & Guidelines","level":"1.5.3","depth":2,"path":"contribute/Code-of-Conduct.md","ref":"contribute/Code-of-Conduct.md","articles":[]},{"title":"Coding Guidelines","level":"1.5.4","depth":2,"path":"contribute/Coding-guidelines.md","ref":"contribute/Coding-guidelines.md","articles":[]},{"title":"End to End Testing","level":"1.5.5","depth":2,"path":"contribute/e2eTesting.md","ref":"contribute/e2eTesting.md","articles":[]},{"title":"Commit Rules","level":"1.5.6","depth":2,"path":"contribute/Commit-rules.md","ref":"contribute/Commit-rules.md","articles":[]},{"title":"Versioning","level":"1.5.7","depth":2,"path":"contribute/Versioning.md","ref":"contribute/Versioning.md","articles":[]},{"title":"Branching Strategy","level":"1.5.8","depth":2,"path":"contribute/Branching-strategy.md","ref":"contribute/Branching-strategy.md","articles":[]},{"title":"Build and Demo Server","level":"1.5.9","depth":2,"path":"contribute/Build-Server.md","ref":"contribute/Build-Server.md","articles":[]},{"title":"Release Scenarioo Viewer Web Application","level":"1.5.10","depth":2,"path":"contribute/Release-Scenarioo-Viewer-Web-Application.md","ref":"contribute/Release-Scenarioo-Viewer-Web-Application.md","articles":[]},{"title":"Release Docker Image","level":"1.5.11","depth":2,"path":"docs/contribute/Building-the-Docker-Image.md","ref":"docs/contribute/Building-the-Docker-Image.md","articles":[]},{"title":"Release Scenarioo Writer Libraries","level":"1.5.12","depth":2,"path":"contribute/Release-Scenarioo-Writer-Library.md","ref":"contribute/Release-Scenarioo-Writer-Library.md","articles":[]},{"title":"Webpage with Jekyll","level":"1.5.13","depth":2,"path":"contribute/Scenarioo-User-Documentation-and-Webpage-with-Jekyll.md","ref":"contribute/Scenarioo-User-Documentation-and-Webpage-with-Jekyll.md","articles":[]}]},"previous":{"title":"Diff Viewer User Guide","level":"1.4.3.1","depth":3,"path":"features/diff-viewer/user-guide.md","ref":"features/diff-viewer/user-guide.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["puml","expandable-chapters","livereload"],"pluginsConfig":{"puml":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"features/diff-viewer/setup.md","mtime":"2016-12-07T14:47:00.888Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-07T21:53:04.755Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

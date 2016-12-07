@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Diff Viewer User Guide · GitBook</title>
+        <title>Diff Viewer · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="setup.html" />
+    <link rel="next" href="user-guide.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="../full-text-search/specifications.html" />
     
 
     </head>
@@ -333,7 +333,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="./">
+        <li class="chapter active" data-level="1.4.3" data-path="./">
             
                 <a href="./">
             
@@ -347,7 +347,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.3.1" data-path="user-guide.html">
+        <li class="chapter " data-level="1.4.3.1" data-path="user-guide.html">
             
                 <a href="user-guide.html">
             
@@ -601,7 +601,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Diff Viewer User Guide</a>
+        <a href="../.." >Diff Viewer</a>
     </h1>
 </div>
 
@@ -616,65 +616,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="diff-viewer-user-guide">Diff Viewer User Guide</h1>
-<p>This guide describes how to use the Scenarioo Diff Viewer feature.</p>
-<p>The Diff Viewer feature makes it possible to compare two different builds against each other.</p>
-<h2 id="preconditions">Preconditions</h2>
+                                <h1 id="diff-viewer">Diff Viewer</h1>
+<p>The Diff Viewer feature makes it possible to compare two different documentation builds in scenarioo against each other to see changes in your test scenarios. </p>
+<p>The Diff Viewer compares all the screenshots of all your tests and shows you where you have how much changes. Also it compares structural changes in your tests, like added or removed scenarios or use cases, or added or removed steps inside test scenarios.</p>
+<p>See following sub sections for more information:</p>
 <ul>
-<li>Make sure your scenarioo-server has the appropriate Diff Viewer configuration as described in the <a href="setup.html">Diff Viewer Installation and Configuration Guide</a></li>
-<li>At least one build should have been compared to generate Diff Information data</li>
+<li><a href="features/diff-viewer/user-guide.md">Diff Viewer User Guide</a></li>
+<li><a href="features/diff-viewer/setup.md">Diff Viewer Setup Instructions</a></li>
 </ul>
-<h2 id="select-a-comparison">Select a Comparison</h2>
-<p>If all the [preconditions] (#Preconditions) are met, you can start the Diff Viewer feature by selecting a comparison in the comparison menu. The comparison menu is located in the header next to the build selection menu. The name of the comparison was defined during the <a href="setup.html#2-add-a-comparison-configuration">comparison configuration</a>. If no comparison menu is shown, then no comparison is available or the [preconditions] (#Preconditions) are not fulfilled.</p>
-<p>You can change the selected comparison at any time, on every layer. It does not matter if you are on the page view or on the use case overview. The Diff Viewer will show the difference between the two builds immediately. The selected comparison will be stored in your browser. Therefore you can reload the page without loosing your selected comparison.</p>
-<p>The following screenshot shows the comparison menu on our <a href="http://demo.scenarioo.org/scenarioo-fork-diffviewer/" target="_blank">Demo Site</a>
-<img src="images/SelectComparison.png" alt="SelectComparison"></p>
-<h2 id="interpret-changes">Interpret Changes</h2>
-<p>Diff Information is integrated into existing pages. You will see the Diff Information right next to each associated item. The information is displayed in a progress-bar like diff icon.</p>
-<p>The following screenshot shows a diff icon example:</p>
-<p><img src="images/DiffIcon.png" alt="DiffIcon"></p>
-<p><strong>Color legend</strong></p>
-<ul>
-<li><strong>green:</strong> Number of new elements</li>
-<li><strong>orange:</strong> Number of changed elements</li>
-<li><strong>red:</strong> Number of removed elements</li>
-</ul>
-<p><strong>Change Rate</strong></p>
-<p>The percent number we use to call Change Rate. 
-The Change Rate is an average value of all changes in the underlying elements.
-Added or removed elements will be calculated as 100% changed.</p>
-<p>The length of the entire progress bar corresponds to the change rate.
-The length of each color progress bar corresponds to the number of changed elements.</p>
-<p><strong>Added and Removed Elements</strong></p>
-<p>Furthermore, added or removed elements are labeled accordingly. To ensure you recognize these elements immediately they are highlighted as in the following screenshot:</p>
-<p><img src="images/AddedDeleted.png" alt="AddedDeleted"></p>
-<h2 id="compare-screenshots">Compare Screenshots</h2>
-<p>You can open the screenshot comparison in the step view with a click on the tab named comparison.</p>
-<p><strong>Views</strong></p>
-<p>Diff Viewer provides you different views to compare a screenshot. You can switch between these two views:</p>
-<p>Side by side view
-<img src="images/StepSideBySide.png" alt="SideBySideView"></p>
-<p>Single page view
-<img src="images/StepSinglePage.png" alt="StepSInglePageView"></p>
-<p><strong>Naming</strong></p>
-<ul>
-<li><strong>Selected screenshot:</strong> The screenshot of the selected build</li>
-<li><strong>Comparison screenshot:</strong> The screenshot of the selected comparison build</li>
-</ul>
-<p>Refer to the <a href="glossary.md">glossary</a> for further details: </p>
-<p><strong>Options</strong></p>
-<ul>
-<li><strong>Side by side view:</strong> Show the screenshots next to each other</li>
-<li><strong>Single page view:</strong> Show one large screenshot</li>
-<li><strong>Show highlights:</strong> Highlight differences between the screenshot</li>
-<li><strong>Hide highlights:</strong> Do not show the highlighting</li>
-<li><strong>Switch to selected screenshot:</strong> Show the selected screenshot in large</li>
-<li><strong>Switch to comparison screenshot:</strong> Show the comparison screenshot in large</li>
-</ul>
-<h2 id="disable-diff-viewer">Disable Diff Viewer</h2>
-<p>On the same place where you [selected a comparison] (#select-a-comparison), you can disable the diff viewer feature.
-Simply select &apos;disable&apos; in the comparison selection menu:</p>
-<p><img src="images/DisableComparison.png" alt="DisableComparison"></p>
 
                                 
                                 </section>
@@ -702,12 +651,12 @@ Simply select &apos;disable&apos; in the comparison selection menu:</p>
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Diff Viewer">
+                <a href="../full-text-search/specifications.html" class="navigation navigation-prev " aria-label="Previous page: Full Text Search Specs">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="setup.html" class="navigation navigation-next " aria-label="Next page: Diff Viewer Setup Instructions">
+                <a href="user-guide.html" class="navigation navigation-next " aria-label="Next page: Diff Viewer User Guide">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -718,7 +667,7 @@ Simply select &apos;disable&apos; in the comparison selection menu:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Diff Viewer User Guide","level":"1.4.3.1","depth":3,"next":{"title":"Diff Viewer Setup Instructions","level":"1.4.3.2","depth":3,"path":"features/diff-viewer/setup.md","ref":"features/diff-viewer/setup.md","articles":[]},"previous":{"title":"Diff Viewer","level":"1.4.3","depth":2,"path":"features/diff-viewer/README.md","ref":"features/diff-viewer/README.md","articles":[{"title":"Diff Viewer User Guide","level":"1.4.3.1","depth":3,"path":"features/diff-viewer/user-guide.md","ref":"features/diff-viewer/user-guide.md","articles":[]},{"title":"Diff Viewer Setup Instructions","level":"1.4.3.2","depth":3,"path":"features/diff-viewer/setup.md","ref":"features/diff-viewer/setup.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["puml","expandable-chapters","livereload"],"pluginsConfig":{"puml":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"features/diff-viewer/user-guide.md","mtime":"2016-11-24T11:08:53.869Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-07T21:53:04.755Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Diff Viewer","level":"1.4.3","depth":2,"next":{"title":"Diff Viewer User Guide","level":"1.4.3.1","depth":3,"path":"features/diff-viewer/user-guide.md","ref":"features/diff-viewer/user-guide.md","articles":[]},"previous":{"title":"Full Text Search Specs","level":"1.4.2.2","depth":3,"path":"features/full-text-search/specifications.md","ref":"features/full-text-search/specifications.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["puml","expandable-chapters","livereload"],"pluginsConfig":{"puml":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"features/diff-viewer/README.md","mtime":"2016-12-07T21:42:36.102Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-07T21:53:04.755Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
