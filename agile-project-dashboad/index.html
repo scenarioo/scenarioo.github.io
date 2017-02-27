@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Prez</title>
+
+    <meta name="description" content="-- DESCRIPTION HERE --">
+    <meta name="author" content="-- AUTHOR HERE --">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="css/highlight/styles/zenburn.css" id="highlight-theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <link rel="stylesheet" href="css/custom.css">
+
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides"><section id="chapter-title" class="chapter">
+<section id="title-title" class="slide" data-has-notes="false">
+<h1>Agile Project Dashboard</h1><h3>Kick-off meeting 23.02.2017</h3><p><img style="border: 0; box-shadow: none" src="images/3-amigos-blue.png" width="35%"></p>
+</section>
+</section>
+
+<section id="chapter-problem-to-solve" class="chapter">
+<section id="problem-to-solve-the-silo-problem" class="slide" data-has-notes="true">
+<h2>The silo problem</h2><p><img src="images/silos.jpg" width="100%"></p><aside class="notes"><ul>
+<li><p>No collaberation between roles (waterfall)</p>
+</li>
+<li><p>Throwing documents over the fence</p>
+</li>
+<li><p>Missunderstandings</p>
+</li>
+<li><p>Problems are detected late in the process</p>
+</li>
+</ul></aside>
+</section>
+
+<section id="problem-to-solve-the-document-hell" class="slide" data-has-notes="true">
+<h2>The document hell</h2><p><img src="images/document-hell.jpg" width="76%"></p><aside class="notes"><ul>
+<li><p>Different sources of information (documents &amp; tools)</p>
+</li>
+<li><p>Lack of the big picture</p>
+</li>
+<li><p>Redundant and controversial information</p>
+</li>
+<li><p>Reinventing the wheel</p>
+</li>
+<li><p>Documentation out of date</p>
+</li>
+</ul></aside>
+</section>
+
+<section id="problem-to-solve-common-problems" class="slide" data-has-notes="false">
+<h2>Common problems in projects</h2><ul>
+<li><p>Silos</p>
+</li>
+<li><p>Different sources of information</p>
+</li>
+<li><p>Redundant and controversial information</p>
+</li>
+<li><p>Lack of the big picture</p>
+</li>
+<li><p>Problems are detected late in the process</p>
+</li>
+<li><p>Documentation out of date</p>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-vision" class="chapter">
+<section id="vision-vision" class="slide" data-has-notes="true">
+<h2>Vision</h2><p><img id="image" src="images/tree-vision-2.jpg" width="60%"></p><aside class="notes"><ul>
+<li><p>Provide a tool that supports the collaboration of all team members over the whole product life-cycle</p>
+</li>
+<li><p>Provide a documentation that fits to the implement</p>
+</li>
+<li><p>Offer easy and fast way to specify requirements in our projects</p>
+</li>
+</ul></aside>
+</section>
+
+<section id="vision-collaberation" class="slide" data-has-notes="false">
+<h2>Collaboration of team members in a agile way</h2><ul>
+<li><p>Breaking the silos</p>
+</li>
+<li><p>Improve collaboration</p>
+</li>
+<li><p>Make BA/RE, Dev and Tester work better together</p>
+</li>
+<li><p>One model over the hole product life-cycle </p>
+</li>
+<li><p>Easier to maintain</p>
+</li>
+<li><p>Solve User Story vs Feature view</p>
+</li>
+</ul>
+</section>
+
+<section id="vision-documentation-fits-implementation" class="slide" data-has-notes="false">
+<h2>Documentation that fits the implementation</h2><ul>
+<li><p>Provide example how to create a living documentation of a software project</p>
+</li>
+<li><p>Provide example of a complete CI tool chain setup</p>
+</li>
+<li><p>Provide suggestions where which kind of documents are stored</p>
+</li>
+<li><p>Create a dashboard where all the different artifacts from a project are linked together</p>
+</li>
+<li><p>Quicker on-boarding for new team members</p>
+</li>
+</ul>
+</section>
+
+<section id="vision-specify-with-examples" class="slide" data-has-notes="false">
+<h2>Specify requirements with examples</h2><ul>
+<li><p>Provide example for quick start using specification by example</p>
+</li>
+<li><p>Provide some good examples of specifications to show the benefits of it</p>
+</li>
+<li><p>Less misunderstandings</p>
+</li>
+</ul>
+</section>
+
+<section id="vision-benefits" class="slide" data-has-notes="false">
+<h2>Benefits</h2><ul>
+<li><p>Detect problems and challenges earlier</p>
+</li>
+<li><p>Always have a big picture</p>
+</li>
+<li><p>See up-to-date requirements and stories only</p>
+</li>
+<li><p>An overview of the current implementation and test status of each story</p>
+</li>
+<li><p>One central place where all documents are linked</p>
+</li>
+<li><p>Versioned</p>
+</li>
+</ul>
+</section>
+
+<section id="vision-detect-problems-earlier" class="slide" data-has-notes="false">
+<h2>Detect problems and challenges earlier</h2><ul>
+<li><p>Spec-by-ex offers a new effective approach to implement projects fast &amp; successfully</p>
+</li>
+<li><p>Provide example of a workflow how BA/RE, Dev and Tester can work together</p>
+</li>
+<li><p>Provide some good practices how to run a specification workshop (3 Amigos)</p>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-example-project" class="chapter">
+<section id="example-project-example-heat-clinic" class="slide" data-has-notes="true">
+<h2>Example Project: Heat Clinic</h2><p><img src="images/heat-clinic-web.png" width="42%"></p>
+<p><a href="http://demo.broadleafcommerce.org/">http://demo.broadleafcommerce.org/</a></p><aside class="notes"><ul>
+<li><p>Provide an example project using this approch</p>
+</li>
+<li><p>Webshop: easy to understand, but complex enough</p>
+</li>
+<li><p>open-source: can be shown anywhere</p>
+</li>
+</ul></aside>
+</section>
+
+<section id="example-project-heat-clinic-acitivites" class="slide" data-has-notes="false">
+<h2>Heat Clinic Activities</h2><ul>
+<li><p>User Story Map</p>
+</li>
+<li><p>Personas</p>
+</li>
+<li><p>Specification with BDD examples</p>
+</li>
+<li><p>Automated acceptance tests</p>
+</li>
+<li><p>UI documentation with Scenarioo</p>
+</li>
+<li><p>Proof of concept: Generate Markdown</p>
+</li>
+</ul>
+</section>
+
+<section id="example-project-poc-md-directories" class="slide" data-has-notes="true">
+<h2>Markdown POC: Generate from directory</h2><p><img src="images/poc-md-directories.png" width="80%"></p>
+<p><a href="https://stash.zuehlke.com/users/rbr/repos/spec-by-ex-heat-clinic/browse/blueprint/dotnet/SpecByEx.Blueprint.HeatClinic.Specs/HeatClinicFeatures">Features directory</a></p><aside class="notes"><ul>
+<li><p>Create markdown documentation out of folder structure</p>
+</li>
+<li><p>Collects all the artifacts in the folder structure</p>
+</li>
+<li><p>Link all the artifacts together with other tools like JIRA</p>
+</li>
+</ul></aside>
+</section>
+
+<section id="example-project-poc-md-overview" class="slide" data-has-notes="true">
+<h2>Markdown POC: Overview</h2><p><img src="images/poc-md-overview.png" width="80%"></p>
+<p><a href="https://stash.zuehlke.com/users/rbr/repos/spec-by-ex-heat-clinic/browse/blueprint/dotnet/SpecByEx.Blueprint.HeatClinic.Specs/HeatClinicFeatures/readme.md">Markdown file</a></p><aside class="notes"><ul>
+<li><p>Overview created out of</p>
+<ul>
+<li><p>foldername</p>
+</li>
+<li><p>content (other MD files)</p>
+</li>
+</ul>
+</li>
+</ul></aside>
+</section>
+
+<section id="example-project-poc-md-sub-features" class="slide" data-has-notes="true">
+<h2>Markdown POC: Features</h2><p><img src="images/poc-md-sub-features.png" width="80%"></p>
+<p><a href="https://stash.zuehlke.com/users/rbr/repos/spec-by-ex-heat-clinic/browse/blueprint/dotnet/SpecByEx.Blueprint.HeatClinic.Specs/HeatClinicFeatures/readme.md">Markdown file</a></p><aside class="notes"><ul>
+<li>links to all the subfolder &amp; feature files</li>
+</ul></aside>
+</section>
+
+<section id="example-project-poc-md-feature-details" class="slide" data-has-notes="true">
+<h2>Markdown POC: Feature Details</h2><p><img src="images/poc-md-features.png" width="70%"></p>
+<p><a href="https://stash.zuehlke.com/users/rbr/repos/spec-by-ex-heat-clinic/browse/blueprint/dotnet/SpecByEx.Blueprint.HeatClinic.Specs/HeatClinicFeatures/02_ShoppingCart/readme.md">Markdown file</a></p><aside class="notes"><ul>
+<li><p>details of a feature</p>
+</li>
+<li><p>with links to other tools &amp; artifacts</p>
+</li>
+</ul></aside>
+</section>
+</section>
+
+<section id="chapter-documentation-viewer" class="chapter">
+<section id="documentation-viewer-living-documentation" class="slide" data-has-notes="true">
+<h2>Documentation Viewer</h2><p><img src="images/livingdocumentation-overview-simple.png" width="70%"></p><aside class="notes"><ul>
+<li><p>Living documentation viewer</p>
+</li>
+<li><p>Building a dashboard that links diffrent information together</p>
+</li>
+</ul></aside>
+</section>
+
+<section id="documentation-viewer-gui-mock-story-map" class="slide" data-has-notes="false">
+<h3>Documentation Viewer: a first UI mock</h3><ul>
+<li><p>Central entry point to browse all project related documentation</p>
+</li>
+<li><p>Several views for different needs </p>
+<ul>
+<li><p>high-order overview</p>
+</li>
+<li><p>user stories</p>
+</li>
+<li><p>test results</p>
+</li>
+<li><p>ui documentation</p>
+</li>
+</ul>
+</li>
+<li><p>Powerful search over all sources</p>
+</li>
+</ul>
+</section>
+
+<section id="documentation-viewer-gui-mock-story-map" class="slide" data-has-notes="true">
+<h3>Documentation Viewer: &quot;Story Map&quot; View</h3><p><img src="images/gui-mock-story-map.png" width="90%"></p><aside class="notes"><ul>
+<li><p>Overview with story map</p>
+</li>
+<li><p>Links to features</p>
+</li>
+<li><p>Other related documents like vision</p>
+</li>
+</ul></aside>
+</section>
+
+<section id="documentation-viewer-gui-mock-story" class="slide" data-has-notes="false">
+<h3>Documentation Viewer: User Story View</h3><p><img src="images/gui-mock-story.png" width="90%"></p>
+</section>
+
+<section id="documentation-viewer-gui-mock-feature" class="slide" data-has-notes="false">
+<h3>Documentation Viewer: Feature View</h3><p><img src="images/gui-mock-feature.png" width="90%"></p>
+</section>
+
+<section id="documentation-viewer-gui-mock-scenarioo" class="slide" data-has-notes="false">
+<h3>Documentation Viewer: Web Test Screenshots / UI Documentation</h3><p><img src="images/gui-mock-scenarioo.png" width="80%"></p>
+</section>
+
+<section id="documentation-viewer-gui-mock-personas" class="slide" data-has-notes="false">
+<h3>GUI Sketch: Personas</h3><p><img src="images/gui-mock-personas.png" width="60%"></p>
+<p><a href="https://confluence.zuehlke.com/display/ZTOPSBE/Joanna">https://confluence.zuehlke.com/display/ZTOPSBE/Joanna</a></p>
+</section>
+
+<section id="documentation-viewer-living-documentation-sources" class="slide" data-has-notes="false">
+<h2>Living documentation sources I</h2><ul>
+<li><p>Scrumboard (physical, JIRA, TFS..)</p>
+</li>
+<li><p>Story map (physical, SpecLog, ...)</p>
+</li>
+<li><p>Business processes (EA, Visio, Wiki, ..)</p>
+</li>
+<li><p>Ticket system (JIRA, TFS)</p>
+</li>
+<li><p>Wiki (Confluence, Github, Sharepoint)</p>
+</li>
+<li><p>Code</p>
+</li>
+<li><p>Repository (Github, Bitbucked, TFS)</p>
+</li>
+</ul>
+</section>
+
+<section id="documentation-viewer-living-documentation-sources2" class="slide" data-has-notes="false">
+<h2>Living documentation sources II</h2><ul>
+<li><p>Build server (TeamCity, Jenkins, Bamboo, TFS)</p>
+</li>
+<li><p>Deployment server (Octopus deploy)</p>
+</li>
+<li><p>Test Cases (HP ALM, ...)</p>
+</li>
+<li><p>End-to-end results (Scenarioo)</p>
+</li>
+<li><p>Performance, Loadtests (Dynatrace, JMeter, Soapui)</p>
+</li>
+<li><p>Operation (Tivoli, Splunk, Logfiles, Systemlogs ...)</p>
+</li>
+</ul>
+</section>
+</section>
+
+<section id="chapter-links" class="chapter">
+<section id="links-scenarioo-links" class="slide" data-has-notes="false">
+<h3>Scenarioo links</h3><ul>
+<li><p><a href="https://github.com/scenarioo/scenarioo-spec-by-example">Scenarioo Spec By Example Repo</a></p>
+</li>
+<li><p><a href="https://github.com/scenarioo/scenarioo/issues/580">Scenarioo Agile Project Dashboard Epic</a></p>
+</li>
+<li><p><a href="http://build.scenarioo.org">Build/CI/CD-Server</a></p>
+</li>
+<li><p><a href="http://demo.scenarioo.org">Continuous Demo Deployment</a></p>
+</li>
+<li><p><a href="http://scenarioo.org/docs/">Docu</a></p>
+</li>
+</ul>
+</section>
+
+<section id="links-additional-links" class="slide" data-has-notes="false">
+<h3>Additional links</h3><ul>
+<li><p><a href="http://demo.broadleafcommerce.org/">Heat Clinic Project Example</a></p>
+</li>
+<li><p><a href="https://gojko.net/books/specification-by-example/">Specification by Example Book</a></p>
+</li>
+</ul>
+</section>
+</section></div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      transition: Reveal.getQueryHash().transition || 'slide', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [
+        //{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        //{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        //{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+      ]
+    });
+    </script>
+
+    <script src="js/dynamic-theme.js"></script><script src="js/custom.js"></script>
+
+  </body>
+</html>
