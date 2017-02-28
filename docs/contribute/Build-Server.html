@@ -626,12 +626,14 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="scenarioo-cicd-build-and-demo-server">Scenarioo CI/CD Build and Demo Server</h1>
-<h2 id="jenkins">Jenkins</h2>
+<h2 id="jenkins-cicd-build-server">Jenkins CI/CD Build Server</h2>
 <p><a href="http://ci.scenarioo.org" target="_blank">http://ci.scenarioo.org</a> or <a href="http://build.scenarioo.org" target="_blank">http://build.scenarioo.org</a> (both forward to <a href="http://54.88.202.24/jenkins" target="_blank">http://54.88.202.24/jenkins</a>)</p>
+<p>The server is maintained by adiherzog. Contact him if you need a Jenkins account.</p>
 <h2 id="demos">Demos</h2>
-<p>Latest release: <a href="http://54.88.202.24/scenarioo-master" target="_blank">http://54.88.202.24/scenarioo-master</a> (or use shortcut <a href="http://demo.scenarioo.org" target="_blank">http://demo.scenarioo.org</a>)</p>
-<p>Development for future release: <a href="http://54.88.202.24/scenarioo-develop" target="_blank">http://54.88.202.24/scenarioo-develop</a></p>
-<h2 id="add-a-new-branch-to-be-built-and-deployed">Add a new branch to be built and deployed</h2>
+<p>Latest release: <a href="http://demo.scenarioo.org" target="_blank">http://demo.scenarioo.org</a></p>
+<p>Development for future release: <a href="http://demo.scenarioo.org/scenarioo-develop" target="_blank">http://demo.scenarioo.org/scenarioo-develop</a></p>
+<p>Your special feature or release branch (if it has a CI/CD-build-job): <a href="http://demo.scenarioo.org/scenarioo-{branch-name}" target="_blank">http://demo.scenarioo.org/scenarioo-{branch-name}</a></p>
+<h2 id="add-new-cicd-build-job-for-new-branch">Add new CI/CD build job for new branch</h2>
 <ul>
 <li>Click &quot;New Item&quot; in the Jenkins menu</li>
 <li>Set the name of the new build job to &quot;scenarioo-{my-branch-name}&quot;</li>
@@ -639,15 +641,52 @@
 <li>Click &quot;Ok&quot;</li>
 <li>Set the correct branch next to &quot;Branches to build&quot;</li>
 <li>In the post-build task where the &quot;deploy-demo-and-run-e2e-tests&quot; task is called, set &quot;BRANCH={my-branch-name}&quot;.</li>
+<li>It&apos;s important that you use exactly the same {my-branch-name} values for both occurrences. It does not have to be the exact git branch name, but it should identify the branch. Only use alphanumeric characters and the dash in {my-branch-name}. Otherwise you may run into problems.</li>
+<li>Save it</li>
+<li>Choose to build once: &quot;Build Now&quot;</li>
+<li>First run of the build run will usually fail (there seems to be a problem with clean build currently).</li>
+<li>Choose to build again, usually the second build should succeed.</li>
+<li>The demo once deployed should be available under: <a href="http://demo.scenarioo.org/scenarioo-{my-branch-name}" target="_blank">http://demo.scenarioo.org/scenarioo-{my-branch-name}</a></li>
 </ul>
-<p>It&apos;s important that you use exactly the same {my-branch-name} values for both occurrences. It does not have to be the exact git branch name, but it should identify the branch. Only use alphanumeric characters and the dash in {my-branch-name}. Otherwise you may run into problems.</p>
-<p>We use nginx as a reverse proxy. Therefore you also have to add a configuration for the new Scenarioo instance URL in <code>/etc/nginx/sites-available/default</code>. Otherwise the demo is not reachable.</p>
-<h2 id="maintenance-of-the-build-server">Maintenance of the build server</h2>
-<p>The server is maintained by adiherzog and forkch. Contact them if you need a Jenkins account.</p>
+<h2 id="nginx-proxy-configurations">Nginx Proxy Configurations</h2>
+<p>Modifying NGINX proxy configuration files to redirect URLs on our demo/build server, can be done as follows:</p>
+<ol>
+<li><p>All the config files are found on the demo VM in following directory:
+/etc/nginx/sites-available</p>
+</li>
+<li><p>Download/Upload config files</p>
+<ul>
+<li>Use SCP to copy files<ul>
+<li>from server: <code>scp ubuntu@54.88.202.24:/etc/nginx/sites-available/* .</code></li>
+<li>to server: <code>scp ./* ubuntu@54.88.202.24:/home/ubuntu/upload/sites-available</code></li>
+</ul>
+</li>
+<li>On windows use putty, pageant and pscp (all from putty)<ul>
+<li>register the key for the VM with pageant</li>
+<li>then use pscp in same way as scp (see above)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>SSH to VM and copy the files from uploaded place to /etc/nginx/sites-available</p>
+<blockquote>
+<p>cd ~/upload/sites-available
+sudo cp ./<changed-file> /etc/nginx/sites-available/<changed-file></changed-file></changed-file></p>
+</blockquote>
+</li>
+<li><p>Only in case of a new config file: Generate link for new server files in <code>sites-enabled</code>:</p>
+<blockquote>
+<p>sudo ln -s /etc/nginx/sites-available/<name-of-new-server-file> /etc/nginx/sites-enabled/</name-of-new-server-file></p>
+</blockquote>
+</li>
+<li><p>Restart the NGINX Server</p>
+<blockquote>
+<p>sudo service nginx restart</p>
+</blockquote>
+</li>
+</ol>
 <h2 id="setup-of-build-server">Setup of build server</h2>
 <p>There are a number of aliases defined in the .bash_aliases file of the ubuntu user. They all start with <code>sc-</code> and lead to the Tomcat, Jenkins and the Scenarioo data directories.</p>
-<h2 id="demo-server">Demo Server</h2>
-<p>Demo is available at <a href="http://54.88.202.24/scenarioo-{your-branch-name-here}" target="_blank">http://54.88.202.24/scenarioo-{your-branch-name-here}</a></p>
 <h3 id="restart-tomcat-manually">Restart tomcat manually</h3>
 <ol>
 <li><p>SSH to the demo server:</p>
@@ -722,7 +761,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Build and Demo Server","level":"1.6.12","depth":2,"next":{"title":"Webpage with Jekyll","level":"1.6.13","depth":2,"path":"contribute/Scenarioo-User-Documentation-and-Webpage-with-Jekyll.md","ref":"contribute/Scenarioo-User-Documentation-and-Webpage-with-Jekyll.md","articles":[]},"previous":{"title":"Release Scenarioo Writer Libraries","level":"1.6.11","depth":2,"path":"contribute/Release-Scenarioo-Writer-Library.md","ref":"contribute/Release-Scenarioo-Writer-Library.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/Build-Server.md","mtime":"2016-11-24T11:08:53.809Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-17T06:59:51.562Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Build and Demo Server","level":"1.6.12","depth":2,"next":{"title":"Webpage with Jekyll","level":"1.6.13","depth":2,"path":"contribute/Scenarioo-User-Documentation-and-Webpage-with-Jekyll.md","ref":"contribute/Scenarioo-User-Documentation-and-Webpage-with-Jekyll.md","articles":[]},"previous":{"title":"Release Scenarioo Writer Libraries","level":"1.6.11","depth":2,"path":"contribute/Release-Scenarioo-Writer-Library.md","ref":"contribute/Release-Scenarioo-Writer-Library.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/Build-Server.md","mtime":"2017-02-28T14:58:25.282Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-28T15:25:31.791Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
