@@ -1,7 +1,7 @@
 Scenarioo Open Source Project:
 <a href="https://github.com/scenarioo" target="_blank">Github</a>
  &mdash;
-<a href="https://twitter.com/search?q=%23scenarioo" target="_blank">Twitter</a>
+<a href="https://twitter.com/scenarioo_org" target="_blank">Twitter</a>
  &mdash;
 <a href="https://groups.google.com/forum/#!forum/scenarioo-news/join" target="_blank">Newsletter</a>
  &mdash;
