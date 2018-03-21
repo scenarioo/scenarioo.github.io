@@ -2,12 +2,17 @@
 title: "Documentation"
 ---
 
-[Documentation of last release](http://scenarioo.org/docs/)
+[Documentation of latest release](http://scenarioo.org/docs/)
 
-[Documentation of development version](https://github.com/scenarioo/scenarioo/tree/develop/docs)
+[Documentation of development version](https://github.com/scenarioo/scenarioo/tree/develop/docs) (for contributors)
 
+## Video: A short introduction to Scenarioo
 
-### Tutorial
+Shows the essential features of Scenarioo and gives you some first insights into the Scenarioo documentation format structure.
+
+<iframe width="883" height="497" src="https://www.youtube-nocookie.com/embed/C_Omyu190V4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+## Introductory Tutorial
 
 **Note: This tutorial is still work in progress and may be incomplete in some places. We apologize!** 
 <br/>
