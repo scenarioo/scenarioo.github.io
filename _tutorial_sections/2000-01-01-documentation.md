@@ -7,7 +7,7 @@ title: "Documentation"
 [Documentation of development version](https://github.com/scenarioo/scenarioo/tree/develop/docs)
 
 
-# Tutorial
+### Tutorial
 
 **Note: This tutorial is still work in progress and may be incomplete in some places. We apologize!** 
 <br/>
