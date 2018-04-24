@@ -2,11 +2,13 @@
 title: "Documentation"
 ---
 
-[Documentation of latest release](http://scenarioo.org/docs/)
+**Read our documentation, make sure to pick the right version:**
 
-[Documentation of development version](https://github.com/scenarioo/scenarioo/tree/develop/docs) (for contributors)
+* **[Documentation for Latest Release](http://scenarioo.org/docs/)**
 
-## Video: A short introduction to Scenarioo
+* **[Documentation for Development Version](https://github.com/scenarioo/scenarioo/tree/develop/docs) (**for Contributors!**)**
+
+## Video: A Short Introduction to Scenarioo
 
 Shows the essential features of Scenarioo and gives you some first insights into the Scenarioo documentation format structure.
 
@@ -15,10 +17,8 @@ Shows the essential features of Scenarioo and gives you some first insights into
 ## Introductory Tutorial
 
 **Note: This tutorial is still work in progress and may be incomplete in some places. We apologize!** 
-<br/>
 
 The goal of this tutorial is to integrate Scenarioo in a minimal way to demonstrate its basics.
-
 
 #### Using Scenarioo in Java Selenium Tests
 
@@ -33,8 +33,8 @@ More specific information about the C# Writer Library can be found here:
 
 #### Using Scenarioo in Javascript Protractor or WebdriverJS Tests
 
-Please refer to the following documentation, for how easy it is to use it in your Javascript tests with Protractor or WebdriverJS:
-<a href="https://github.com/scenarioo/scenarioo-js/blob/master/README.md" target="_blank">ScenariooJS Writer Library</a>
+Refer to ScenariooJS on NPM for how easy it is to use it in your Javascript tests with Protractor or WebdriverJS:
+<a href="https://www.npmjs.com/package/scenarioo-js" target="_blank">ScenariooJS Writer Library on NPM</a>
 
 #### Setup the Scenarioo Viewer Web App
 1. If you haven't already, download a tomcat application server from http://tomcat.apache.org/.
@@ -266,3 +266,8 @@ public class ScenariooRule implements TestRule {
   }
 }
 {% endhighlight %}
+
+
+## Further Information and Documentation
+
+For more information and advanced topics refer to our full [Documentation](http://www.scenarioo.org/tutorial.html).
