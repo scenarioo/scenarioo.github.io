@@ -6,7 +6,7 @@ title: "Documentation"
 
 * **[Documentation for Latest Release](http://scenarioo.org/docs/)**
 
-* **[Documentation for Development Version](https://github.com/scenarioo/scenarioo/tree/develop/docs) (for Contributors!)**
+* **[Documentation for Development Version](https://scenarioo.org/develop/) (for Contributors!)**
 
 ## Video: A Short Introduction to Scenarioo
 
