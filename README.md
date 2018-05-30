@@ -1,9 +1,31 @@
-scenarioo.github.io
-===================
+# Scenarioo Webpage
 
 Project webpage for http://www.scenarioo.org
 
 based on Single Page template https://github.com/t413/SinglePaged
+
+## How to change the webpage
+
+Simple push your changes to the master branch - rest is done by github pages for you.
+
+## How to deploy the Documentation
+
+* The Sources for the Docu are located here: https://github.com/scenarioo/scenarioo/tree/develop/docs
+
+* Is it docu for a new reelased version of scenarioo? If yes, do the following ... 
+  * Add configuration for this new version to configuration in https://github.com/scenarioo/scenarioo/blob/develop/docs/book.json
+  * Create a new subfolder in this repo's docs folder for that version
+
+* Go to scenarioo/scenarioo repo and run `npm run build` in `docs` folder.
+
+* Copy the content of `docs/_book` (without the .gitignore file) into one of the sub folders in the `docs` folder for the version you want to deploy
+    * Make sure the target folder is cleaned first, if there was already an old version of the docu deployed for that same version.
+
+* Commit and push the new version to master branch
+
+# Working with Single Page Template
+
+Following docu is from Single Page Template repo ...
 
 ## Basic structure
 
