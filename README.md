@@ -6,22 +6,54 @@ based on Single Page template https://github.com/t413/SinglePaged
 
 ## How to change the webpage
 
-Simple push your changes to the master branch - rest is done by github pages for you.
+Simply change the html and markdown files in the repository 'scenarioo.github.io'.
+
+Simple push your changes to the master branch - rest is done by github pages for you and the page will be available for browsing here: http://scenarioo.org
+
+**Attention**: If you work for documentation of a future release, then do not work on the main branch but change the web page on an appropriate release branch!
+
+## Jekyll Setup for generating Webpage and Documentation
+
+You can use local tooling for browsing the page as well, but beware that these instructions here might not be up to date with latest and greatest setup of github pages ...
+
+You need to install Jekyll and all prerequisites on your development environment machine, as explained here under https://help.github.com/articles/using-jekyll-with-pages/.
+
+This was what I did once long time ago on the scenarioo dev VM to get it installed (beware that this instructions might be long time outdated and not in synch with what github pages use today):
+
+ * Install Ruby 2.x:
+   See also http://rvm.io/ for how to install ruby version manager (RVM) to get newest ruby version, I did the following steps on the VM:
+    * `sudo apt-get update`
+    * `gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3`
+    * `sudo apt-get install curl`
+    * `\curl -sSL https://get.rvm.io | bash -s stable`
+    * `source /home/scenarioo/.rvm/scripts/rvm`
+    * `rvm get stable`
+    * `rvm install ruby2.2.1`
+ * Install Jekyll:
+    * `gem install bundler`
+    * call the following command inside the 'scenarioo.github.io' directory (where Gemfile is checked in): 
+      `bundle install`
+
+## How to generate and review docu
+
+you can browse the webpage locally, by calling the following commands inside directory 'scenarioo.github.io':
+ * `jekyll serve`
+ * browse to localhost:4000
+
+To be sure that the compilation is similar and uptodate with github pages, you should maybe use the following instead:
+ * ??? outdated here - sorry!
+ 
+## How to release the webpage to github pages
+
+Follow the usual release process, and merge the changes you made to the master branch
+
+If you checkin on master branch your change is directly released.
 
 ## How to deploy the Documentation
 
 * The Sources for the Docu are located here: https://github.com/scenarioo/scenarioo/tree/develop/docs
 
-* Is it docu for a new reelased version of scenarioo? If yes, do the following ... 
-  * Add configuration for this new version to configuration in https://github.com/scenarioo/scenarioo/blob/develop/docs/book.json
-  * Create a new subfolder in this repo's docs folder for that version
-
-* Go to scenarioo/scenarioo repo and run `npm run build` in `docs` folder.
-
-* Copy the content of `docs/_book` (without the .gitignore file) into one of the sub folders in the `docs` folder for the version you want to deploy
-    * Make sure the target folder is cleaned first, if there was already an old version of the docu deployed for that same version.
-
-* Commit and push the new version to master branch
+* Further instructions can be found here: 
 
 # Working with Single Page Template
 
