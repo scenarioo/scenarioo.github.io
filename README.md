@@ -34,7 +34,7 @@ This was what I did once long time ago on the scenarioo dev VM to get it install
     * call the following command inside the 'scenarioo.github.io' directory (where Gemfile is checked in): 
       `bundle install`
 
-## How to generate and review docu
+## How to generate and review webpage
 
 you can browse the webpage locally, by calling the following commands inside directory 'scenarioo.github.io':
  * `jekyll serve`
@@ -53,7 +53,7 @@ If you checkin on master branch your change is directly released.
 
 * The Sources for the Docu are located here: https://github.com/scenarioo/scenarioo/tree/develop/docs
 
-* Further instructions can be found here: 
+* Further instructions can be found in here: http://scenarioo.org/docs/develop/contribute/Scenarioo-User-Documentation-and-Webpage-with-Jekyll.html
 
 # Working with Single Page Template
 
