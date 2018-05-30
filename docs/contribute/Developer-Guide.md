@@ -69,7 +69,7 @@ This process describes how you clean update all your sources and build everythin
       `npm test`
       or use following command to run them everytime a file changes:
       `npm run test-watch`
-      for running javascript tests from inside WebStorm see also [Webstorm](./Development-Environment.md#webstorm)
+      for running javascript tests from inside WebStorm see also [Webstorm](Development-Environment.md#webstorm)
       or use
       `npm test` which will call gulp under the hood
   * run all E2E tests (=web tests): see [E2E Testing](e2eTesting.md)
