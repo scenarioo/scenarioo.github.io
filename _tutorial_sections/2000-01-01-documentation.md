@@ -4,9 +4,9 @@ title: "Documentation"
 
 **Read our documentation, make sure to pick the right version:**
 
-* **[Documentation for Latest Release](http://scenarioo.org/docs/)**
+* **[Documentation for Latest Release](http://scenarioo.org/docs/master/)**
 
-* **[Documentation for Development Version](http://scenarioo.org/develop/) (for Contributors!)**
+* **[Documentation for Development Version](http://scenarioo.org/docs/develop/) (for Contributors!)**
 
 ## Video: A Short Introduction to Scenarioo
 

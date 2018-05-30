@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Webpage with Jekyll · Scenarioo Documentation</title>
+        <title>Documentation & Webpage · Scenarioo Documentation</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -539,7 +539,7 @@
                 <a href="Scenarioo-User-Documentation-and-Webpage-with-Jekyll.html">
             
                     
-                    Webpage with Jekyll
+                    Documentation & Webpage
             
                 </a>
             
@@ -666,7 +666,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Webpage with Jekyll</a>
+        <a href=".." >Documentation & Webpage</a>
     </h1>
 </div>
 
@@ -682,48 +682,42 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="scenarioo-webpage-and-documentation">Scenarioo Webpage and Documentation</h1>
-<p><strong>TODO: this info here is probably not 100% accurate, ask @bruderol, this needs to be corrected!</strong></p>
-<p>We use Jekyll to generate our webpage and documentation on the github pages.</p>
-<p>What is special: 
-We do not directly maintain the docu files in the gh-pages branch. We edit our pages in the &apos;docu&apos; directory on every branch and finaly release from the docu directory on master branch to gh-pages.</p>
-<h2 id="jekyll-setup-for-generating-webpage-and-documentation">Jekyll Setup for generating Webpage and Documentation</h2>
-<p>You need to install Jekyll and all prerequisites on your development environment machine, as explained here under <a href="https://help.github.com/articles/using-jekyll-with-pages/" target="_blank">https://help.github.com/articles/using-jekyll-with-pages/</a>.</p>
-<p>This was what I did on the scenarioo dev VM to get it installed:</p>
+<h2 id="web-page">Web Page</h2>
+<p>The scnearioo.org webpage is maintained in repository 
+<a href="https://github.com/scenarioo/scenarioo.github.io" target="_blank">https://github.com/scenarioo/scenarioo.github.io</a></p>
+<p>The web page can be changed in that repo by simply do a PR to master.</p>
+<p>See README.md in that repo for further detailed information.</p>
+<p>Changes for further releases should not yet been made on master but prepared on special release branches, to be merged on the date of release.</p>
+<h2 id="documentation">Documentation</h2>
+<p>We do not use Wikis!</p>
+<p>All our repos have a docs folder with a markdown file documentation using gitbook tooling.</p>
+<p>The major scenarioo documentation is in major scenarioo repository here:
+<a href="https://github.com/scenarioo/scenarioo/tree/develop/docs" target="_blank">https://github.com/scenarioo/scenarioo/tree/develop/docs</a></p>
+<h3 id="how-to-publish-documentation">How to Publish Documentation</h3>
 <ul>
-<li>Install Ruby 2.x:
-See also <a href="http://rvm.io/" target="_blank">http://rvm.io/</a> for how to install ruby version manager (RVM) to get newest ruby version, I did the following steps on the VM:<ul>
-<li><code>sudo apt-get update</code></li>
-<li><code>gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3</code></li>
-<li><code>sudo apt-get install curl</code></li>
-<li><code>\curl -sSL https://get.rvm.io | bash -s stable</code></li>
-<li><code>source /home/scenarioo/.rvm/scripts/rvm</code></li>
-<li><code>rvm get stable</code></li>
-<li><code>rvm install ruby2.2.1</code></li>
+<li><p>Make sure the version of scenarioo/scenarioo you want to release docu for is checked out</p>
+</li>
+<li><p>Is it docu for a new release version of scenarioo? If not, continue with next step, otherwise do the following first ... </p>
+<ul>
+<li>Add configuration for this new version to configuration in <a href="https://github.com/scenarioo/scenarioo/blob/develop/docs/book.json" target="_blank">https://github.com/scenarioo/scenarioo/blob/develop/docs/book.json</a></li>
+<li>Configure that version to be selected in the book.json</li>
+<li>In scenarioo.github.io web page repository: Create a new subfolder in folder <code>docs</code> for that new version</li>
 </ul>
 </li>
-<li>Install Jekyll:<ul>
-<li><code>gem install bundler</code></li>
-<li>call the following command inside the &apos;scenarioo.github.io&apos; directory (where Gemfile is checked in): 
-<code>bundle install</code></li>
+<li><p>Make sure the book.json has the correct version you are going to release selected in the configuration (<code>&quot;selected&quot;: true</code>)</p>
+</li>
+<li><p>Run <code>npm run build</code> in <code>docs</code> folder.</p>
+</li>
+<li><p>Copy the generated content to the scenarioo.github.io repository:</p>
+<ul>
+<li>Select all content of <code>docs/_book</code> to copy (without the .gitignore file)</li>
+<li>Copy to scenarioo.github.io repo into the correct sub folder of <code>docs</code> for the version you want to deploy</li>
+<li>Make sure the target folder is cleaned first, if there was already an old version of the docu deployed for that same version, before you copy.</li>
 </ul>
 </li>
+<li><p>Commit and push the new version to master branch on scenarioo.github.io</p>
+</li>
 </ul>
-<h2 id="how-to-maintainedit-the-docu">How to maintain/edit the docu</h2>
-<p>Simply change the html and markdown files in the repository &apos;scenarioo.github.io&apos;.</p>
-<p><strong>Attention</strong>: If you work for documentation of a future release, then do not work on the main branch but change the docu on the appropriate branch!</p>
-<h2 id="how-to-generate-and-review-docu">How to generate and review docu</h2>
-<p>you can browse the webpage locally, by calling the following commands inside directory &apos;scenarioo.github.io&apos;:</p>
-<ul>
-<li><code>jekyll serve</code></li>
-<li>browse to localhost:4000</li>
-</ul>
-<p>To be sure that the compilation is similar and uptodate with github pages, you should maybe use the following instead:</p>
-<ul>
-<li>TODO</li>
-</ul>
-<h2 id="how-to-release-the-docu-to-github-pages">How to release the docu to github pages</h2>
-<p>Follow the usual release process, and merge the changes you made to the master branch</p>
-<p>If you checkin on master branch your change is directly released.</p>
 
                                 
                                 </section>
@@ -767,7 +761,7 @@ See also <a href="http://rvm.io/" target="_blank">http://rvm.io/</a> for how to 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Webpage with Jekyll","level":"1.6.12","depth":2,"next":{"title":"CI and Demo Server","level":"1.6.13","depth":2,"path":"contribute/Build-Server.md","ref":"contribute/Build-Server.md","articles":[]},"previous":{"title":"Release Scenarioo Writer Libraries","level":"1.6.11","depth":2,"path":"contribute/Release-Scenarioo-Writer-Library.md","ref":"contribute/Release-Scenarioo-Writer-Library.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/develop/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/Scenarioo-User-Documentation-and-Webpage-with-Jekyll.md","mtime":"2017-10-31T16:23:48.341Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-30T13:35:18.444Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Documentation & Webpage","level":"1.6.12","depth":2,"next":{"title":"CI and Demo Server","level":"1.6.13","depth":2,"path":"contribute/Build-Server.md","ref":"contribute/Build-Server.md","articles":[]},"previous":{"title":"Release Scenarioo Writer Libraries","level":"1.6.11","depth":2,"path":"contribute/Release-Scenarioo-Writer-Library.md","ref":"contribute/Release-Scenarioo-Writer-Library.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/develop/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/Scenarioo-User-Documentation-and-Webpage-with-Jekyll.md","mtime":"2018-05-30T14:27:02.175Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-30T15:09:31.337Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
