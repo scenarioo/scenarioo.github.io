@@ -534,9 +534,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.12" data-path="Scenarioo-User-Documentation-and-Webpage-with-Jekyll.html">
+        <li class="chapter active" data-level="1.6.12" data-path="Documentation-and-Webpage.html">
             
-                <a href="Scenarioo-User-Documentation-and-Webpage-with-Jekyll.html">
+                <a href="Documentation-and-Webpage.html">
             
                     
                     Documentation & Webpage
@@ -691,31 +691,50 @@
 <h2 id="documentation">Documentation</h2>
 <p>We do not use Wikis!</p>
 <p>All our repos have a docs folder with a markdown file documentation using gitbook tooling.</p>
-<p>The major scenarioo documentation is in major scenarioo repository here:
+<p>The sources for the major scenarioo documentation is in major scenarioo repository here:
 <a href="https://github.com/scenarioo/scenarioo/tree/develop/docs" target="_blank">https://github.com/scenarioo/scenarioo/tree/develop/docs</a></p>
-<h3 id="how-to-publish-documentation">How to Publish Documentation</h3>
+<p>This docu is deployed as a nice browsable web page in different versions as follows:</p>
 <ul>
-<li><p>Make sure the version of scenarioo/scenarioo you want to release docu for is checked out</p>
+<li><a href="http://scenarioo.org/docs/master/" target="_blank">Master Docu</a>: This is the docu of the last official released version.</li>
+<li><a href="http://scenarioo.org/docs/develop/" target="_blank">Development Docu</a>: This is the docu of the last official released version.</li>
+<li><a href="http://scenarioo.org/docs/3.0/" target="_blank">Specific Version Docu  - e.g. for Version 3.0</a>: For every major release we keep one archived published version of the docu. Links in our product usually point to that version of the docu that is currently installed. If we fix / improve docu of latest release we have to publish it to the latest archived version and as well into the master documentation.</li>
+</ul>
+<h3 id="how-to-publish-documentation">How to Publish Documentation</h3>
+<h4 id="automatic-publishing">Automatic Publishing</h4>
+<p>Easiest way is to use the automation on Jenkins which currently automatically publishes the docu as follows:</p>
+<ul>
+<li><code>Develop Docu</code>: Automatically updated/published on every push to develop branch.</li>
+</ul>
+<h4 id="manual-publishing">Manual Publishing</h4>
+<p>Since the automation does not yet automatically deploy all our versions of the docu, here is the process to follow to publish one version manually.</p>
+<ul>
+<li><p>Make sure the version of scenarioo/scenarioo you want to release docu for is checked out (usually <code>develop</code>, <code>master</code> or a release branch).</p>
 </li>
-<li><p>Is it docu for a new release version of scenarioo? If not, continue with next step, otherwise do the following first ... </p>
+<li><p>If you publish documentation for a new release version, do the following, otherwise skip to the next step.</p>
 <ul>
 <li>Add configuration for this new version to configuration in <a href="https://github.com/scenarioo/scenarioo/blob/develop/docs/book.json" target="_blank">https://github.com/scenarioo/scenarioo/blob/develop/docs/book.json</a></li>
-<li>Configure that version to be selected in the book.json</li>
 <li>In scenarioo.github.io web page repository: Create a new subfolder in folder <code>docs</code> for that new version</li>
 </ul>
 </li>
 <li><p>Make sure the book.json has the correct version you are going to release selected in the configuration (<code>&quot;selected&quot;: true</code>)</p>
 </li>
-<li><p>Run <code>npm run build</code> in <code>docs</code> folder.</p>
+<li><p>Run <code>npm install</code> and <code>npm run build</code> in <code>docs</code> folder.</p>
 </li>
 <li><p>Copy the generated content to the scenarioo.github.io repository:</p>
 <ul>
 <li>Select all content of <code>docs/_book</code> to copy (without the .gitignore file)</li>
 <li>Copy to scenarioo.github.io repo into the correct sub folder of <code>docs</code> for the version you want to deploy</li>
 <li>Make sure the target folder is cleaned first, if there was already an old version of the docu deployed for that same version, before you copy.</li>
+<li>If this is the docu of the current official released version, please publish both to its concrete version directory as well as to folder <code>master</code>.</li>
 </ul>
 </li>
-<li><p>Commit and push the new version to master branch on scenarioo.github.io</p>
+<li><p>Commit and push the added / updated documentation versions to master branch on scenarioo.github.io</p>
+</li>
+<li><p>When done: </p>
+<ul>
+<li>make sure that you changes to scenarioo/scenarioo are merged to develop </li>
+<li>on develop verify in <code>book.json</code> that the Developer version is configured as selected again!</li>
+</ul>
 </li>
 </ul>
 
@@ -761,7 +780,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Documentation & Webpage","level":"1.6.12","depth":2,"next":{"title":"CI and Demo Server","level":"1.6.13","depth":2,"path":"contribute/Build-Server.md","ref":"contribute/Build-Server.md","articles":[]},"previous":{"title":"Release Scenarioo Writer Libraries","level":"1.6.11","depth":2,"path":"contribute/Release-Scenarioo-Writer-Library.md","ref":"contribute/Release-Scenarioo-Writer-Library.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/develop/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/Scenarioo-User-Documentation-and-Webpage-with-Jekyll.md","mtime":"2018-05-30T14:27:02.175Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-30T15:09:31.337Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Documentation & Webpage","level":"1.6.12","depth":2,"next":{"title":"CI and Demo Server","level":"1.6.13","depth":2,"path":"contribute/Build-Server.md","ref":"contribute/Build-Server.md","articles":[]},"previous":{"title":"Release Scenarioo Writer Libraries","level":"1.6.11","depth":2,"path":"contribute/Release-Scenarioo-Writer-Library.md","ref":"contribute/Release-Scenarioo-Writer-Library.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/develop/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/Documentation-and-Webpage.md","mtime":"2018-05-31T12:55:18.910Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-31T18:39:06.846Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
