@@ -25,6 +25,7 @@
 <url> <loc>http://scenarioo.org/contribute/Developer-Guide.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/Coding-guidelines.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/e2eTesting.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://scenarioo.org/contribute/Documentation-and-Webpage.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/Code-of-Conduct.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/Commit-rules.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/Branching-strategy.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -32,7 +33,6 @@
 <url> <loc>http://scenarioo.org/contribute/Release-Scenarioo-Viewer-Web-Application.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/Building-the-Docker-Image.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/Release-Scenarioo-Writer-Library.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://scenarioo.org/contribute/Documentation-and-Webpage.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/Build-Server.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/ci-server-setup/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/ci-server-setup/nginx.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>

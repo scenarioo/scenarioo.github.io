@@ -443,7 +443,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" data-path="Code-of-Conduct.html">
+        <li class="chapter " data-level="1.6.5" data-path="Documentation-and-Webpage.html">
+            
+                <a href="Documentation-and-Webpage.html">
+            
+                    
+                    Documentation & Webpage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="Code-of-Conduct.html">
             
                 <a href="Code-of-Conduct.html">
             
@@ -456,7 +469,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.6" data-path="Commit-rules.html">
+        <li class="chapter " data-level="1.6.7" data-path="Commit-rules.html">
             
                 <a href="Commit-rules.html">
             
@@ -469,7 +482,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.7" data-path="Branching-strategy.html">
+        <li class="chapter " data-level="1.6.8" data-path="Branching-strategy.html">
             
                 <a href="Branching-strategy.html">
             
@@ -482,7 +495,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.8" data-path="Versioning.html">
+        <li class="chapter " data-level="1.6.9" data-path="Versioning.html">
             
                 <a href="Versioning.html">
             
@@ -495,7 +508,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.9" data-path="Release-Scenarioo-Viewer-Web-Application.html">
+        <li class="chapter active" data-level="1.6.10" data-path="Release-Scenarioo-Viewer-Web-Application.html">
             
                 <a href="Release-Scenarioo-Viewer-Web-Application.html">
             
@@ -508,7 +521,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.10" data-path="Building-the-Docker-Image.html">
+        <li class="chapter " data-level="1.6.11" data-path="Building-the-Docker-Image.html">
             
                 <a href="Building-the-Docker-Image.html">
             
@@ -521,25 +534,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.11" data-path="Release-Scenarioo-Writer-Library.html">
+        <li class="chapter " data-level="1.6.12" data-path="Release-Scenarioo-Writer-Library.html">
             
                 <a href="Release-Scenarioo-Writer-Library.html">
             
                     
                     Release Scenarioo Writer Libraries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.12" data-path="Documentation-and-Webpage.html">
-            
-                <a href="Documentation-and-Webpage.html">
-            
-                    
-                    Documentation & Webpage
             
                 </a>
             
@@ -682,34 +682,62 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="scenarioo-release-procedure">Scenarioo Release Procedure</h1>
-<p>We use the git flow branching strategy (see <a href="Branching-strategy.html">branching strategy</a>).</p>
-<p>Whenever you see <code>&lt;version&gt;</code> in this guide we mean a version number in the form <code>1.2.0</code> (without <code>v</code>prefix).</p>
-<h3 id="set-release-version--release-branch">Set Release Version &amp; Release Branch</h3>
-<p>In <code>gradle.build</code> you have to adjust following version information:</p>
+<p>We use the git flow branching strategy (see <a href="Branching-strategy.html">branching Strategy</a>).</p>
+<p>Whenever you see <code>&lt;version&gt;</code> in this guide we mean a version number in the form <code>1.2.0</code> (without <code>v</code> prefix!).</p>
+<h2 id="set-release-versions">Set Release Versions</h2>
+<p>In <code>build.gradle</code> you have to adjust following version information:</p>
 <ul>
 <li><p><code>documentationVersion</code>: this is the version that identifies the documentation URL for this release, which is <a href="http://scenarioo.org/docs/{documentationVersion}" target="_blank">http://scenarioo.org/docs/{documentationVersion}</a> for links into the documentation of that same release version. Please put the major version (e.g. &quot;4.0&quot;) of the new release you gona to release (see releasing the docu later).</p>
 </li>
-<li><p><code>scenariooAggregatedDataFormatVersion</code>: set it to a new version in case the internal aggregated data format somehow changes, which nakes it necessary on an update, that all imported builds need to be reimported. Usually this should be the same as the Scenarioo version that you are going to release. If you are a 100% sure that the internal format did not change since the last release, you can keep the version from the previous release.</p>
+<li><p><code>scenariooApiVersion</code>: which writer library version to use in this release. If the library has been changed, we have to release it first. Use a non snapshot version for the release in any case!</p>
+</li>
+<li><p><code>scenariooAggregatedDataFormatVersion</code>: set it to a new version in case the internal aggregated data format somehow changed in a release, which makes it necessary on an update, that all imported builds need to be reimported. 
+Usually this should be the same as the Scenarioo version that you are going to release. If you are a 100% sure that the internal format did not change since the last release, you can keep the version from the previous release.</p>
 </li>
 </ul>
-<h3 id="prepare-release-notes">Prepare release notes</h3>
+<p><strong>Search Documentation for occurences of old verison number and replace with new version:</strong></p>
 <ul>
-<li>Create the release notes using GitHubs infrastructure: <a href="https://github.com/scenarioo/scenarioo/releases" target="_blank">https://github.com/scenarioo/scenarioo/releases</a>. Make sure you safe them as a draft and do not publish them yet.</li>
+<li>Do a global search for the old version!</li>
+<li>update <a href="../setup/Scenarioo-Viewer-Docker-Image.html">Scenarioo Viewer Doker Image</a></li>
+<li>update any other occurences </li>
 </ul>
-<h3 id="create-release-branch-and-make-last-fixes">Create release branch and make last fixes</h3>
+<h2 id="prepare-release-notes-and-migration-guide">Prepare Release Notes and Migration Guide</h2>
+<ul>
+<li>Go to file <code>CHANGELOG.md</code> and prepare the release notes for the next version</li>
+<li>If needed write a migration guide for the new version in <a href="../setup/Migration-Guide.md">Migration Guide</a></li>
+<li>Let both review by the team and finalize these important release documents.</li>
+</ul>
+<h2 id="create-release-branch-and-stabilize">Create Release Branch and Stabilize</h2>
 <ul>
 <li>Create a release branch:<ul>
-<li>Make sure you have checked out the <code>develop</code> branch.</li>
+<li>Make sure you have checked out the <code>develop</code> branch and are updated to latest changes.</li>
 <li><code>git checkout -b release/&lt;version&gt; develop</code></li>
 </ul>
 </li>
-<li>Test it thoroughly.</li>
-<li>Fix the bugs you find and commit them to the release branch.</li>
 <li>Push the release branch and make sure it builds on our <a href="Build-Server">build server</a>.</li>
+<li>On the develop branch: change the docu version back to &quot;develop&quot; to be ready for development for next release.</li>
+<li>Inform the team about the release branch and that release stabilisation has to be done on that branch as follows.</li>
+<li>Test the release version thoroughly on the demo.</li>
+<li>Ask some devs to maybe do some release candidate testing in their projects.</li>
+<li>Fix the bugs you find and merge the fixes to the release branch (instead of develop directly!).</li>
+<li>Also proceed with further release preparations as explained in next sections</li>
 </ul>
-<h3 id="finalize-release">Finalize release</h3>
+<h2 id="prepare-documentation-and-webpage-for-new-release-version">Prepare Documentation and Webpage for new Release Version</h2>
 <ul>
-<li><p>Finalize the release:</p>
+<li><p>See <a href="Documentation-and-Webpage.html">Documentation and Webpage</a> for further instructions how to configure the documentation for a new release.</p>
+</li>
+<li><p>Prepare everything as described in that other instructions on the release branch:</p>
+<ul>
+<li>You should at least check that the docu version for the new release branch is properly published under <code>http://www.scenarioo.org/docs/{version}</code> (e.g. <code>/4.0</code>) - it should be published automatically by Jenkins pipeline on your release branch (see Build Results Page).</li>
+<li>Verify also in the published docu for the new version, that the correct new version is displayed and selected in upper left version selection dropdown.</li>
+</ul>
+</li>
+<li><p>If for the release the web page needs to be upgraded prepare so on a special release branch as well.</p>
+</li>
+</ul>
+<h2 id="merge-and-build-final-release">Merge and Build Final Release</h2>
+<ul>
+<li><p><strong>Finalize the release by merging:</strong></p>
 <ul>
 <li>Fast forward master to release<pre><code>git checkout master
 git merge --ff-only release/&lt;version&gt;
@@ -719,32 +747,29 @@ git push --tags
 </code></pre></li>
 <li>Merge release branch into develop (if not done yet)<pre><code>git checkout develop
 git merge release/&lt;version&gt;
-git branch -d release/&lt;version&gt;
 git push
 </code></pre></li>
+<li>Make sure the master branch builds on the build server. As the build uses the git tag as a version number, it&apos;s important to distribute a build artifact that was build after the tag was pushed!</li>
 </ul>
 </li>
-<li><p>DO NOT delete the release branch. We will keep the release branch to provide links to the right documentation version
-and we can even reuse the release branch as a branch to do and test hotfixes on it.</p>
+<li><p><strong>DO NOT delete the release branch. We will keep the release branch to do improvements on the documentation for the just released version (or if ever needed: for hotfixes as well)</strong>. Because usually short after a release we get feedback about how to improve that version of the docu. Such things have still to be fixed on the release branch and merged both to master and develop, such that those changes are in the published documentation of that version!</p>
 </li>
 </ul>
-<h3 id="build-master-branch">Build master branch</h3>
-<ul>
-<li>Make sure the master branch builds on the build server. As the build uses the git tag as a version number,
-it&apos;s important to distribute a build artifact that was build after the tag was pushed!</li>
-</ul>
-<h3 id="create-and-push-docker-image">Create and push Docker image</h3>
+<h3 id="build-docker-image-and-publish-to-dockerhub">Build Docker Image and Publish to Dockerhub</h3>
 <ul>
 <li>Create a new Docker image for this release according to <a href="Building-the-Docker-Image">this manual</a></li>
 <li>Do not forget to update the usage instructions for the Docker Image:<br>  <a href="../setup/Scenarioo-Viewer-Docker-Image.html">Scenarioo Viewer Doker Image</a> 
   (<strong>!! change the version number in the example!</strong>)</li>
 </ul>
-<h3 id="finish-release-notes-and-create-links">Finish release notes and create links</h3>
+<h3 id="publish-the-release-on-github">Publish the Release on Github</h3>
 <ul>
+<li>Create a release on github to make the release publicly visible: <a href="https://github.com/scenarioo/scenarioo/releases" target="_blank">https://github.com/scenarioo/scenarioo/releases</a>. </li>
+<li>For description use the release notes of that release version from CHANGELOG.md in the release description on github.</li>
+<li>Make sure you safe it first only as a draft and do not publish them yet.  </li>
 <li>Attach the binary of the release (WAR-file) to the release notes (see area &quot;Attach binaries by dropping them here ...&quot;).</li>
-<li>Publish the release notes.</li>
+<li>Publish the release when done.</li>
 </ul>
-<h3 id="upload-to-maven-central">Upload to maven central</h3>
+<h3 id="publish-the-release-on-maven-central">Publish the Release on Maven Central</h3>
 <ol>
 <li>You will need to specify the following properties in your gradle.properties located in your gradle home directory:</li>
 </ol>
@@ -759,8 +784,12 @@ ossrhPassword=#sonatype password goes here#
 <li>Promote build to maven central:
 <a href="http://central.sonatype.org/pages/releasing-the-deployment.html" target="_blank">http://central.sonatype.org/pages/releasing-the-deployment.html</a></li>
 </ol>
-<h3 id="publish-versioned-documentation">Publish Versioned Documentation</h3>
-<p>See <a href="Documentation-and-Webpage.html">Documentation and Webpage</a>.</p>
+<h3 id="release-postprocessing">Release Postprocessing</h3>
+<p><strong>Change following things on develop branch</strong> to prepare for further work on further releases:</p>
+<ul>
+<li>Check <code>documentationVersion</code> in <code>build.gradle</code> is changed to <code>develop</code> again, such that it points to current latest and greatest developer docu, until we do a new release</li>
+<li>Verify that in <code>docs/book.json</code> the develop version of the docu is marked as selected again.</li>
+</ul>
 
                                 
                                 </section>
@@ -804,7 +833,7 @@ ossrhPassword=#sonatype password goes here#
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Release Scenarioo Viewer Web Application","level":"1.6.9","depth":2,"next":{"title":"Release Docker Image","level":"1.6.10","depth":2,"path":"contribute/Building-the-Docker-Image.md","ref":"contribute/Building-the-Docker-Image.md","articles":[]},"previous":{"title":"Versioning","level":"1.6.8","depth":2,"path":"contribute/Versioning.md","ref":"contribute/Versioning.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/develop/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/Release-Scenarioo-Viewer-Web-Application.md","mtime":"2018-05-31T13:16:42.178Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-31T18:39:06.846Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Release Scenarioo Viewer Web Application","level":"1.6.10","depth":2,"next":{"title":"Release Docker Image","level":"1.6.11","depth":2,"path":"contribute/Building-the-Docker-Image.md","ref":"contribute/Building-the-Docker-Image.md","articles":[]},"previous":{"title":"Versioning","level":"1.6.9","depth":2,"path":"contribute/Versioning.md","ref":"contribute/Versioning.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/develop/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/Release-Scenarioo-Viewer-Web-Application.md","mtime":"2018-06-01T14:04:46.650Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-01T14:23:39.795Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
