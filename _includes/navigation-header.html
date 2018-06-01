@@ -15,13 +15,15 @@
 
 	    	<div class="col-md-8">
 			    <ul>
-			      {% for node in site.posts reversed %}
-			        {% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
-			        <li class="p-{{id}} on-same-site"><a href="{{homeBaseUrl}}#section-{{id}}">{{node.title}}</a></li>
-			      {% endfor %}
-			      <li class="p-tutorial"><a href="/tutorial.html">Docs</a></li>
-			      <li class="p-demo border-blue"><a target="_blank" href="http://demo.scenarioo.org">Demo</a></li>
-			      <li class="p-github border-gray"><a target="_blank" href="http://github.com/scenarioo">Github</a></li>
+					{% for node in site.posts reversed %}
+						{% capture id %}{{ node.id | remove:'/' | downcase }}{% endcapture %}
+						<li class="p-{{id}} on-same-site"><a href="{{homeBaseUrl}}#section-{{id}}">{{node.title}}</a></li>
+					{% endfor %}
+					<li class="p-demo border-green"><a target="_blank" href="http://demo.scenarioo.org">Demo</a></li>
+					<li class="p-tutorial border-white"><a href="/tutorial.html">Docs</a></li>
+					<li class="p-twitter border-blue"><a target="_blank" href="https://twitter.com/scenarioo_org">News@Twitter</a></li>
+					<li class="p-github border-gray"><a target="_blank" href="http://github.com/scenarioo">Code@Github</a></li>
+
 			    </ul>
 			 </div>
 
