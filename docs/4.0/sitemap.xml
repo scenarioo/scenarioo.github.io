@@ -10,6 +10,7 @@
 <url> <loc>http://scenarioo.org/setup/Configuration.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/setup/How-to-use-Scenarioo-Writer-Library.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/setup/Publish-Documentation-Data.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://scenarioo.org/setup/Migration-Guide.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/features/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/features/Scenarioo-Writer-Documentation-Format.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/features/Safe-Identifiers.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -39,4 +40,5 @@
 <url> <loc>http://scenarioo.org/contribute/ci-server-setup/docker.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/ci-server-setup/Elasticsearch-5.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/ci-server-setup/Elasticsearch-2.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://scenarioo.org/CHANGELOG.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>
