@@ -710,67 +710,69 @@
                                 <h1 id="scenarioo-viewer-migration-guide">Scenarioo Viewer Migration Guide</h1>
 <p>Guide on how to upgrade for major versions of scenarioo.</p>
 <h2 id="3x-to-4x">3.x to 4.x</h2>
-<p><strong>Breaking Changes:</strong></p>
+<h3 id="breaking-changes">Breaking Changes:</h3>
 <ul>
-<li><p>Starting with version 4.x the path to your scenarioo documentation data has to be configured differently and the scenarioo configuration file (config.xml) must be located in the same directory as all your other scenarioo documentation data.</p>
+<li><p>Starting with version 4.x the path to your Scenarioo documentation data has to be configured differently and the Scenarioo configuration file (<code>config.xml</code>) must be located in the same directory as all your other Scenarioo documentation data.</p>
 </li>
-<li><p>For the full text search Scenarioo now uses newer Elasticsearch Server Version 5.6.9, you will have to upgrade that as well, in case you want to continue to use this feature.</p>
+<li><p>For the full text search Scenarioo now uses Elasticsearch Server Version 5.6.9, you will have to upgrade that as well, in case you want to continue to use this feature.</p>
 </li>
-<li><p>Also all already calculated diff viewer comparison data is not valid for the new version anymore and therefore has to be recalculated after update by simply reimporting those builds for which you still want to see calculated diff viewer comparisons.</p>
+<li><p>Also all already calculated Diff Viewer comparison data is not valid for the new version anymore and therefore has to be recalculated after update by simply reimporting those builds for which you still want to see calculated Diff Viewer comparisons.</p>
+</li>
+<li><p>Some undocumented REST endpoints for the frontend have slightly changed: in case you used these services you have to adjust the usage: <code>/builds/reimportBuild/{branchName}/{buildName}</code> is now <code>/builds/:branchName/:buildName/import</code></p>
 </li>
 </ul>
-<p><strong>Migration:</strong></p>
+<h3 id="migration">Migration:</h3>
 <p>Follow these simple steps to migrate:</p>
 <ol>
-<li><p>Make sure you know what is the scenarioo data directory configured on your old Scenarioo installation:</p>
+<li><p>Make sure you know what is the Scenarioo data directory configured on your old Scenarioo installation:</p>
 <ul>
-<li>Simply go to the <code>Manage</code>-Tab in the old version of scenarioo viewer web app and choose <code>General Settings</code> to see <code>Documentation Data Directory Path</code> (this setting will not be available in the new UI anymore! It will be just read only in future!).</li>
-<li>Or: check value of <code>testDocumentationDirPath</code> in your config.xml file (see next step)</li>
+<li>Simply go to the <code>Manage</code>-Tab in the old version of Scenarioo viewer web app and choose <code>General Settings</code> to see <code>Documentation Data Directory Path</code> (this setting will not be available in the new UI anymore! It will be just read only in future!).</li>
+<li>Or: check value of <code>testDocumentationDirPath</code> in your <code>config.xml</code> file (see next step)</li>
 </ul>
 </li>
-<li><p>Copy the scenarioo config.xml file to that same data directory where all your other scenarioo documentation data is stored, as explained here:</p>
+<li><p>Copy the Scenarioo <code>config.xml</code> file to that same data directory where all your other Scenarioo documentation data is stored, as explained here:</p>
 <ul>
-<li>How to find the config file:<ul>
+<li>How to find the <code>config.xml</code> file:<ul>
 <li>Scenarioo Docker Image: <ul>
-<li>the config file was stored before only inside the docker container, in directory <code>{user.home}/.scenarioo</code> - so just copy it from there and in the future the config will also survive, even when you start a new scenarioo docker container, which is an important benefit of this change!</li>
+<li>so far the config file was only stored inside the docker container, in the directory <code>{user.home}/.scenarioo</code> - so just copy it from there and in the future the config will survive even when you start a new Scenarioo docker container, which is an important benefit of this change!</li>
 </ul>
 </li>
 <li>Scenarioo on Tomcat or other web servers:<ul>
-<li>you will find the config.xml file under <code>{user.home}/.scenarioo</code> or in the config directory that you configured in your webserver&apos;s <code>context.xml</code> file in property <code>scenariooConfigurationDirectory</code> or <code>configurationDirectory</code>.</li>
-<li>the file might have been even configured to have a different name than config.xml in your context.xml file using property <code>scenariooConfigurationFilename</code> or <code>configurationFilename</code> (you will have to rename that file to <code>context.xml</code> after you copied it!).</li>
-<li>you can later remove those settings for the config file location from your context.xml, if you configured it there, since the location is now fix in your data directory and can not be configured separately anymore in newer versions. </li>
+<li>you will find the <code>config.xml</code> file under <code>{user.home}/.scenarioo</code> or in the config directory that you configured in your webserver&apos;s <code>context.xml</code> file in property <code>scenariooConfigurationDirectory</code> or <code>configurationDirectory</code>.</li>
+<li>the file might have been even configured to have a different name than <code>config.xml</code> in your <code>context.xml</code> file using property <code>scenariooConfigurationFilename</code> or <code>configurationFilename</code> (you will have to rename that file to <code>config.xml</code> after you copied it!).</li>
+<li>you can later remove those settings for the config file location from your <code>context.xml</code>, if you configured it there, since the location is now fix in your data directory and can not be configured separately anymore. </li>
 </ul>
 </li>
-<li>If you do not find the config file at all: this might mean that you never saved your configuration, scenarioo might just be running using its internal default configuration. Go to <code>Manage</code>-Tab in the scenarioo viewer web app and choose <code>General Settings / Save</code> this will save the file for you with current settings.<ul>
-<li>When you found the config file then copy it to the scenarioo data directory</li>
+<li>If you do not find the config file at all: this might mean that you never saved your configuration, Scenarioo might just be running using its internal default configuration. Go to <code>Manage</code>-Tab in the Scenarioo viewer web app and choose <code>General Settings / Save</code> this will save the file for you with current settings.<ul>
+<li>When you found the config file then copy it to the Scenarioo data directory</li>
 </ul>
 </li>
-<li>Copy the file to the root of your scenarioo data path (see step 0 if you forgot)</li>
+<li>Copy the file to the root of your Scenarioo data path (see step 0 if you forgot)</li>
 <li>In case your config file had a different name, then rename the copied file to <code>config.xml</code> (this file can not be named differently anymore!)</li>
 <li>You can also remove the setting <code>testDocumentationDirPath</code> from the copied file&apos;s content, since it will be ignored in future versions (see next point on how to configure that directory in new versions).</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>If your old installation had an Elasticsearch server configured - which is only the case if you find the config property &quot;elasticSearchEndpoint&quot; in config.xml - then you have to setup a newer Elasticsearch server of appropriate version:</p>
+<li><p>If your old installation had an Elasticsearch server configured - which is only the case if you find the config property &quot;elasticSearchEndpoint&quot; in <code>config.xml</code> - then you have to setup a newer Elasticsearch server of appropriate version:</p>
 <ul>
 <li>Install and configure an Elasticsearch server with newer version 5.6.9</li>
 <li>See <a href="../features/full-text-search/setup.html">Full Text Search Setup Guide</a> for further instructions. </li>
-<li>If you want to generate search indexes on the new server for existing scenarioo documentation builds, you can trigger a reimport for those builds in the Scenarioo Manage Builds tab later (once scenarioo upgrade is done).</li>
+<li>If you want to generate search indexes on the new server for existing Scenarioo documentation builds, you can trigger a reimport for those builds in the Scenarioo Manage Builds tab later (once Scenarioo upgrade is done).</li>
 </ul>
 </li>
 <li><p>Configure, update and restart Scenarioo:</p>
 <ul>
 <li>Using Scenarioo Docker Image:<ul>
-<li>simply stop the old scenarioo and restart a new one as explained here: <a href="Scenarioo-Viewer-Docker-Image.html">Scenarioo Viewer Docker Image</a></li>
-<li>take care to configure your scenarioo data path on startup properly, as explained in above link, by using the slightly changed parameter to map your documentation data directory to <code>/scenarioo/data</code> inside the container (this path is different in new verson).</li>
+<li>simply stop the old Scenarioo and restart a new one as explained here: <a href="Scenarioo-Viewer-Docker-Image.html">Scenarioo Viewer Docker Image</a></li>
+<li>take care to configure your Scenarioo data path on startup properly, as explained in above link, by using the slightly changed parameter to map your documentation data directory to <code>/scenarioo/data</code> inside the container (this path is different in new verson).</li>
 </ul>
 </li>
-<li>Using WAR Deployment e.g. on Tomcat:<ul>
+<li>Using WAR Deployment, e.g. on Tomcat:<ul>
 <li>Configure the docu data directory in one of the following ways:<ul>
 <li>if the directory was <code>.scenarioo</code> in user&apos;s home, which is the default, you do not have to change anything.</li>
 <li>you can configure the directory now by setting an environment variable <code>SCENARIOO_DATA</code></li>
-<li>or you can set it in context.xml of your webserver as a context variable called <code>scenariooDataDirectory</code></li>
+<li>or you can set it in <code>context.xml</code> of your webserver as a context variable called <code>scenariooDataDirectory</code></li>
 <li>for more information on that see <a href="Scenarioo-Viewer-Web-Application-Setup.html">Web Application Setup</a></li>
 </ul>
 </li>
@@ -781,14 +783,14 @@
 </li>
 <li><p>Optional but Recommended - only if you used Diff Viewer Comparisons before:</p>
 <ul>
-<li>Delete all old diff viewer comparison data, which is stored in your docu data directory under <code>scenarioo-application-data\diffViewer</code>. </li>
+<li>Delete all old Diff Viewer comparison data, which is stored in your docu data directory under <code>scenarioo-application-data\diffViewer</code>. </li>
 <li>From now on this data will be stored in a less disk space consuming format and inside the same directory where the build it belongs to is located.</li>
 <li>If you want to see comparisons for any of the old builds, you have to reimport these builds under <code>Manage / Builds</code>, this will also trigger recalculation of any configured comparisons. See <a href="../features/diff-viewer/setup.md">Diff Viewer Setup Guide</a> on how to configure such comparisons (which has NOT changed!).</li>
 </ul>
 </li>
 </ol>
-<p><strong>In case of troubles with the migration:</strong>
-Let us know immediately here: 
+<h3 id="in-case-of-troubles-with-the-migration">In case of troubles with the migration:</h3>
+<p>Let us know immediately here: 
 <a href="https://github.com/scenarioo/scenarioo/issues/new?labels=feedback" target="_blank">https://github.com/scenarioo/scenarioo/issues/new?labels=feedback</a></p>
 
                                 
@@ -833,7 +835,7 @@ Let us know immediately here:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Migration Guide","level":"1.4.7","depth":2,"next":{"title":"Features & Concepts","level":"1.5","depth":1,"path":"features/README.md","ref":"features/README.md","articles":[{"title":"Documentation Format","level":"1.5.1","depth":2,"path":"features/Scenarioo-Writer-Documentation-Format.md","ref":"features/Scenarioo-Writer-Documentation-Format.md","articles":[{"title":"Safe Identifiers","level":"1.5.1.1","depth":3,"path":"features/Safe-Identifiers.md","ref":"features/Safe-Identifiers.md","articles":[]},{"title":"Labels","level":"1.5.1.2","depth":3,"path":"features/Labels.md","ref":"features/Labels.md","articles":[]},{"title":"Details & Object Repository","level":"1.5.1.3","depth":3,"path":"features/Details.md","ref":"features/Details.md","articles":[]},{"title":"Scenarioo Format Validator","level":"1.5.1.4","depth":3,"path":"features/validator-component/Scenarioo-Validator.md","ref":"features/validator-component/Scenarioo-Validator.md","articles":[]}]},{"title":"Diff Viewer","level":"1.5.2","depth":2,"path":"features/diff-viewer/diff-viewer.md","ref":"features/diff-viewer/diff-viewer.md","articles":[]},{"title":"Full Text Search","level":"1.5.3","depth":2,"path":"features/full-text-search/README.md","ref":"features/full-text-search/README.md","articles":[{"title":"Full Text Search Setup","level":"1.5.3.1","depth":3,"path":"features/full-text-search/setup.md","ref":"features/full-text-search/setup.md","articles":[]},{"title":"Full Text Search Specs","level":"1.5.3.2","depth":3,"path":"features/full-text-search/specifications.md","ref":"features/full-text-search/specifications.md","articles":[]}]}]},"previous":{"title":"Publish Documentation Data","level":"1.4.6","depth":2,"path":"setup/Publish-Documentation-Data.md","ref":"setup/Publish-Documentation-Data.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/develop/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"setup/Migration-Guide.md","mtime":"2018-06-08T13:38:48.589Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-08T17:49:28.906Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Migration Guide","level":"1.4.7","depth":2,"next":{"title":"Features & Concepts","level":"1.5","depth":1,"path":"features/README.md","ref":"features/README.md","articles":[{"title":"Documentation Format","level":"1.5.1","depth":2,"path":"features/Scenarioo-Writer-Documentation-Format.md","ref":"features/Scenarioo-Writer-Documentation-Format.md","articles":[{"title":"Safe Identifiers","level":"1.5.1.1","depth":3,"path":"features/Safe-Identifiers.md","ref":"features/Safe-Identifiers.md","articles":[]},{"title":"Labels","level":"1.5.1.2","depth":3,"path":"features/Labels.md","ref":"features/Labels.md","articles":[]},{"title":"Details & Object Repository","level":"1.5.1.3","depth":3,"path":"features/Details.md","ref":"features/Details.md","articles":[]},{"title":"Scenarioo Format Validator","level":"1.5.1.4","depth":3,"path":"features/validator-component/Scenarioo-Validator.md","ref":"features/validator-component/Scenarioo-Validator.md","articles":[]}]},{"title":"Diff Viewer","level":"1.5.2","depth":2,"path":"features/diff-viewer/diff-viewer.md","ref":"features/diff-viewer/diff-viewer.md","articles":[]},{"title":"Full Text Search","level":"1.5.3","depth":2,"path":"features/full-text-search/README.md","ref":"features/full-text-search/README.md","articles":[{"title":"Full Text Search Setup","level":"1.5.3.1","depth":3,"path":"features/full-text-search/setup.md","ref":"features/full-text-search/setup.md","articles":[]},{"title":"Full Text Search Specs","level":"1.5.3.2","depth":3,"path":"features/full-text-search/specifications.md","ref":"features/full-text-search/specifications.md","articles":[]}]}]},"previous":{"title":"Publish Documentation Data","level":"1.4.6","depth":2,"path":"setup/Publish-Documentation-Data.md","ref":"setup/Publish-Documentation-Data.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/develop/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"setup/Migration-Guide.md","mtime":"2018-06-14T21:28:00.021Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-14T21:40:03.766Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
