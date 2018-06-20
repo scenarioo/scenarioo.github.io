@@ -3,10 +3,8 @@ title: "Documentation"
 ---
 
 **Read our documentation, make sure to pick the right version:**
-
-* **[Documentation for Latest Release](http://scenarioo.org/docs/master/)**
-
-* **[Documentation for Development Version](http://scenarioo.org/docs/develop/) (for Contributors!)**
+* <a href="http://scenarioo.org/docs/master/" target="_blank"><b>Documentation for Latest Release</b></a>
+* <b><a href="http://scenarioo.org/docs/develop/" target="_blank">Documentation for Development Version</a> (for Contributors!)</b>
 
 ## Video: A Short Introduction to Scenarioo
 
