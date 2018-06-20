@@ -741,13 +741,6 @@
                                 
                                 <h1 id="scenarioo-release-notes">Scenarioo Release Notes</h1>
 <h2 id="version-400">Version 4.0.0</h2>
-<h3 id="feature-configuration">Feature &quot;Configuration&quot;</h3>
-<ul>
-<li>The data directory can not be configured through the config UI anymore (for security reasons)</li>
-<li>The data directory can now be configured through an environment variable or in the <code>context.xml</code> file of the web server (or just by directory mapping on the docker container, similar to before).</li>
-<li>The configuration file of Scenarioo is now stored in the data directory. Make sure you move your old <code>config.xml</code> file to the data directory.</li>
-<li>See <a href="Migration-Guide.html">Migration Guide</a> for more detailed explanations.</li>
-</ul>
 <h3 id="feature-diff-viewer-plus">Feature &quot;Diff Viewer Plus&quot;</h3>
 <p>Improvements to the Diff Viewer for Visual Regression Testing:</p>
 <ul>
@@ -762,6 +755,13 @@
 <li><a href="https://github.com/scenarioo/scenarioo/issues/602" target="_blank">#602 - Removed Dependency to GraphicsMagick</a>: GraphicsMagick needs not to be installed anymore to use the DiffViewer feature.</li>
 <li><a href="https://github.com/scenarioo/scenarioo/issues/618" target="_blank">#618 - New Diff Viewer Internal Diff Screen Format</a> The comparisons need less disk space because only a difference image per screenshot is stored. Needs reimport of builds to see comparisons again, see <a href="Migration-Guide.html">Migration Guide</a>.</li>
 <li><a href="https://github.com/scenarioo/scenarioo/issues/577" target="_blank">#577 - Avoid Null Pointer Exceptions</a>: do not log null pointer exceptions when there is just no step to compare to.</li>
+</ul>
+<h3 id="feature-configuration">Feature &quot;Configuration&quot;</h3>
+<ul>
+<li>The data directory can not be configured through the config UI anymore (for security reasons)</li>
+<li>The data directory can now be configured through an environment variable or in the <code>context.xml</code> file of the web server (or just by directory mapping on the docker container, similar to before).</li>
+<li>The configuration file of Scenarioo is now stored in the data directory. Make sure you move your old <code>config.xml</code> file to the data directory.</li>
+<li>See <a href="Migration-Guide.html">Migration Guide</a> for more detailed explanations.</li>
 </ul>
 <h3 id="features-small-improvements--fixes">Features &quot;Small Improvements &amp; Fixes&quot;</h3>
 <p>Further small improvements and bug fixes:</p>
@@ -791,9 +791,9 @@ as explained in the <a href="Migration-Guide.html">Migration Guide</a>. This can
 Also the internal format version is not increased (still 2.1) so that your existing documentation data 
 does not even have to be reimported after the upgrade and will continue to work with the new version (except for the comparisons).</p>
 <h3 id="fixed-issues">Fixed Issues</h3>
-<p>All issues fixed in this release: <a href="https://github.com/scenarioo/scenarioo/milestone/33?closed=1" target="_blank">List of fixed issues</a>.</p>
+<p>All issues fixed in this release: <a href="https://github.com/scenarioo/scenarioo/milestone/33?closed=1" target="_blank">List of Fixed Issues</a>.</p>
 <h3 id="known-issues">Known Issues</h3>
-<p>Please visit our <a href="https://github.com/scenarioo/scenarioo/labels/known-issue" target="_blank">list of known issues on GitHub</a>.</p>
+<p>Please visit our <a href="https://github.com/scenarioo/scenarioo/labels/known-issue" target="_blank">List of Known Issues on GitHub</a>.</p>
 <h3 id="feedback-and-support">Feedback and Support</h3>
 <p>Don&apos;t hesitate to open new issues if you find a bug or problem, or have feedback or questions:
 <a href="https://github.com/scenarioo/scenarioo/issues/new?labels=feedback" target="_blank">https://github.com/scenarioo/scenarioo/issues/new?labels=feedback</a></p>
@@ -842,7 +842,7 @@ does not even have to be reimported after the upgrade and will continue to work 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Version Changelog","level":"2.1","depth":1,"next":{"title":"Migration Guide","level":"2.2","depth":1,"path":"Migration-Guide.md","ref":"Migration-Guide.md","articles":[]},"previous":{"title":"Deprecated: Elasticsearch 2 Installation","level":"1.4.14.4","depth":3,"path":"contribute/ci-server-setup/Elasticsearch-2.md","ref":"contribute/ci-server-setup/Elasticsearch-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/develop/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"CHANGELOG.md","mtime":"2018-06-20T13:16:27.029Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-20T14:28:49.719Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Version Changelog","level":"2.1","depth":1,"next":{"title":"Migration Guide","level":"2.2","depth":1,"path":"Migration-Guide.md","ref":"Migration-Guide.md","articles":[]},"previous":{"title":"Deprecated: Elasticsearch 2 Installation","level":"1.4.14.4","depth":3,"path":"contribute/ci-server-setup/Elasticsearch-2.md","ref":"contribute/ci-server-setup/Elasticsearch-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/develop/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"CHANGELOG.md","mtime":"2018-06-20T14:29:16.137Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-20T14:41:39.191Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
