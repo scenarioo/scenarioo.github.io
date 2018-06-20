@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction & Overview · Scenarioo Documentation</title>
+        <title>Downloads and Links · Scenarioo Documentation</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,8 +61,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="examples.html" />
+    <link rel="next" href="tutorial/" />
     
+    
+    <link rel="prev" href="examples.html" />
     
 
     </head>
@@ -91,7 +93,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -118,7 +120,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.2" data-path="downloads-and-links.html">
+        <li class="chapter active" data-level="1.1.2" data-path="downloads-and-links.html">
             
                 <a href="downloads-and-links.html">
             
@@ -722,7 +724,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction & Overview</a>
+        <a href="." >Downloads and Links</a>
     </h1>
 </div>
 
@@ -737,48 +739,39 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="scenarioo">Scenarioo</h1>
-<p>This documentation is about the Software Development and Testing Tool &quot;Scenarioo&quot;. </p>
-<p>Scenarioo helps you visualizing and documenting the functionalities of your software system in a guidebook, that contains the important user interaction flows, generated out of your UI tests. Each so called &quot;User Scenario&quot; is presented as step by step page flow with screenshots and any additional useful information that you want to provide. This documentation is always up to date with the current implementation and available to everybody involved in your Software Development Lifecycle.</p>
-<p>For more hi level introduction about what scenarioo is, please refer to our web page: <a href="http://www.scenarioo.org" target="_blank">http://www.scenarioo.org</a></p>
-<h2 id="scenarioo-overview">Scenarioo Overview</h2>
-<p>The following sections gives a basic introduction to Scenarioo and where to find more information for most important aspects in our documentation.</p>
-<h3 id="what-can-scenarioo-do-for-me">What can Scenarioo do for me?</h3>
-<p>Scenarioo is a tool that helps you create an up-to-date software documentation leveraging existing UI tests. This can be an essential part of a &quot;living documentation system&quot; as described by Gojko Adzic in his book &quot;Specification by Example&quot;.</p>
-<p>With Scenarioo you can document your frontend application from a business and user perspective. Each UI test scenario is documented as a flow of screens. For a better overview, these scenarios are grouped into use cases. This gives a good high level picture of what an application is capable of and what typical scenarios you had in mind when implementing it.</p>
-<p>The Scenarioo Viewer web application lets you browse the documentation easily and lets you jump from screen to screen, almost like a cangaroo (therefore our logo).</p>
-<h3 id="what-does-scenarioo-consist-of">What does Scenarioo consist of?</h3>
-<p>These are the parts of which Scenarioo is made of:</p>
-<p><img src="https://cloud.githubusercontent.com/assets/3780183/9653298/d03ba2dc-5222-11e5-80a4-9a58a6ccd004.png" alt="Scenarioo Architecture"></p>
-<ol>
-<li><p><strong>Scenarioo Documentation Format</strong>: A file format and folder structure for storing the automatic documentation of your user scenarios out of UI tests. As a user of Scenarioo you do not need to know much about this exact format, because you probably just want to use one of the existing writer libraries to write this format. If you want to know more details about the format, have a look at the <a href="features/Scenarioo-Writer-Documentation-Format.html">Scenarioo-Writer-Documentation-Format</a>.</p>
-</li>
-<li><p><strong>Scenarioo Writer libraries for different languages (currently available for Java, C# and JavaScript)</strong>:
-To generate the Scenarioo documentation files, you need to extend your UI tests (written in e.g. Protractor, Selenium, Robotium, etc.) so that they store information about use cases and scenarios into a documentation folder. The Scenarioo writer library helps you with this task. The Scenarioo Writer library knows how the documentation data has to be stored on disk, so that you can concentrate on supplying the relevant information. Have a look at <a href="tutorial/How-to-use-Scenarioo-Writer-Library.html">How to use a Scenarioo Writer Library</a> to find out more.</p>
-</li>
-<li><p><strong>Scenarioo Viewer web application for browsing the generated documentation</strong>: The web app makes the documentation available to anybody that is interested in it. This includes developers, business analysts and even business people. Therefore it let&apos;s you easily browse use cases, scenarios and their steps. If you just need to know how to set up the web app, have a look at the <a href="tutorial/Scenarioo-Viewer-Web-Application-Setup.html">Scenarioo Viewer Web Application Setup</a>.</p>
-</li>
-</ol>
-<h3 id="see-scenarioo-in-action">See Scenarioo in Action</h3>
-<p>Have a look at our Scenarioo Viewer Demo: <a href="http://demo.scenarioo.org" target="_blank">http://demo.scenarioo.org</a></p>
-<p>And see our <a href="examples.html">Collection of Examples</a> for how to produce documentation data content. Some content produced by those examples is what you can also see in our Viewer Demo as example content.</p>
-<p>There are also demo links for next release candidates of the Scenarioo Viewer that are currently under development, see <a href="downloads-and-links.html">Downloads &amp; Links</a>.</p>
-<h3 id="setup--use-scenarioo-in-your-project">Setup &amp; Use Scenarioo in Your Project</h3>
-<p>If you are interested how you can use Scenarioo in your own project, have a look here:</p>
-<p><a href="tutorial/">How to Setup &amp; Use Scenarioo</a></p>
-<h3 id="contribute-to-scenarioo">Contribute to Scenarioo</h3>
-<p>If you want to contribute to Scenarioo please carefully read and follow the guidelines you find on this page:</p>
-<p><a href="contribute/">Information for Scenarioo Contributors</a></p>
-<h3 id="information-for-scenarioo-writer-developers">Information for Scenarioo Writer Developers</h3>
-<p>The Scenarioo Writer library is a core part of Scenarioo. The Java version of this library is the reference implementation. Furthermore we maintain a library for C# and JavaScript. If you want to contribute to one of this libraries or want to start a new Scenarioo Writer library in a different language, you will find most important required information on the following page.</p>
-<p><a href="features/Scenarioo-Writer-Documentation-Format.html">Scenarioo Writer Documentation Format</a></p>
-<h2 id="documentation-structure">Documentation Structure</h2>
-<p>You can find further information in this documentation folder, which is structured into following major sections:</p>
+                                <h1 id="downloads-and-links">Downloads and Links</h1>
+<p>This page informs you where you can get the different versions (stable and unstable) of Scenarioo from and where you find a running demo instance for each of these versions on our CI/CD/Demo-Server.</p>
+<h2 id="scenarioo-viewer-web-app">Scenarioo Viewer Web App</h2>
+<h3 id="latest-stable-release">Latest Stable Release</h3>
 <ul>
-<li><a href="tutorial/">Setup</a>: How to setup Scenarioo for a project</li>
-<li><a href="features/">Features</a>: Overview of the core concepts and architecture and detailed informations for specific features of Scenarioo.</li>
-<li><a href="contribute/">Contribute</a>: How developers can contribute to the Scenarioo Open Source Project</li>
+<li><p><strong>Download as WAR from <a href="https://github.com/scenarioo/scenarioo/releases" target="_blank">Official Releases</a></strong></p>
+</li>
+<li><p><strong>Live-Demo under <a href="http://demo.scenarioo.org" target="_blank">demo.scenarioo.org</a></strong></p>
+</li>
 </ul>
+<h3 id="release-candidate-develop">Release Candidate (develop)</h3>
+<p>Our current release candidate for the develop branch with the next version of Scenarioo can be found here (it may include unstable new functionality):</p>
+<ul>
+<li><p><strong>Download as WAR from <a href="http://build.scenarioo.org/jenkins/job/scenarioo-develop/lastSuccessfulBuild/artifact/scenarioo-server/build/libs/" target="_blank">CI/CD-Build-Job-Artifacts</a></strong> </p>
+</li>
+<li><p><strong>Live-Demo under <a href="http://demo.scenarioo.org/scenarioo-develop" target="_blank">demo.scenarioo.org/scenarioo-develop</a></strong></p>
+</li>
+</ul>
+<h3 id="other-special-versions">Other Special Versions</h3>
+<p>For some important other feature branches or forks, there might be a build job in our CI/CD-Pipeline with a running demo instance:</p>
+<ul>
+<li><strong>Check the <a href="http://build.scenarioo.org" target="_blank">CI/CD-Build-Server</a></strong> for a job called <code>scenarioo-{name-of-branch}</code> or <code>scenarioo-fork-{name-of-fork}</code> </li>
+<li>Try out the running Demo under <code>http://demo.scenarioo.org/{put-same-name-as-the-build-job-here}</code></li>
+<li>You can download the WAR from last successful artifacts inside this build job, if you need it for deployment.</li>
+</ul>
+<h2 id="scenarioo-writer-libraries">Scenarioo Writer Libraries</h2>
+<p>These are the libraries you can use in your tests to write Scenarioo documentation reports on test execution:</p>
+<h3 id="javascript">JavaScript</h3>
+<p><a href="https://github.com/scenarioo/scenarioo-js" target="_blank">https://github.com/scenarioo/scenarioo-js</a></p>
+<h3 id="java">Java</h3>
+<p><a href="https://github.com/scenarioo/scenarioo-java" target="_blank">https://github.com/scenarioo/scenarioo-java</a></p>
+<h3 id="c&#x266F;">C&#x266F;</h3>
+<p><a href="https://github.com/scenarioo/scenarioo-cs" target="_blank">https://github.com/scenarioo/scenarioo-cs</a> </p>
 
                                 
                                 </section>
@@ -806,8 +799,12 @@ To generate the Scenarioo documentation files, you need to extend your UI tests 
 
             
                 
+                <a href="examples.html" class="navigation navigation-prev " aria-label="Previous page: Scenarioo Examples">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="examples.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Scenarioo Examples">
+                
+                <a href="tutorial/" class="navigation navigation-next " aria-label="Next page: Getting Started">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -818,7 +815,7 @@ To generate the Scenarioo documentation files, you need to extend your UI tests 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction & Overview","level":"1.1","depth":1,"next":{"title":"Scenarioo Examples","level":"1.1.1","depth":2,"path":"examples.md","ref":"examples.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/develop/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"README.md","mtime":"2018-06-20T14:59:58.901Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-20T16:39:13.195Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Downloads and Links","level":"1.1.2","depth":2,"next":{"title":"Getting Started","level":"1.2","depth":1,"path":"tutorial/README.md","ref":"tutorial/README.md","articles":[{"title":"Write Documentation from Tests","level":"1.2.1","depth":2,"path":"tutorial/How-to-use-Scenarioo-Writer-Library.md","ref":"tutorial/How-to-use-Scenarioo-Writer-Library.md","articles":[{"title":"Quickstart with ScenariooJS","level":"1.2.1.1","depth":3,"path":"tutorial/Quickstart-JS.md","ref":"tutorial/Quickstart-JS.md","articles":[]},{"title":"Quickstart with Java","level":"1.2.1.2","depth":3,"path":"tutorial/Quickstart-Java.md","ref":"tutorial/Quickstart-Java.md","articles":[]}]},{"title":"Install Viewer Web App","level":"1.2.2","depth":2,"path":"tutorial/Scenarioo-Viewer-Web-Application-Setup.md","ref":"tutorial/Scenarioo-Viewer-Web-Application-Setup.md","articles":[]},{"title":"Install Viewer Docker Image","level":"1.2.3","depth":2,"path":"tutorial/Scenarioo-Viewer-Docker-Image.md","ref":"tutorial/Scenarioo-Viewer-Docker-Image.md","articles":[]},{"title":"Publish Documentation","level":"1.2.4","depth":2,"path":"tutorial/Publish-Documentation-Data.md","ref":"tutorial/Publish-Documentation-Data.md","articles":[]},{"title":"Viewer Configuration","level":"1.2.5","depth":2,"path":"tutorial/Configuration.md","ref":"tutorial/Configuration.md","articles":[]}]},"previous":{"title":"Scenarioo Examples","level":"1.1.1","depth":2,"path":"examples.md","ref":"examples.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/develop/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"downloads-and-links.md","mtime":"2018-06-20T14:59:58.913Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-20T16:39:13.195Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

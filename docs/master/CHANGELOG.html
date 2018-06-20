@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction & Overview · Scenarioo Documentation</title>
+        <title>Version Changelog · Scenarioo Documentation</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,8 +61,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="examples.html" />
+    <link rel="next" href="Migration-Guide.html" />
     
+    
+    <link rel="prev" href="contribute/ci-server-setup/Elasticsearch-2.html" />
     
 
     </head>
@@ -91,7 +93,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -666,7 +668,7 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="CHANGELOG.html">
+        <li class="chapter active" data-level="2.1" data-path="CHANGELOG.html">
             
                 <a href="CHANGELOG.html">
             
@@ -722,7 +724,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction & Overview</a>
+        <a href="." >Version Changelog</a>
     </h1>
 </div>
 
@@ -737,48 +739,66 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="scenarioo">Scenarioo</h1>
-<p>This documentation is about the Software Development and Testing Tool &quot;Scenarioo&quot;. </p>
-<p>Scenarioo helps you visualizing and documenting the functionalities of your software system in a guidebook, that contains the important user interaction flows, generated out of your UI tests. Each so called &quot;User Scenario&quot; is presented as step by step page flow with screenshots and any additional useful information that you want to provide. This documentation is always up to date with the current implementation and available to everybody involved in your Software Development Lifecycle.</p>
-<p>For more hi level introduction about what scenarioo is, please refer to our web page: <a href="http://www.scenarioo.org" target="_blank">http://www.scenarioo.org</a></p>
-<h2 id="scenarioo-overview">Scenarioo Overview</h2>
-<p>The following sections gives a basic introduction to Scenarioo and where to find more information for most important aspects in our documentation.</p>
-<h3 id="what-can-scenarioo-do-for-me">What can Scenarioo do for me?</h3>
-<p>Scenarioo is a tool that helps you create an up-to-date software documentation leveraging existing UI tests. This can be an essential part of a &quot;living documentation system&quot; as described by Gojko Adzic in his book &quot;Specification by Example&quot;.</p>
-<p>With Scenarioo you can document your frontend application from a business and user perspective. Each UI test scenario is documented as a flow of screens. For a better overview, these scenarios are grouped into use cases. This gives a good high level picture of what an application is capable of and what typical scenarios you had in mind when implementing it.</p>
-<p>The Scenarioo Viewer web application lets you browse the documentation easily and lets you jump from screen to screen, almost like a cangaroo (therefore our logo).</p>
-<h3 id="what-does-scenarioo-consist-of">What does Scenarioo consist of?</h3>
-<p>These are the parts of which Scenarioo is made of:</p>
-<p><img src="https://cloud.githubusercontent.com/assets/3780183/9653298/d03ba2dc-5222-11e5-80a4-9a58a6ccd004.png" alt="Scenarioo Architecture"></p>
-<ol>
-<li><p><strong>Scenarioo Documentation Format</strong>: A file format and folder structure for storing the automatic documentation of your user scenarios out of UI tests. As a user of Scenarioo you do not need to know much about this exact format, because you probably just want to use one of the existing writer libraries to write this format. If you want to know more details about the format, have a look at the <a href="features/Scenarioo-Writer-Documentation-Format.html">Scenarioo-Writer-Documentation-Format</a>.</p>
-</li>
-<li><p><strong>Scenarioo Writer libraries for different languages (currently available for Java, C# and JavaScript)</strong>:
-To generate the Scenarioo documentation files, you need to extend your UI tests (written in e.g. Protractor, Selenium, Robotium, etc.) so that they store information about use cases and scenarios into a documentation folder. The Scenarioo writer library helps you with this task. The Scenarioo Writer library knows how the documentation data has to be stored on disk, so that you can concentrate on supplying the relevant information. Have a look at <a href="tutorial/How-to-use-Scenarioo-Writer-Library.html">How to use a Scenarioo Writer Library</a> to find out more.</p>
-</li>
-<li><p><strong>Scenarioo Viewer web application for browsing the generated documentation</strong>: The web app makes the documentation available to anybody that is interested in it. This includes developers, business analysts and even business people. Therefore it let&apos;s you easily browse use cases, scenarios and their steps. If you just need to know how to set up the web app, have a look at the <a href="tutorial/Scenarioo-Viewer-Web-Application-Setup.html">Scenarioo Viewer Web Application Setup</a>.</p>
-</li>
-</ol>
-<h3 id="see-scenarioo-in-action">See Scenarioo in Action</h3>
-<p>Have a look at our Scenarioo Viewer Demo: <a href="http://demo.scenarioo.org" target="_blank">http://demo.scenarioo.org</a></p>
-<p>And see our <a href="examples.html">Collection of Examples</a> for how to produce documentation data content. Some content produced by those examples is what you can also see in our Viewer Demo as example content.</p>
-<p>There are also demo links for next release candidates of the Scenarioo Viewer that are currently under development, see <a href="downloads-and-links.html">Downloads &amp; Links</a>.</p>
-<h3 id="setup--use-scenarioo-in-your-project">Setup &amp; Use Scenarioo in Your Project</h3>
-<p>If you are interested how you can use Scenarioo in your own project, have a look here:</p>
-<p><a href="tutorial/">How to Setup &amp; Use Scenarioo</a></p>
-<h3 id="contribute-to-scenarioo">Contribute to Scenarioo</h3>
-<p>If you want to contribute to Scenarioo please carefully read and follow the guidelines you find on this page:</p>
-<p><a href="contribute/">Information for Scenarioo Contributors</a></p>
-<h3 id="information-for-scenarioo-writer-developers">Information for Scenarioo Writer Developers</h3>
-<p>The Scenarioo Writer library is a core part of Scenarioo. The Java version of this library is the reference implementation. Furthermore we maintain a library for C# and JavaScript. If you want to contribute to one of this libraries or want to start a new Scenarioo Writer library in a different language, you will find most important required information on the following page.</p>
-<p><a href="features/Scenarioo-Writer-Documentation-Format.html">Scenarioo Writer Documentation Format</a></p>
-<h2 id="documentation-structure">Documentation Structure</h2>
-<p>You can find further information in this documentation folder, which is structured into following major sections:</p>
+                                <h1 id="scenarioo-release-notes">Scenarioo Release Notes</h1>
+<h2 id="version-400">Version 4.0.0</h2>
+<h3 id="feature-diff-viewer-plus">Feature &quot;Diff Viewer Plus&quot;</h3>
+<p>Improvements to the Diff Viewer for Visual Regression Testing:</p>
 <ul>
-<li><a href="tutorial/">Setup</a>: How to setup Scenarioo for a project</li>
-<li><a href="features/">Features</a>: Overview of the core concepts and architecture and detailed informations for specific features of Scenarioo.</li>
-<li><a href="contribute/">Contribute</a>: How developers can contribute to the Scenarioo Open Source Project</li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/692" target="_blank">#692 - Create Comparison Manually through the Web Frontend</a>: user can create a comparison through a modal dialog.</li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/603" target="_blank">#603 - Improved Comparison View</a> to understand the comparison of two screenshots and the possible comparison view options better. Highlighting of changes is now available in both screenshots.</li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/605" target="_blank">#605 - Comparison REST API to trigger Comparisons from Automated CI Test Pipelines</a> to more easily integrate Diff Viewer comparisons for visual regression testing into your automated test pipeline.</li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/650" target="_blank">#650 - Manage Comparisons View</a>: To see all calculated comparisons, their error logs and have the ability to trigger a comparison for recalculation if needed.</li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/673" target="_blank">#673 - Comparison Configurations with Regexp for base branches to compare</a>: allow to define comparisons against another build to be calculated on multiple branches selected by regexp (e.g. for all feature branches).</li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/596" target="_blank">#596 - Configure Highlight Color for Changes in DiffViewer Comparison Screenshots</a>: new config property <code>diffImageColorRgbaHex</code> to customize the highlight color.</li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/604" target="_blank">#604 - Background Calculation of Comparisons</a>: to not block builds from being imported while a comparison is computed.</li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/597" target="_blank">#597 - Store diff information directly inside build</a>: the comparisons are now stored inside the build directory, such that the comparisons get automatically cleaned up when deleting a build. Breaking change, see <a href="Migration-Guide.html">Migration Guide</a>.</li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/602" target="_blank">#602 - Removed Dependency to GraphicsMagick</a>: GraphicsMagick needs not to be installed anymore to use the DiffViewer feature.</li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/618" target="_blank">#618 - New Diff Viewer Internal Diff Screen Format</a> The comparisons need less disk space because only a difference image per screenshot is stored. Needs reimport of builds to see comparisons again, see <a href="Migration-Guide.html">Migration Guide</a>.</li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/577" target="_blank">#577 - Avoid Null Pointer Exceptions</a>: do not log null pointer exceptions when there is just no step to compare to.</li>
 </ul>
+<h3 id="feature-configuration">Feature &quot;Configuration&quot;</h3>
+<ul>
+<li>The data directory can not be configured through the config UI anymore (for security reasons)</li>
+<li>The data directory can now be configured through an environment variable or in the <code>context.xml</code> file of the web server (or just by directory mapping on the docker container, similar to before).</li>
+<li>The configuration file of Scenarioo is now stored in the data directory. Make sure you move your old <code>config.xml</code> file to the data directory.</li>
+<li>See <a href="Migration-Guide.html">Migration Guide</a> for more detailed explanations.</li>
+</ul>
+<h3 id="features-small-improvements--fixes">Features &quot;Small Improvements &amp; Fixes&quot;</h3>
+<p>Further small improvements and bug fixes:</p>
+<ul>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/601" target="_blank">#601 - Branch Selection Order</a>: new configuration property <code>branchSelectionListOrder</code> to configure order of branches in the branch selection list. </li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/630" target="_blank">#630 - Hide Screen Annotation Button if there are no Annotations</a>: bugfix to hide the button if there are no annotations to display.</li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/628" target="_blank">#628 - Improve logging format (log4j.properties) to be less verbose</a>.</li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/651" target="_blank">#651 - Generic Request Logging for all REST calls to the backend</a>.</li>
+</ul>
+<h3 id="breaking-changes-and-backwards-compatibility">Breaking Changes and Backwards Compatibility</h3>
+<ul>
+<li><p><strong>Changed configuration of data directory location:</strong> you need to setup your data location and the configuration file 
+as explained in the <a href="Migration-Guide.html">Migration Guide</a>. This can not be configured through the frontend anymore.</p>
+</li>
+<li><p><strong>Internal format of comparisons between builds (DiffViewer feature) has changed:</strong> after an update to the new version you will see no calculated comparisons on old builds anymore and need to reimport those builds for which you want to calculate and see comparisons again. See step 3 in <a href="Migration-Guide.html">Migration Guide</a>.</p>
+</li>
+<li><p><strong>Full Text Search needs Elasticsearch Version 5:</strong> we upgraded the full text search feature to use Elasticsearch 5.6.9. If you want to use that feature your have to configure a compatible Elasticsearch server and a cluster name as described in <a href="features/full-text-search/setup.html">Full Text Search Setup Guide</a></p>
+</li>
+<li><p><strong>Some undocumented REST endpoints for the frontend have slightly changed:</strong> in case you used these services you have to adjust the usage:</p>
+<ul>
+<li><code>/builds/reimportBuild/{branchName}/{buildName}</code> is now <code>/builds/:branchName/:buildName/import</code></li>
+</ul>
+</li>
+</ul>
+<p>Apart from that there are no breaking changes.</p>
+<p>The Java Writer Library in use is still version 2.1 which is still compatible with Java 6 and upwards. 
+Also the internal format version is not increased (still 2.1) so that your existing documentation data 
+does not even have to be reimported after the upgrade and will continue to work with the new version (except for the comparisons).</p>
+<h3 id="fixed-issues">Fixed Issues</h3>
+<p>All issues fixed in this release: <a href="https://github.com/scenarioo/scenarioo/milestone/33?closed=1" target="_blank">List of Fixed Issues</a>.</p>
+<h3 id="known-issues">Known Issues</h3>
+<p>Please visit our <a href="https://github.com/scenarioo/scenarioo/labels/known-issue" target="_blank">List of Known Issues on GitHub</a>.</p>
+<h3 id="feedback-and-support">Feedback and Support</h3>
+<p>Don&apos;t hesitate to open new issues if you find a bug or problem, or have feedback or questions:
+<a href="https://github.com/scenarioo/scenarioo/issues/new?labels=feedback" target="_blank">https://github.com/scenarioo/scenarioo/issues/new?labels=feedback</a></p>
+<h2 id="version-300-and-earlier">Version 3.0.0 and Earlier</h2>
+<p>See <a href="https://github.com/scenarioo/scenarioo/releases" target="_blank">https://github.com/scenarioo/scenarioo/releases</a></p>
 
                                 
                                 </section>
@@ -806,8 +826,12 @@ To generate the Scenarioo documentation files, you need to extend your UI tests 
 
             
                 
+                <a href="contribute/ci-server-setup/Elasticsearch-2.html" class="navigation navigation-prev " aria-label="Previous page: Deprecated: Elasticsearch 2 Installation">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="examples.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Scenarioo Examples">
+                
+                <a href="Migration-Guide.html" class="navigation navigation-next " aria-label="Next page: Migration Guide">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -818,7 +842,7 @@ To generate the Scenarioo documentation files, you need to extend your UI tests 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction & Overview","level":"1.1","depth":1,"next":{"title":"Scenarioo Examples","level":"1.1.1","depth":2,"path":"examples.md","ref":"examples.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/develop/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"README.md","mtime":"2018-06-20T14:59:58.901Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-20T16:39:13.195Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Version Changelog","level":"2.1","depth":1,"next":{"title":"Migration Guide","level":"2.2","depth":1,"path":"Migration-Guide.md","ref":"Migration-Guide.md","articles":[]},"previous":{"title":"Deprecated: Elasticsearch 2 Installation","level":"1.4.14.4","depth":3,"path":"contribute/ci-server-setup/Elasticsearch-2.md","ref":"contribute/ci-server-setup/Elasticsearch-2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/develop/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"CHANGELOG.md","mtime":"2018-06-20T14:59:58.901Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-20T16:39:13.195Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

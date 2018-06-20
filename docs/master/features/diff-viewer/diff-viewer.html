@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Full Text Search Specs · Scenarioo Documentation</title>
+        <title>Diff Viewer · Scenarioo Documentation</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../../contribute/" />
+    <link rel="next" href="../full-text-search/" />
     
     
-    <link rel="prev" href="setup.html" />
+    <link rel="prev" href="../validator-component/Scenarioo-Validator.html" />
     
 
     </head>
@@ -339,9 +339,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../diff-viewer/diff-viewer.html">
+        <li class="chapter active" data-level="1.3.2" data-path="diff-viewer.html">
             
-                <a href="../diff-viewer/diff-viewer.html">
+                <a href="diff-viewer.html">
             
                     
                     Diff Viewer
@@ -352,9 +352,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="./">
+        <li class="chapter " data-level="1.3.3" data-path="../full-text-search/">
             
-                <a href="./">
+                <a href="../full-text-search/">
             
                     
                     Full Text Search
@@ -366,9 +366,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.3.1" data-path="setup.html">
+        <li class="chapter " data-level="1.3.3.1" data-path="../full-text-search/setup.html">
             
-                <a href="setup.html">
+                <a href="../full-text-search/setup.html">
             
                     
                     Full Text Search Setup
@@ -379,9 +379,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.3.2" data-path="specifications.html">
+        <li class="chapter " data-level="1.3.3.2" data-path="../full-text-search/specifications.html">
             
-                <a href="specifications.html">
+                <a href="../full-text-search/specifications.html">
             
                     
                     Full Text Search Specs
@@ -724,7 +724,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Full Text Search Specs</a>
+        <a href="../.." >Diff Viewer</a>
     </h1>
 </div>
 
@@ -739,120 +739,195 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="scenarioo-full-text-search---specification-by-example">Scenarioo Full Text Search - Specification by Example</h1>
-<p>This test cases specify how the full text search is supposed to behave in different situations.</p>
-<h2 id="configuration-of-the-search-feature">Configuration of the search feature</h2>
-<h3 id="tc1-by-default-the-full-text-search-feature-is-switched-off">TC1: By default the full text search feature is switched off</h3>
+                                <h1 id="diff-viewer-user-guide">Diff Viewer User Guide</h1>
+<p>This guide describes how to use the Scenarioo Diff Viewer feature.</p>
+<p>The Diff Viewer feature makes it possible to compare two different builds against each other, to see changes between your scenarios in two builds.</p>
+<p>The Diff Viewer compares all the screenshots of all your tests and shows you where you have how much changes. Also it compares structural changes in your tests, like added or removed scenarios or use cases, or added or removed steps inside test scenarios.</p>
+<p>The following sections describe how you can create, browse, configure, manage and even delete such Diff Viewer comparisons:</p>
+<ol>
+<li><a href="#create-comparison-manually">Create Comparison Manually</a></li>
+<li><a href="#select-comparison-to-browse">Select Comparison to Browse</a></li>
+<li><a href="#browse-comparison-differences">Browse Comparison Differences</a></li>
+<li><a href="#hide-comparisons">Hide Comparison</a></li>
+<li><a href="#configuration-of-automatic-comparisons">Configuration of Automatic Comparisons</a></li>
+<li><a href="#manage-comparisons">Manage Comparisons</a></li>
+<li><a href="#delete-comparisons">Delete Comparisons</a></li>
+</ol>
+<h2 id="create-comparison-manually">Create Comparison Manually</h2>
+<p>In the Scenarioo Viewer simply choose <code>Create Comparison ...</code> from the top right in the Scenarioo navigation bar.</p>
+<p>Provide following information:</p>
 <ul>
-<li>The default config file that comes with Scenarioo does not contain
-the elasticSearchEndpoint config tag.</li>
-<li>If the elasticSearchEndpoint config tag is not present
-the full text search feature is switched off
-and the Manage -&gt; General Settings -&gt; Full Text Search section shows
-how the Elasticsearch  endpoint can be configured in the config.xml
-file.</li>
-<li>Because the search feature is switched off, the search box is not
-shown in the Scenarioo header.</li>
+<li><strong>Comparison Name:</strong> this is the name under which you can browse the comparison results</li>
+<li><strong>Target Build:</strong> the build on which the comparison will be calculated and on which it can be selected for browsing</li>
+<li><strong>Compare with:</strong> the other build to compare with</li>
 </ul>
-<h3 id="tc2-elasticsearch-enabled-but-endpoint-not-available">TC2: Elasticsearch enabled but endpoint not available</h3>
-<p>Set the elasticSearchEndpoint tag in config.xml to an endpoint
-that has a valid format but where no Elasticsearch instance is 
-running (e.g. localhost:9000).</p>
+<p>When you submit the dialog, the comparison is calculated in the background. </p>
+<p>Once the comparison calculation was successful you will see it in the Comparisons drop down in the top navigation bar.</p>
+<p>You have to reload the page to get the new comparison listed.</p>
+<h2 id="select-comparison-to-browse">Select Comparison to Browse</h2>
+<p>Once a Comparison is available you can browse it on the target build where it has been calculated.
+The <code>Comparison</code> selection drop down menu is located in the top navigation bar to the right oft the build selection drop down menu.</p>
+<p>If no <code>Comparison</code> drop down menu is shown, then no comparison is currently available on current selected build. Either try to choose another build or reload the page for calculated comparisons to become available.</p>
+<p>You can change the selected comparison at any time, on every Scenarioo page. It does not matter if you are on the page view or on the use case overview. The Diff Viewer will show the difference between the two builds immediately. </p>
+<p>The last selected comparison will be stored in your browser. Therefore you can reload the page without loosing your selected comparison.</p>
+<p>The following screenshot shows the comparison menu on our <a href="http://demo.scenarioo.org/scenarioo-fork-diffviewer/" target="_blank">Demo Site</a></p>
+<p><img src="images/SelectComparison.png" alt="SelectComparison"></p>
+<h2 id="browse-comparison-differences">Browse Comparison Differences</h2>
+<p>Diff Information is integrated into existing pages. You will see the Diff Information right next to each associated item. The information is displayed in a progress bar like diff icon.</p>
+<p>The following screenshot shows a diff icon example:</p>
+<p><img src="images/DiffIcon.png" alt="DiffIcon"></p>
+<h3 id="colors">Colors</h3>
 <ul>
-<li>Search box is not shown in Header</li>
-<li>Settings page shows the configured Elasticsearch endpoint</li>
-<li>Settings page shows that Elasticsearch is not reachable</li>
+<li><strong>Green:</strong> New elements</li>
+<li><strong>Orange:</strong> Changed elements</li>
+<li><strong>Red:</strong> Removed elements</li>
 </ul>
-<h3 id="tc3-elasticsearch-enabled-and-endpoint-available">TC3: Elasticsearch enabled and endpoint available</h3>
-<p>Set the elasticSearchEndpoint tag in config.xml to the endpoint where
-Elasticsearch is actually available (e.g. localhost:9300).</p>
+<h3 id="change-rate">Change Rate</h3>
+<p>The Change Rate is the average value of all changes in the underlying elements. Added or removed elements will be calculated as 100% changed.</p>
+<p>The length of the entire progress bar corresponds to the change rate. The length of each color progress bar corresponds to the number of changed elements.</p>
+<h3 id="added-and-removed-elements">Added and Removed Elements</h3>
+<p>Furthermore, added or removed elements are labelled accordingly. To ensure you recognize these elements immediately they are highlighted as in the following screenshot:</p>
+<p><img src="images/AddedDeleted.png" alt="AddedDeleted"></p>
+<h2 id="compare-screenshots">Compare Screenshots</h2>
+<p>You can open the screenshot comparison in the step view by navigating to the <code>Comparison</code> tab.</p>
+<h3 id="views">Views</h3>
+<p>Diff Viewer comes with different views to compare a screenshot. You can switch between these two views:</p>
+<p>Side by side view:</p>
+<p><img src="images/StepSideBySide.png" alt="SideBySideView"></p>
+<p>Single page view:</p>
+<p><img src="images/StepSinglePage.png" alt="StepSInglePageView"></p>
+<h2 id="hide-comparison">Hide Comparison</h2>
+<p>On the same place where you <a href="#select-comparison-to-browse">selected a comparison</a>, you can disable the Diff Viewer feature.
+Simply select &apos;Disable&apos; in the comparison selection menu:</p>
+<p><img src="images/DisableComparison.png" alt="DisableComparison"></p>
+<h2 id="configuration-of-automatic-comparisons">Configuration of Automatic Comparisons</h2>
+<p>You can configure Scenarioo to automatically compute comparisons for you on each new build on a specific branch.</p>
+<p>In the Scenarioo <code>config.xml</code> file you can edit the comparison configuration. It is possible to add one or more comparison configurations. On each import, all the configured comparisons get compared.
+You can delete a comparisonConfiguration, then it will not be compared in the future. The old comparisons will not be deleted automatically. Check out <a href="#delete-comparisons">Delete Comparison</a> for further details.</p>
+<p>Each comparisonConfiguration has the following settings:</p>
 <ul>
-<li>Search box is shown in the header</li>
-<li>Settings page shows the configured Elasticsearch endpoint</li>
-<li>Settings page shows that Elasticsearch is reachable</li>
-<li>Search for &quot;Donate&quot; shows a result, result can be opened</li>
-</ul>
-<h2 id="search">Search</h2>
-<h3 id="tc4-search-can-be-triggered-by-pressing-enter-in-the-search-box">TC4: Search can be triggered by pressing enter in the search box</h3>
-<h3 id="tc5-no-results-found">TC5: No results found</h3>
-<p>Enter a search term that should not yield any results (e.g. aaaaaaaa)</p>
-<ul>
-<li>Message is shown, that no results were found</li>
-<li>There&apos;s a link for the user to go back to the Use Case overview (&quot;home&quot; in the breadcrumbs)</li>
-</ul>
-<h3 id="tc6-search-for-various-things---some-failing">TC6: Search for various things -&gt; SOME FAILING</h3>
-<p>Perform these searches in the self-docu:</p>
-<ul>
-<li>Use Case title (&quot;breadcrumbs&quot; in double quotes should show the UC &quot;Use breadcrumbs&quot; and some others) -&gt; OK</li>
-<li>Use Case title (&quot;breadcrumbs&quot; without double quotes should show the UC &quot;Use breadcrumbs&quot; and some others) -&gt; OK</li>
-<li>Use Case description (&quot;reference&quot; in double quotes should show the UC &quot;Browse object details&quot;) -&gt; OK</li>
-<li>Scenario title:
-&quot;unique&quot; (without double quotes)<ul>
-<li>should show UC &quot;Manage branch aliases&quot; and scenario &quot;Unique aliases&quot; -&gt; OK</li>
-<li>should show Create%20sketch/New%20issue%20success/scenarioo-fork-full-text-search_/0/1 -&gt; FAILS, not shown
-&quot;unique&quot; (with double quotes)</li>
-<li>should show UC &quot;Manage branch aliases&quot; and scenario &quot;Unique aliases&quot; -&gt; OK</li>
-<li>should show Create%20sketch/New%20issue%20success/scenarioo-fork-full-text-search_/0/1 -&gt; OK</li>
+<li><strong>name</strong>: name of the comparison. This is the name that gets displayed in the Viewer to select a comparison result for displaying it. 
+ As soon as the comparison is calculated for a build you can select it in the comparison selection menu in the frontend on that build.</li>
+<li><strong>baseBranchName</strong>: name or alias of the branch for which to perform such a comparison calculation on each new build being imported for that branch. </li>
+<li><strong>comparisonBranchName</strong>: name or alias of the branch to which to compare (can be the same branch as well).</li>
+<li><strong>comparisonBuildName</strong>: the name or alias of the build to which to compare to. Some examples:<ul>
+<li>&quot;last successful&quot;: alias for the last successful build (as configured in configuration as well)</li>
+<li>&quot;most recent&quot;: alias for the most recent build (as configured in configuration as well)</li>
+<li>the original build name    </li>
 </ul>
 </li>
-<li>Scenario description (&quot;access&quot; should show UC &quot;Application Startup&quot; with scenario &quot;First visit&quot;) -&gt; OK</li>
-<li>Page name (&quot;scenarioo-fork-full-text-search_&quot; in quotes should show all pages) -&gt; FAILS, only three use cases shown</li>
-<li>Step name (&quot;A different page variant&quot; in quotes should show the &quot;Browse page variants&quot; step that contains this as a title) -&gt; OK</li>
-<li>Class in HTML source (&quot;label-success&quot; in quotes should show all) -&gt; FAILS, shows only a few pages, e.g. the &quot;Manage branch aliases&quot; is missing.</li>
-<li>Search for simple word in HTML source (&quot;StartInitAction&quot; should show a few pages) -&gt; OK</li>
-<li>Search for something that is part of all HTML sources (&quot;html&quot; should show all UCs, scenarios and steps as result) -&gt; FAILS, only three UCs are shown</li>
 </ul>
-<p>Perform these searches in the Wikipedia Example, 2014-03-19:</p>
+<p>Example Configuration:</p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span> standalone=<span class="hljs-string">&quot;yes&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
+
+    ...
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">comparisonConfigurations</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">comparisonConfiguration</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>To last successful<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">baseBranchName</span>&gt;</span>wikipedia-docu-example-dev<span class="hljs-tag">&lt;/<span class="hljs-name">baseBranchName</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">comparisonBranchName</span>&gt;</span>wikipedia-docu-example<span class="hljs-tag">&lt;/<span class="hljs-name">comparisonBranchName</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">comparisonBuildName</span>&gt;</span>last successful<span class="hljs-tag">&lt;/<span class="hljs-name">comparisonBuildName</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">comparisonConfiguration</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">comparisonConfiguration</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>To most recent<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">baseBranchName</span>&gt;</span>wikipedia-docu-example-dev<span class="hljs-tag">&lt;/<span class="hljs-name">baseBranchName</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">comparisonBranchName</span>&gt;</span>Production<span class="hljs-tag">&lt;/<span class="hljs-name">comparisonBranchName</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">comparisonBuildName</span>&gt;</span>most recent<span class="hljs-tag">&lt;/<span class="hljs-name">comparisonBuildName</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">comparisonConfiguration</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">comparisonConfiguration</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>To Projectstart<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">baseBranchName</span>&gt;</span>wikipedia-docu-example-dev<span class="hljs-tag">&lt;/<span class="hljs-name">baseBranchName</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">comparisonBranchName</span>&gt;</span>Production<span class="hljs-tag">&lt;/<span class="hljs-name">comparisonBranchName</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">comparisonBuildName</span>&gt;</span>2014-01-20<span class="hljs-tag">&lt;/<span class="hljs-name">comparisonBuildName</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">comparisonConfiguration</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;/<span class="hljs-name">comparisonConfigurations</span>&gt;</span>
+
+    ...
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span>
+</code></pre>
+<p>Once you configured automatic comparisons to be calculated you can trigger automatic comparison calculations as follows:</p>
 <ul>
-<li>Use Case label (&quot;normal-case&quot; in quotes should find one use case) -&gt; OK</li>
-<li>Scenario metadata (&quot;a_cat_by_the_tail&quot; without quotes should show all scenarios) -&gt; OK</li>
-<li>Scenario metadata (&quot;a_cat_by_the_tail&quot; with quotes should also show the relevant scenarios) -&gt; FAILS, shows irrelevant pages</li>
-<li>Step metadata (&quot;no user rights&quot; in quotes should show almost all steps) -&gt; FAILS, some steps are missing that should show up (e.g. the &quot;Switch Language&quot; UC)</li>
-<li>Step label (&quot;step-label-0&quot; in quotes should show 8 steps) -&gt; OK</li>
+<li>Reimport an existing build:<ul>
+<li>Scenario Viewer &gt; Manage &gt; Click on the reimport symbol next to the preferred build</li>
+<li>NOTE: The &quot;Import &amp; Update Builds&quot; Button will only start a comparison if a build gets imported for the first time.</li>
 </ul>
-<h2 id="ui">UI</h2>
-<h3 id="tc7-breadcrumbs-are-shown">TC7: Breadcrumbs are shown</h3>
+</li>
+<li>Create a new build and upload it to Scenarioo in the usual way (see <a href="../../tutorial/Publish-Documentation-Data.html">Publish Scenarioo Documentation Data</a>).</li>
+</ul>
+<h2 id="manage-comparisons">Manage Comparisons</h2>
+<p>In the <code>Manage</code>-view there is a <code>Comparisons</code> tab that lists all calculated comparisons with further information. </p>
+<p>There you can also see error logs in case a calculation of a comparison failed in the <code>Details &amp; Logs</code> dialog.</p>
+<h2 id="delete-comparisons">Delete Comparisons</h2>
+<p>All comparisons are stored inside the build directory of their target build inside a subfolder <code>comparisons.derived</code>.</p>
+<p>To delete a comparison you only have to delete the appropriate folder. You have the following options:</p>
 <ul>
-<li>Breadcrumbs show &quot;Home&quot; -&gt; &quot;Search Results for <search term="">&quot;</search></li>
-<li>Share this page works as usual</li>
+<li>Delete all the comparisons of a build at once</li>
+<li>Delete selected comparisons</li>
 </ul>
-<h3 id="tc8-search-box-looks-good-and-does-not-mess-up-navigation-bar">TC8: Search box looks good and does not mess up navigation bar</h3>
+<p>A file structure example:</p>
 <ul>
-<li>The right end of the search box is aligned with the right end of the breadcrumbs</li>
-<li>The bottom end of the search box is aligned with the navigation bar labels (e.g. Manage and Info)</li>
+<li>Root Folder<ul>
+<li>branchName1<ul>
+<li>buildName1.1<ul>
+<li><strong>comparisons.derived</strong><ul>
+<li>comparison1</li>
+<li>comparison2</li>
+<li>...</li>
 </ul>
-<h3 id="tc9-the-search-term-is-not-part-of-the-query-string-but-instead-of-the-path">TC9: The search term is not part of the query string but instead of the path</h3>
-<ul>
-<li>The path contains <code>/search/&lt;term&gt;</code> not <code>/search?q=term</code></li>
+</li>
+<li>useCaseName1<ul>
+<li>scenarioName1<ul>
+<li>...</li>
 </ul>
-<h3 id="tc10-pressing-enter-in-an-empty-search-field-does-not-trigger-any-actions">TC10: Pressing enter in an empty search field does not trigger any actions</h3>
-<h2 id="edge-cases-and-error-messages">Edge cases and error messages</h2>
-<h3 id="tc11-server-does-not-have-an-index-for-a-branch">TC11: Server does not have an index for a branch</h3>
-<ul>
-<li>List all indexes in the browser: <a href="http://localhost:9200/_cat/indices?v" target="_blank">http://localhost:9200/_cat/indices?v</a></li>
-<li>Delete the index of a branch: curl -XDELETE &apos;localhost:9200/scenarioo-wikipedia-docu-example-2014-03-19?pretty&apos;</li>
-<li>Then search for something.</li>
-<li>The error message shows &quot;The search index was not found for the selected build.&quot;</li>
+</li>
 </ul>
-<h3 id="tc12-search-terms-with-special-characters">TC12: Search terms with special characters</h3>
-<ul>
-<li>/ should not execute search</li>
-<li>&quot; or &quot;something should show an error message in the UI (this results in an elasticsearch parse error)</li>
-<li><code>&lt;?&#xE7;+&#xB0;&apos;&amp;%&gt;</code> should execute search but not find any results</li>
+</li>
 </ul>
-<h3 id="tc13-index-is-deleted-and-recreated-on-reimport">TC13: Index is deleted and recreated on reimport</h3>
-<ul>
-<li>Import build</li>
-<li>Change something in the build data (e.g. add a new keyword that did not have
-results before or delete an entire Use Case folder)</li>
-<li>Reimport build and check whether the changes show up when searching</li>
+</li>
+<li>buildName2<ul>
+<li><strong>comparisons.derived</strong><ul>
+<li>...</li>
 </ul>
-<h3 id="tc14-search-engine-temporarily-not-reachable">TC14: Search engine temporarily not reachable</h3>
-<ul>
-<li>Search field is shown, then turn off the Elasticsearch service.</li>
-<li>Enter something into the search field and press enter.</li>
-<li>The error message shows &quot;The search engine is not running or not reachable for Scenarioo.&quot;</li>
+</li>
+<li>useCaseName1<ul>
+<li>scenarioName1<ul>
+<li>...      </li>
 </ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>branchName2<ul>
+<li>buildName3<ul>
+<li><strong>comparisons.derived</strong><ul>
+<li>...</li>
+</ul>
+</li>
+<li>useCaseName1<ul>
+<li>scenarioName1<ul>
+<li>...</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>When you delete a build directory also all contained comparisons will be removed.</p>
 
                                 
                                 </section>
@@ -880,12 +955,12 @@ results before or delete an entire Use Case folder)</li>
 
             
                 
-                <a href="setup.html" class="navigation navigation-prev " aria-label="Previous page: Full Text Search Setup">
+                <a href="../validator-component/Scenarioo-Validator.html" class="navigation navigation-prev " aria-label="Previous page: Scenarioo Format Validator">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../../contribute/" class="navigation navigation-next " aria-label="Next page: Contributor Guide">
+                <a href="../full-text-search/" class="navigation navigation-next " aria-label="Next page: Full Text Search">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -896,7 +971,7 @@ results before or delete an entire Use Case folder)</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Full Text Search Specs","level":"1.3.3.2","depth":3,"next":{"title":"Contributor Guide","level":"1.4","depth":1,"path":"contribute/README.md","ref":"contribute/README.md","articles":[{"title":"Development Environment Setup","level":"1.4.1","depth":2,"path":"contribute/Development-Environment-Setup.md","ref":"contribute/Development-Environment-Setup.md","articles":[]},{"title":"Developer Guide","level":"1.4.2","depth":2,"path":"contribute/Developer-Guide.md","ref":"contribute/Developer-Guide.md","articles":[]},{"title":"Coding Guidelines","level":"1.4.3","depth":2,"path":"contribute/Coding-guidelines.md","ref":"contribute/Coding-guidelines.md","articles":[]},{"title":"End to End Testing","level":"1.4.4","depth":2,"path":"contribute/e2eTesting.md","ref":"contribute/e2eTesting.md","articles":[]},{"title":"Documentation & Webpage","level":"1.4.5","depth":2,"path":"contribute/Documentation-and-Webpage.md","ref":"contribute/Documentation-and-Webpage.md","articles":[]},{"title":"Code of Conduct: Rules & Guidelines","level":"1.4.6","depth":2,"path":"contribute/Code-of-Conduct.md","ref":"contribute/Code-of-Conduct.md","articles":[]},{"title":"Commit Rules","level":"1.4.7","depth":2,"path":"contribute/Commit-rules.md","ref":"contribute/Commit-rules.md","articles":[]},{"title":"Branching Strategy","level":"1.4.8","depth":2,"path":"contribute/Branching-strategy.md","ref":"contribute/Branching-strategy.md","articles":[]},{"title":"Versioning","level":"1.4.9","depth":2,"path":"contribute/Versioning.md","ref":"contribute/Versioning.md","articles":[]},{"title":"Release Scenarioo Viewer Web Application","level":"1.4.10","depth":2,"path":"contribute/Release-Scenarioo-Viewer-Web-Application.md","ref":"contribute/Release-Scenarioo-Viewer-Web-Application.md","articles":[]},{"title":"Release Docker Image","level":"1.4.11","depth":2,"path":"contribute/Building-the-Docker-Image.md","ref":"contribute/Building-the-Docker-Image.md","articles":[]},{"title":"Release Scenarioo Writer Libraries","level":"1.4.12","depth":2,"path":"contribute/Release-Scenarioo-Writer-Library.md","ref":"contribute/Release-Scenarioo-Writer-Library.md","articles":[]},{"title":"CI and Demo Server","level":"1.4.13","depth":2,"path":"contribute/Build-Server.md","ref":"contribute/Build-Server.md","articles":[]},{"title":"CI & Tools Installation/Configuration","level":"1.4.14","depth":2,"path":"contribute/ci-server-setup/README.md","ref":"contribute/ci-server-setup/README.md","articles":[{"title":"Nginx Proxy","level":"1.4.14.1","depth":3,"path":"contribute/ci-server-setup/nginx.md","ref":"contribute/ci-server-setup/nginx.md","articles":[]},{"title":"Docker Installation","level":"1.4.14.2","depth":3,"path":"contribute/ci-server-setup/docker.md","ref":"contribute/ci-server-setup/docker.md","articles":[]},{"title":"Elasticsearch 5 Installation","level":"1.4.14.3","depth":3,"path":"contribute/ci-server-setup/Elasticsearch-5.md","ref":"contribute/ci-server-setup/Elasticsearch-5.md","articles":[]},{"title":"Deprecated: Elasticsearch 2 Installation","level":"1.4.14.4","depth":3,"path":"contribute/ci-server-setup/Elasticsearch-2.md","ref":"contribute/ci-server-setup/Elasticsearch-2.md","articles":[]}]}]},"previous":{"title":"Full Text Search Setup","level":"1.3.3.1","depth":3,"path":"features/full-text-search/setup.md","ref":"features/full-text-search/setup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/develop/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"features/full-text-search/specifications.md","mtime":"2018-06-20T14:59:58.929Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-20T16:39:13.195Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Diff Viewer","level":"1.3.2","depth":2,"next":{"title":"Full Text Search","level":"1.3.3","depth":2,"path":"features/full-text-search/README.md","ref":"features/full-text-search/README.md","articles":[{"title":"Full Text Search Setup","level":"1.3.3.1","depth":3,"path":"features/full-text-search/setup.md","ref":"features/full-text-search/setup.md","articles":[]},{"title":"Full Text Search Specs","level":"1.3.3.2","depth":3,"path":"features/full-text-search/specifications.md","ref":"features/full-text-search/specifications.md","articles":[]}]},"previous":{"title":"Scenarioo Format Validator","level":"1.3.1.4","depth":3,"path":"features/validator-component/Scenarioo-Validator.md","ref":"features/validator-component/Scenarioo-Validator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/develop/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"features/diff-viewer/diff-viewer.md","mtime":"2018-06-20T14:59:58.913Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-20T16:39:13.195Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
