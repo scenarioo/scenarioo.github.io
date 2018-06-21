@@ -2,12 +2,9 @@
 title: "Documentation"
 ---
 
-**Read our documentation, make sure to pick the right version:**
-* <a href="http://scenarioo.org/docs/master/" target="_blank"><b>Documentation for Latest Release</b></a>
-* <b><a href="http://scenarioo.org/docs/develop/" target="_blank">Documentation for Development Version</a> (for Contributors!)</b>
+**Out documentation including our Tutorials has beend moved to the following location:**
+* <a href="http://scenarioo.org/docs/master/" target="_blank"><b>http://scenarioo.org/docs/master</b></a>
 
-## Video: A Short Introduction to Scenarioo
+You can even pick different versions inside the docu in the version dropdown in upper left corner, if you are interested in older major releases or latest and greatest developer version of our docu!
 
-Shows the essential features of Scenarioo and gives you some first insights into the Scenarioo documentation format structure.
-
-<p><iframe width="883" height="497" src="https://www.youtube-nocookie.com/embed/C_Omyu190V4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+This page is still here - just for those places where the old docu/tutorial location is still linked to redirect to the new location.
