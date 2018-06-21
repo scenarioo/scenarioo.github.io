@@ -18,6 +18,7 @@
 <url> <loc>http://scenarioo.org/features/Details.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/features/validator-component/Scenarioo-Validator.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/features/diff-viewer/diff-viewer.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://scenarioo.org/features/diff-viewer/diff-viewer-rest-api.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/features/full-text-search/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/features/full-text-search/setup.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/features/full-text-search/specifications.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
