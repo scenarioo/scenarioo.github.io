@@ -61,7 +61,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../full-text-search/" />
+    <link rel="next" href="diff-viewer-rest-api.html" />
     
     
     <link rel="prev" href="../validator-component/Scenarioo-Validator.html" />
@@ -349,6 +349,25 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="diff-viewer-rest-api.html">
+            
+                <a href="diff-viewer-rest-api.html">
+            
+                    
+                    Diff Viewer REST API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -748,8 +767,9 @@
 <li><a href="#create-comparison-manually">Create Comparison Manually</a></li>
 <li><a href="#select-comparison-to-browse">Select Comparison to Browse</a></li>
 <li><a href="#browse-comparison-differences">Browse Comparison Differences</a></li>
-<li><a href="#hide-comparisons">Hide Comparison</a></li>
+<li><a href="#hide-comparisons">Hide Comparisons</a></li>
 <li><a href="#configuration-of-automatic-comparisons">Configuration of Automatic Comparisons</a></li>
+<li><a href="#integrate-comparisons-in-ci-pipeline">Integrate Comparisons in CI Pipeline</a></li>
 <li><a href="#manage-comparisons">Manage Comparisons</a></li>
 <li><a href="#delete-comparisons">Delete Comparisons</a></li>
 </ol>
@@ -796,7 +816,7 @@ The <code>Comparison</code> selection drop down menu is located in the top navig
 <p><img src="images/StepSideBySide.png" alt="SideBySideView"></p>
 <p>Single page view:</p>
 <p><img src="images/StepSinglePage.png" alt="StepSInglePageView"></p>
-<h2 id="hide-comparison">Hide Comparison</h2>
+<h2 id="hide-comparisons">Hide Comparisons</h2>
 <p>On the same place where you <a href="#select-comparison-to-browse">selected a comparison</a>, you can disable the Diff Viewer feature.
 Simply select &apos;Disable&apos; in the comparison selection menu:</p>
 <p><img src="images/DisableComparison.png" alt="DisableComparison"></p>
@@ -861,6 +881,9 @@ You can delete a comparisonConfiguration, then it will not be compared in the fu
 </li>
 <li>Create a new build and upload it to Scenarioo in the usual way (see <a href="../../tutorial/Publish-Documentation-Data.html">Publish Scenarioo Documentation Data</a>).</li>
 </ul>
+<h2 id="integrate-comparisons-in-ci-pipeline">Integrate Comparisons in CI Pipeline</h2>
+<p>You can trigger comparisons from your CI pipeline to do visual regression testing.</p>
+<p>See: <a href="diff-viewer-rest-api.html">Diff Viewer REST API</a>.</p>
 <h2 id="manage-comparisons">Manage Comparisons</h2>
 <p>In the <code>Manage</code>-view there is a <code>Comparisons</code> tab that lists all calculated comparisons with further information. </p>
 <p>There you can also see error logs in case a calculation of a comparison failed in the <code>Details &amp; Logs</code> dialog.</p>
@@ -960,7 +983,7 @@ You can delete a comparisonConfiguration, then it will not be compared in the fu
                 </a>
                 
                 
-                <a href="../full-text-search/" class="navigation navigation-next " aria-label="Next page: Full Text Search">
+                <a href="diff-viewer-rest-api.html" class="navigation navigation-next " aria-label="Next page: Diff Viewer REST API">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -971,7 +994,7 @@ You can delete a comparisonConfiguration, then it will not be compared in the fu
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Diff Viewer","level":"1.3.2","depth":2,"next":{"title":"Full Text Search","level":"1.3.3","depth":2,"path":"features/full-text-search/README.md","ref":"features/full-text-search/README.md","articles":[{"title":"Full Text Search Setup","level":"1.3.3.1","depth":3,"path":"features/full-text-search/setup.md","ref":"features/full-text-search/setup.md","articles":[]},{"title":"Full Text Search Specs","level":"1.3.3.2","depth":3,"path":"features/full-text-search/specifications.md","ref":"features/full-text-search/specifications.md","articles":[]}]},"previous":{"title":"Scenarioo Format Validator","level":"1.3.1.4","depth":3,"path":"features/validator-component/Scenarioo-Validator.md","ref":"features/validator-component/Scenarioo-Validator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/4.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"features/diff-viewer/diff-viewer.md","mtime":"2018-06-21T12:14:15.610Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-21T12:46:09.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Diff Viewer","level":"1.3.2","depth":2,"next":{"title":"Diff Viewer REST API","level":"1.3.2.1","depth":3,"path":"features/diff-viewer/diff-viewer-rest-api.md","ref":"features/diff-viewer/diff-viewer-rest-api.md","articles":[]},"previous":{"title":"Scenarioo Format Validator","level":"1.3.1.4","depth":3,"path":"features/validator-component/Scenarioo-Validator.md","ref":"features/validator-component/Scenarioo-Validator.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/4.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"features/diff-viewer/diff-viewer.md","mtime":"2018-06-21T13:29:58.565Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-06-21T14:01:02.763Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
