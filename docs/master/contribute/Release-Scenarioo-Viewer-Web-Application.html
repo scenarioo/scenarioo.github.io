@@ -799,7 +799,8 @@ Usually this should be the same as the Scenarioo version that you are going to r
 <li>Fix the bugs you find and merge the fixes to the release branch (instead of develop directly!).</li>
 <li>Also proceed with further release preparations as explained in next sections</li>
 </ul>
-<h2 id="prepare-documentation-and-webpage-for-new-release-version">Prepare Documentation and Webpage for new Release Version</h2>
+<h2 id="prepare-documentation-and-webpage-for-new-release">Prepare Documentation and Webpage for new Release</h2>
+<h3 id="for-major-versions">For Major Versions</h3>
 <ul>
 <li><p>See <a href="Documentation-and-Webpage.html">Documentation and Webpage</a> for further instructions how to configure the documentation for a new release.</p>
 </li>
@@ -811,6 +812,11 @@ Usually this should be the same as the Scenarioo version that you are going to r
 </li>
 <li><p>If for the release the web page needs to be upgraded prepare so on a special release branch as well.</p>
 </li>
+</ul>
+<h3 id="for-any-version---even-for-patches">For any Version - even for patches</h3>
+<ul>
+<li>Do not forget to update the usage instructions for the Docker Image to use the newest version:<br>  <a href="../tutorial/Scenarioo-Viewer-Docker-Image.html">Scenarioo Viewer Docker Image</a> 
+  (<strong>!! change the version number in the example!</strong>)</li>
 </ul>
 <h2 id="merge-and-build-final-release">Merge and Build Final Release</h2>
 <ul>
@@ -834,16 +840,14 @@ git push
 </ul>
 <h3 id="build-docker-image-and-publish-to-dockerhub">Build Docker Image and Publish to Dockerhub</h3>
 <ul>
-<li>Create a new Docker image for this release according to <a href="Building-the-Docker-Image">this manual</a></li>
-<li>Do not forget to update the usage instructions for the Docker Image:<br>  <a href="../tutorial/Scenarioo-Viewer-Docker-Image.html">Scenarioo Viewer Doker Image</a> 
-  (<strong>!! change the version number in the example!</strong>)</li>
+<li>Create and publish a new Docker image for this release according to <a href="Building-the-Docker-Image">this manual</a></li>
 </ul>
 <h3 id="publish-the-release-on-github">Publish the Release on Github</h3>
 <ul>
 <li>Create a release on github to make the release publicly visible: <a href="https://github.com/scenarioo/scenarioo/releases" target="_blank">https://github.com/scenarioo/scenarioo/releases</a>. </li>
 <li>For description use the release notes of that release version from CHANGELOG.md in the release description on github.</li>
 <li>Make sure you safe it first only as a draft and do not publish them yet.  </li>
-<li>Attach the binary of the release (WAR-file) to the release notes (see area &quot;Attach binaries by dropping them here ...&quot;).</li>
+<li>Attach the binary of the release (WAR-file having the right clean version number downloaded from jenkins) to the release notes (see area &quot;Attach binaries by dropping them here ...&quot;).</li>
 <li>Publish the release when done.</li>
 </ul>
 <h3 id="publish-the-release-on-maven-central">Publish the Release on Maven Central</h3>
@@ -910,7 +914,7 @@ ossrhPassword=#sonatype password goes here#
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Release Scenarioo Viewer Web Application","level":"1.4.10","depth":2,"next":{"title":"Release Docker Image","level":"1.4.11","depth":2,"path":"contribute/Building-the-Docker-Image.md","ref":"contribute/Building-the-Docker-Image.md","articles":[]},"previous":{"title":"Versioning","level":"1.4.9","depth":2,"path":"contribute/Versioning.md","ref":"contribute/Versioning.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/4.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/Release-Scenarioo-Viewer-Web-Application.md","mtime":"2018-10-14T12:59:33.657Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-10-14T13:13:24.538Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Release Scenarioo Viewer Web Application","level":"1.4.10","depth":2,"next":{"title":"Release Docker Image","level":"1.4.11","depth":2,"path":"contribute/Building-the-Docker-Image.md","ref":"contribute/Building-the-Docker-Image.md","articles":[]},"previous":{"title":"Versioning","level":"1.4.9","depth":2,"path":"contribute/Versioning.md","ref":"contribute/Versioning.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/4.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/Release-Scenarioo-Viewer-Web-Application.md","mtime":"2018-10-14T17:19:41.499Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-10-14T17:59:38.911Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
