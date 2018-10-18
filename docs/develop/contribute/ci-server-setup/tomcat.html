@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Elasticsearch 5 Installation · Scenarioo Documentation</title>
+        <title>Tomcat · Scenarioo Documentation</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Elasticsearch-2.html" />
+    <link rel="next" href="../../CHANGELOG.html" />
     
     
-    <link rel="prev" href="docker.html" />
+    <link rel="prev" href="Elasticsearch.html" />
     
 
     </head>
@@ -644,12 +644,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.14.3" data-path="Elasticsearch-5.html">
+        <li class="chapter " data-level="1.4.14.3" data-path="Elasticsearch.html">
             
-                <a href="Elasticsearch-5.html">
+                <a href="Elasticsearch.html">
             
                     
-                    Elasticsearch 5 Installation
+                    Elasticsearch
             
                 </a>
             
@@ -657,12 +657,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.14.4" data-path="Elasticsearch-2.html">
+        <li class="chapter active" data-level="1.4.14.4" data-path="tomcat.html">
             
-                <a href="Elasticsearch-2.html">
+                <a href="tomcat.html">
             
                     
-                    Deprecated: Elasticsearch 2 Installation
+                    Tomcat
             
                 </a>
             
@@ -743,7 +743,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Elasticsearch 5 Installation</a>
+        <a href="../.." >Tomcat</a>
     </h1>
 </div>
 
@@ -758,36 +758,56 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="install-and-run-with-docker">Install and Run with Docker</h2>
-<p>Install and run using docker:</p>
-<pre><code>docker pull docker.elastic.co/elasticsearch/elasticsearch:5.6.9
-docker run -d --name elasticsearch5 -p 9200:9200 -p 9300:9300 -e cluster.name=elasticsearch -e xpack.ml.enabled=false -e xpack.security.enabled=false docker.elastic.co/elasticsearch/elasticsearch:5.6.9
-</code></pre><p>Set port values that do not conflict with other existing installation (e.g. Elasticsearch 2 which is currently running in parallel)</p>
-<h2 id="start-and-stop">Start and Stop</h2>
-<pre><code>docker stop elasticsearch5
-</code></pre><pre><code>docker start elasticsearch5
-</code></pre><h2 id="see-logs-of-elasticsearch">See Logs of Elasticsearch</h2>
-<p>To see logs in case of problems for debugging:</p>
-<pre><code>docker logs elasticsearch5
-</code></pre><h2 id="register-as-a-system-service">Register as a System Service</h2>
-<p>Register as a service using the start script in ./servicescripts/elasticsearch5.</p>
+                                <h1 id="tomcat-8">Tomcat 8</h1>
+<p>We use tomcat 8 - but since the docu for how tomcat8 was setup is missing, please refer to old docu from tomcat 7 setup below</p>
+<h2 id="tomcat-users">Tomcat Users</h2>
+<p>After the installation of tomcat 8 do not forget to configure a scenarioo user with role to upload scenarioo documentation files over our REST API as follows:</p>
 <ul>
-<li>Copy the script <code>elasticsearch5</code> to <code>/etc/init.d</code></li>
-<li>chmod to be executable: <code>chmod a+x elasticsearch5</code></li>
-<li><code>service elasticsearch5 start</code></li>
-<li><code>service elasticsearch5 stop</code></li>
-<li>Register the service to start on startup:<pre><code>  sudo update-rc.d elasticsearch5 defaults 95 10
-  sudo /etc/init.d/elasticsearch5 start
+<li>go to <code>/var/lib/tomcat8/conf/tomcat-users.xml</code></li>
+<li>Add user entries as follows:<pre><code> &lt;role rolename=&quot;scenarioo-build-publisher&quot;/&gt;
+ &lt;user username=&quot;scenarioo&quot; password=&quot;&lt;our-password&gt;&quot; roles=&quot;scenarioo-build-publisher&quot;/&gt;
 </code></pre></li>
+<li>Please use our usual password when configuring this (please ask if in doubt!)</li>
 </ul>
-<h2 id="configure-maxmapcount">Configure max_map_count</h2>
-<p>To avoid this error message: <code>max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</code></p>
-<p>Temporary configuration: </p>
-<p><code>sudo sysctl -w vm.max_map_count=262144</code></p>
-<p>Permanent configuration:</p>
-<p>Change the value in <code>/etc/sysctl.conf</code> to <code>vm.max_map_count=262144</code></p>
-<p>Source: <a href="https://github.com/docker-library/elasticsearch/issues/111" target="_blank">https://github.com/docker-library/elasticsearch/issues/111</a></p>
-
+<h1 id="tomcat-7">Tomcat 7</h1>
+<p>This part is old docu to be replaced with tomcat8 docu - TODO</p>
+<h2 id="installation">Installation</h2>
+<p>Install:</p>
+<pre><code>sudo apt-get install tomcat7 tomcat7-admin
+</code></pre><p>Jenkins runs under user <code>ubuntu:ubuntu</code> so Tomcat has to run with the same use in order to be able to read the files written by Jenkins.</p>
+<pre><code>sudo chown -R ubuntu:ubuntu /var/log/tomcat7
+sudo chown -R ubuntu:ubuntu /usr/share/tomcat7
+sudo chown -R ubuntu:ubuntu /usr/share/tomcat7
+sudo chown -R ubuntu:ubuntu /var/lib/tomcat7
+sudo chown -R ubuntu:ubuntu /etc/tomcat7
+</code></pre><p>See also: <a href="http://askubuntu.com/questions/371809/run-tomcat7-as-tomcat7-or-any-other-user" target="_blank">http://askubuntu.com/questions/371809/run-tomcat7-as-tomcat7-or-any-other-user</a></p>
+<p>Add existing user to group (this is probably not necessary...):</p>
+<pre><code>sudo usermod -a -G ubuntu tomcat7
+</code></pre><p><a href="http://askubuntu.com/questions/371809/run-tomcat7-as-tomcat7-or-any-other-user" target="_blank">http://askubuntu.com/questions/371809/run-tomcat7-as-tomcat7-or-any-other-user</a></p>
+<ul>
+<li><h2 id="directories">Directories</h2>
+</li>
+</ul>
+<p>Bin: /usr/share/tomcat7/bin</p>
+<p>Config: /etc/tomcat7</p>
+<p>Contexts: /etc/tomcat7/Catalina/localhost</p>
+<p>Logs: /var/log/tomcat7</p>
+<p>Webapps: /var/lib/tomcat7/webapps</p>
+<p>Scenarioo documentation data: /var/lib/scenarioo/scenarioDocuExample-...</p>
+<h2 id="usage">Usage</h2>
+<p>Restart:</p>
+<pre><code>sudo service tomcat7 restart
+</code></pre><p>There&apos;s also an alias for that:</p>
+<pre><code>sc-tomcat-restart
+</code></pre><h2 id="java-version-used-by-tomcat">Java Version used by Tomcat</h2>
+<pre><code>sudo vim /etc/default/tomcat7
+</code></pre><p>Change this line:</p>
+<pre><code>JAVA_HOME=/usr/lib/jvm/java-7-oracle
+</code></pre><p>Also set <code>JAVA_HOME</code> in <code>.bashrc</code> to Java 8.</p>
+<h2 id="change-memory">Change Memory</h2>
+<p>Increase to 2 GB in file /etc/default/tomcat7:</p>
+<pre><code>JAVA_OPTS=&quot;-Djava.awt.headless=true -Xms1024m -Xmx2048m -XX:MaxPermSize=1024m -XX:+UseConcMarkSweepGC&quot;
+</code></pre>
                                 
                                 </section>
                             
@@ -814,12 +834,12 @@ docker run -d --name elasticsearch5 -p 9200:9200 -p 9300:9300 -e cluster.name=el
 
             
                 
-                <a href="docker.html" class="navigation navigation-prev " aria-label="Previous page: Docker Installation">
+                <a href="Elasticsearch.html" class="navigation navigation-prev " aria-label="Previous page: Elasticsearch">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Elasticsearch-2.html" class="navigation navigation-next " aria-label="Next page: Deprecated: Elasticsearch 2 Installation">
+                <a href="../../CHANGELOG.html" class="navigation navigation-next " aria-label="Next page: Version Changelog">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -830,7 +850,7 @@ docker run -d --name elasticsearch5 -p 9200:9200 -p 9300:9300 -e cluster.name=el
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Elasticsearch 5 Installation","level":"1.4.14.3","depth":3,"next":{"title":"Deprecated: Elasticsearch 2 Installation","level":"1.4.14.4","depth":3,"path":"contribute/ci-server-setup/Elasticsearch-2.md","ref":"contribute/ci-server-setup/Elasticsearch-2.md","articles":[]},"previous":{"title":"Docker Installation","level":"1.4.14.2","depth":3,"path":"contribute/ci-server-setup/docker.md","ref":"contribute/ci-server-setup/docker.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/4.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/ci-server-setup/Elasticsearch-5.md","mtime":"2018-10-14T16:58:56.095Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-10-18T23:14:21.829Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Tomcat","level":"1.4.14.4","depth":3,"next":{"title":"Version Changelog","level":"2.1","depth":1,"path":"CHANGELOG.md","ref":"CHANGELOG.md","articles":[]},"previous":{"title":"Elasticsearch","level":"1.4.14.3","depth":3,"path":"contribute/ci-server-setup/Elasticsearch.md","ref":"contribute/ci-server-setup/Elasticsearch.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/4.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/ci-server-setup/tomcat.md","mtime":"2018-10-18T23:14:49.538Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-10-18T23:27:12.221Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

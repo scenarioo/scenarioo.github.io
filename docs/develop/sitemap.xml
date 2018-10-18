@@ -39,8 +39,8 @@
 <url> <loc>http://scenarioo.org/contribute/ci-server-setup/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/ci-server-setup/nginx.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/ci-server-setup/docker.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://scenarioo.org/contribute/ci-server-setup/Elasticsearch-5.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://scenarioo.org/contribute/ci-server-setup/Elasticsearch-2.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://scenarioo.org/contribute/ci-server-setup/Elasticsearch.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://scenarioo.org/contribute/ci-server-setup/tomcat.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/CHANGELOG.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/Migration-Guide.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>
