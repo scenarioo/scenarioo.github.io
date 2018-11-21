@@ -1,0 +1,890 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Diff Viewer REST API · Scenarioo Documentation</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-versions/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../full-text-search/" />
+    
+    
+    <link rel="prev" href="diff-viewer.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction & Overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../examples.html">
+            
+                <a href="../../examples.html">
+            
+                    
+                    Scenarioo Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../downloads-and-links.html">
+            
+                <a href="../../downloads-and-links.html">
+            
+                    
+                    Downloads and Links
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../tutorial/">
+            
+                <a href="../../tutorial/">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../tutorial/How-to-use-Scenarioo-Writer-Library.html">
+            
+                <a href="../../tutorial/How-to-use-Scenarioo-Writer-Library.html">
+            
+                    
+                    Write Documentation from Tests
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../tutorial/Quickstart-JS.html">
+            
+                <a href="../../tutorial/Quickstart-JS.html">
+            
+                    
+                    Quickstart with ScenariooJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../tutorial/Quickstart-Java.html">
+            
+                <a href="../../tutorial/Quickstart-Java.html">
+            
+                    
+                    Quickstart with Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../tutorial/Scenarioo-Viewer-Web-Application-Setup.html">
+            
+                <a href="../../tutorial/Scenarioo-Viewer-Web-Application-Setup.html">
+            
+                    
+                    Install Viewer Web App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../tutorial/Scenarioo-Viewer-Docker-Image.html">
+            
+                <a href="../../tutorial/Scenarioo-Viewer-Docker-Image.html">
+            
+                    
+                    Install Viewer Docker Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../tutorial/Publish-Documentation-Data.html">
+            
+                <a href="../../tutorial/Publish-Documentation-Data.html">
+            
+                    
+                    Publish Documentation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../tutorial/Configuration.html">
+            
+                <a href="../../tutorial/Configuration.html">
+            
+                    
+                    Viewer Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Features & Concepts
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Scenarioo-Writer-Documentation-Format.html">
+            
+                <a href="../Scenarioo-Writer-Documentation-Format.html">
+            
+                    
+                    Documentation Format
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../Safe-Identifiers.html">
+            
+                <a href="../Safe-Identifiers.html">
+            
+                    
+                    Safe Identifiers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../Labels.html">
+            
+                <a href="../Labels.html">
+            
+                    
+                    Labels
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../Details.html">
+            
+                <a href="../Details.html">
+            
+                    
+                    Details & Object Repository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../validator-component/Scenarioo-Validator.html">
+            
+                <a href="../validator-component/Scenarioo-Validator.html">
+            
+                    
+                    Scenarioo Format Validator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="diff-viewer.html">
+            
+                <a href="diff-viewer.html">
+            
+                    
+                    Diff Viewer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.2.1" data-path="diff-viewer-rest-api.html">
+            
+                <a href="diff-viewer-rest-api.html">
+            
+                    
+                    Diff Viewer REST API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../full-text-search/">
+            
+                <a href="../full-text-search/">
+            
+                    
+                    Full Text Search
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../full-text-search/setup.html">
+            
+                <a href="../full-text-search/setup.html">
+            
+                    
+                    Full Text Search Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../full-text-search/specifications.html">
+            
+                <a href="../full-text-search/specifications.html">
+            
+                    
+                    Full Text Search Specs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../contribute/">
+            
+                <a href="../../contribute/">
+            
+                    
+                    Contributor Guide
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../contribute/Development-Environment-Setup.html">
+            
+                <a href="../../contribute/Development-Environment-Setup.html">
+            
+                    
+                    Development Environment Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../contribute/Developer-Guide.html">
+            
+                <a href="../../contribute/Developer-Guide.html">
+            
+                    
+                    Developer Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../contribute/Coding-guidelines.html">
+            
+                <a href="../../contribute/Coding-guidelines.html">
+            
+                    
+                    Coding Guidelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../contribute/e2eTesting.html">
+            
+                <a href="../../contribute/e2eTesting.html">
+            
+                    
+                    End to End Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../contribute/Documentation-and-Webpage.html">
+            
+                <a href="../../contribute/Documentation-and-Webpage.html">
+            
+                    
+                    Documentation & Webpage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../contribute/Code-of-Conduct.html">
+            
+                <a href="../../contribute/Code-of-Conduct.html">
+            
+                    
+                    Code of Conduct: Rules & Guidelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../contribute/Commit-rules.html">
+            
+                <a href="../../contribute/Commit-rules.html">
+            
+                    
+                    Commit Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../contribute/Branching-strategy.html">
+            
+                <a href="../../contribute/Branching-strategy.html">
+            
+                    
+                    Branching Strategy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../contribute/Versioning.html">
+            
+                <a href="../../contribute/Versioning.html">
+            
+                    
+                    Versioning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../../contribute/Release-Scenarioo-Viewer-Web-Application.html">
+            
+                <a href="../../contribute/Release-Scenarioo-Viewer-Web-Application.html">
+            
+                    
+                    Release Scenarioo Viewer Web Application
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../../contribute/Building-the-Docker-Image.html">
+            
+                <a href="../../contribute/Building-the-Docker-Image.html">
+            
+                    
+                    Release Docker Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../../contribute/Release-Scenarioo-Writer-Library.html">
+            
+                <a href="../../contribute/Release-Scenarioo-Writer-Library.html">
+            
+                    
+                    Release Scenarioo Writer Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../../contribute/Build-Server.html">
+            
+                <a href="../../contribute/Build-Server.html">
+            
+                    
+                    CI and Demo Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../../contribute/ci-server-setup/">
+            
+                <a href="../../contribute/ci-server-setup/">
+            
+                    
+                    CI & Tools Installation/Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.14.1" data-path="../../contribute/ci-server-setup/nginx.html">
+            
+                <a href="../../contribute/ci-server-setup/nginx.html">
+            
+                    
+                    Nginx Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.2" data-path="../../contribute/ci-server-setup/docker.html">
+            
+                <a href="../../contribute/ci-server-setup/docker.html">
+            
+                    
+                    Docker Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.3" data-path="../../contribute/ci-server-setup/Elasticsearch.html">
+            
+                <a href="../../contribute/ci-server-setup/Elasticsearch.html">
+            
+                    
+                    Elasticsearch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.4" data-path="../../contribute/ci-server-setup/tomcat.html">
+            
+                <a href="../../contribute/ci-server-setup/tomcat.html">
+            
+                    
+                    Tomcat
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../CHANGELOG.html">
+            
+                <a href="../../CHANGELOG.html">
+            
+                    
+                    Version Changelog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../Migration-Guide.html">
+            
+                <a href="../../Migration-Guide.html">
+            
+                    
+                    Migration Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Diff Viewer REST API</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="diff-viewer-rest-api">Diff Viewer REST API</h1>
+<p>The Diff Viewer REST API is intended for people who want to include visual regression testing in their build pipeline. E.g. you could make your build fail if the overall change rate is beyond a certain threshold.</p>
+<p>Parameters:</p>
+<ul>
+<li><code>branchName</code> / <code>buildName</code> in URL: build to compare with the comparison build. This is the build where the comparison will show up in the selection dropdown.</li>
+<li><code>comparisonName</code>: name under which the comparison will be available for selection</li>
+<li><code>banchName</code> / <code>buildName</code> in payload: the build the above build is compared with</li>
+</ul>
+<h2 id="calculate-configured-comparisons">Calculate Configured Comparisons</h2>
+<p>The comparisons configured in the <code>config.xml</code> file are automatically calculated after a build import (see <a href="../../tutorial/Publish-Documentation-Data.html">Publish Scenarioo Documentation Data</a> and <a href="diff-viewer.html#configuration-of-automatic-comparisons">Configuration of Automatic Comparisons</a>). You can use a calculation endpoint (see below) to poll for completion of these calculations.</p>
+<h2 id="import-build-and-calculate-comparison-synchronously">Import Build and Calculate Comparison Synchronously</h2>
+<p>This call triggers a build import and comparison calculation and also blocks until both are done. This operation can take a long time for larger builds. Consider using the non-blocking API calls instead. </p>
+<p><code>POST /rest/builds/{branchName}/{buildName}/comparisons/{comparisonName}/importAndCompare</code></p>
+<p>Payload:</p>
+<p><code>{ &quot;branchName&quot;: &quot;{comparisonBranchName}&quot;, &quot;buildName&quot;: &quot;{comparisonBuildName}&quot; }</code></p>
+<h2 id="request-comparison-calculation">Request Comparison Calculation</h2>
+<p>Queues the calculation of a comparison between two builds. The method returns immediately and does not wait for the calculation to complete.</p>
+<p><code>POST /rest/builds/{branchName}/{buildName}/comparisons/{comparisonName}/calculate</code></p>
+<p>Payload:</p>
+<p><code>{ &quot;branchName&quot;: &quot;{comparisonBranchName}&quot;, &quot;buildName&quot;: &quot;{comparisonBuildName}&quot; }</code></p>
+<h2 id="get-calculation-status">Get Calculation Status</h2>
+<p>Returns the calculation status as a string. This is useful to check whether a queued calculation has already completed.</p>
+<p><code>GET /rest/builds/{branchName}/{buildName}/comparisons/{comparisonName}/calculationStatus</code></p>
+<p>The return value is one of these:</p>
+<ul>
+<li><code>QUEUED_FOR_PROCESSING</code></li>
+<li><code>PROCESSING</code></li>
+<li><code>SKIPPED</code></li>
+<li><code>SUCCESS</code></li>
+<li><code>FAILED</code></li>
+</ul>
+<h2 id="get-calculation">Get Calculation</h2>
+<p>Returns the calculation object. This can be used to read the overall change rate (field <code>changeRate</code>).</p>
+<p><code>GET /rest/builds/{branchName}/{buildName}/comparisons/{comparisonName}</code></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="diff-viewer.html" class="navigation navigation-prev " aria-label="Previous page: Diff Viewer">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../full-text-search/" class="navigation navigation-next " aria-label="Next page: Full Text Search">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Diff Viewer REST API","level":"1.3.2.1","depth":3,"next":{"title":"Full Text Search","level":"1.3.3","depth":2,"path":"features/full-text-search/README.md","ref":"features/full-text-search/README.md","articles":[{"title":"Full Text Search Setup","level":"1.3.3.1","depth":3,"path":"features/full-text-search/setup.md","ref":"features/full-text-search/setup.md","articles":[]},{"title":"Full Text Search Specs","level":"1.3.3.2","depth":3,"path":"features/full-text-search/specifications.md","ref":"features/full-text-search/specifications.md","articles":[]}]},"previous":{"title":"Diff Viewer","level":"1.3.2","depth":2,"path":"features/diff-viewer/diff-viewer.md","ref":"features/diff-viewer/diff-viewer.md","articles":[{"title":"Diff Viewer REST API","level":"1.3.2.1","depth":3,"path":"features/diff-viewer/diff-viewer-rest-api.md","ref":"features/diff-viewer/diff-viewer-rest-api.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/4.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"features/diff-viewer/diff-viewer-rest-api.md","mtime":"2018-11-21T15:26:11.721Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-11-21T15:26:38.016Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-versions/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
