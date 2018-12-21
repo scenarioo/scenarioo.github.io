@@ -773,16 +773,32 @@
 <blockquote>
 <p>We strongly recommend to use HTTPS for this in order to safely transmit the authentication information.</p>
 </blockquote>
-<h3 id="configure-a-user">Configure a user</h3>
-<p>Add a user to <code>tomcat-users.xml</code>. Assign it the role <code>scenarioo-build-publisher</code> and choose a strong password. Here&apos;s an example:</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;tomcat-users&gt;
-    &lt;role rolename=&quot;scenarioo-build-publisher&quot;/&gt;
-    &lt;user username=&quot;john&quot; password=&quot;defineYourOwnPasswordHere&quot; roles=&quot;scenarioo-build-publisher&quot;/&gt;
-&lt;/tomcat-users&gt;
-</code></pre><h3 id="usage">Usage</h3>
+<h3 id="configure-the-userpassword">Configure the user/password</h3>
+<p>By default, Sring Security in a Spring Boot 2 application configures a user <code>user</code> with a random password to secure all REST endpoints.
+In this case, the default user name has been set to <code>scenarioo</code>. The random password is printed in the log output at application startup and looks like this:</p>
+<pre><code>Using generated security password: 67f584b8-04e6-46b3-af57-90f037c0ca5b
+</code></pre><p>Based on the flexibility of Spring Boot configuration property resolution, there are various ways how the user/password combination can be overridden.</p>
+<h4 id="provide-an-applicationproperties-file">Provide an application.properties file</h4>
+<p><em>Suitable for: Running Scenarioo as standalone WAR</em></p>
+<pre><code>spring.security.user.name=scenarioo
+spring.security.user.password=somePassword
+</code></pre><h4 id="provide-as-environment-variables">Provide as environment variables</h4>
+<p><em>Suitable for: Running Scenarioo as Docker image or standalone WAR</em></p>
+<p>Because of the underlying configuration property resolution, it is possible to define them as environment variables like this:</p>
+<pre><code>SPRING_SECURITY_USER_NAME=scenarioo
+SPRING_SECURITY_USER_PASSWORD=somePassword
+</code></pre><h4 id="provide-as-servlet-context-parameters">Provide as servlet context parameters</h4>
+<p><em>Suitable for: Running Scenarioo on a separate Tomcat webserver</em></p>
+<p>To configure user and password on a Tomcat, you can provide the respective properties as servlet context init parameters in the <code>context.xml</code>.</p>
+<pre><code>&lt;Context&gt;
+    &lt;Parameter name=&quot;spring.security.user.name&quot; value=&quot;scenarioo&quot; override=&quot;true&quot; description=&quot;HTTP user for publishing documentation data&quot;/&gt;
+    &lt;Parameter name=&quot;spring.security.user.password&quot; value=&quot;somePassword&quot; override=&quot;true&quot; description=&quot;HTTP password for publishing documentation data&quot;/&gt;
+&lt;/Context&gt;
+</code></pre><p>There are a lot more ways how these properties can be exposed to the application. For a full list, please refer to the <a href="https://docs.spring.io/spring-boot/docs/2.0.2.RELEASE/reference/html/boot-features-external-config.html#boot-features-external-config" target="_blank">Externalized Configuration</a> 
+section in the official Spring Boot documentation.</p>
+<h3 id="usage">Usage</h3>
 <p>Use e.g. <code>curl</code> to add a documentation build to Scenarioo. Here&apos;s an example:</p>
-<pre><code>curl -f --user john:defineYourOwnPasswordHere -F&quot;file=@build-to-post.zip&quot; http://localhost:8080/scenarioo/rest/builds
+<pre><code>curl -f --user scenarioo:somePassword -F&quot;file=@build-to-post.zip&quot; http://localhost:8080/scenarioo/rest/builds
 </code></pre><p>Please make sure you obey the following rules:</p>
 <ul>
 <li>The ZIP file must contain exactly one branch directory with a <code>branch.xml</code> file. The <code>branch.xml</code> file is only used if the branch did not exist yet in the documentation directory.</li>
@@ -834,7 +850,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Publish Documentation","level":"1.2.4","depth":2,"next":{"title":"Viewer Configuration","level":"1.2.5","depth":2,"path":"tutorial/Configuration.md","ref":"tutorial/Configuration.md","articles":[]},"previous":{"title":"Install Viewer Docker Image","level":"1.2.3","depth":2,"path":"tutorial/Scenarioo-Viewer-Docker-Image.md","ref":"tutorial/Scenarioo-Viewer-Docker-Image.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/4.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"tutorial/Publish-Documentation-Data.md","mtime":"2018-12-21T07:47:08.947Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-12-21T07:47:33.909Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Publish Documentation","level":"1.2.4","depth":2,"next":{"title":"Viewer Configuration","level":"1.2.5","depth":2,"path":"tutorial/Configuration.md","ref":"tutorial/Configuration.md","articles":[]},"previous":{"title":"Install Viewer Docker Image","level":"1.2.3","depth":2,"path":"tutorial/Scenarioo-Viewer-Docker-Image.md","ref":"tutorial/Scenarioo-Viewer-Docker-Image.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/4.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"tutorial/Publish-Documentation-Data.md","mtime":"2018-12-21T23:48:16.752Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-12-21T23:48:43.797Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
