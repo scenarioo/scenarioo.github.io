@@ -26,7 +26,6 @@
 <url> <loc>http://scenarioo.org/contribute/Development-Environment-Setup.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/Developer-Guide.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/Coding-guidelines.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://scenarioo.org/contribute/e2eTesting.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/Documentation-and-Webpage.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/Code-of-Conduct.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/Commit-rules.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -36,11 +35,10 @@
 <url> <loc>http://scenarioo.org/contribute/Building-the-Docker-Image.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/Release-Scenarioo-Writer-Library.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/contribute/Build-Server.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://scenarioo.org/contribute/ci-server-setup/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://scenarioo.org/contribute/ci-server-setup/nginx.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://scenarioo.org/contribute/ci-server-setup/docker.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://scenarioo.org/contribute/ci-server-setup/Elasticsearch.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://scenarioo.org/contribute/ci-server-setup/tomcat.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://scenarioo.org/contribute/circle-ci.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://scenarioo.org/contribute/demo-server-setup/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://scenarioo.org/contribute/demo-server-setup/OVH-Server-Setup.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://scenarioo.org/contribute/demo-server-setup/nginx.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/CHANGELOG.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://scenarioo.org/Migration-Guide.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>

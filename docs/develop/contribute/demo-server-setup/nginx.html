@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="docker.html" />
+    <link rel="next" href="../../CHANGELOG.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="OVH-Server-Setup.html" />
     
 
     </head>
@@ -474,20 +474,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../e2eTesting.html">
-            
-                <a href="../e2eTesting.html">
-            
-                    
-                    End to End Testing
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.5" data-path="../Documentation-and-Webpage.html">
+        <li class="chapter " data-level="1.4.4" data-path="../Documentation-and-Webpage.html">
             
                 <a href="../Documentation-and-Webpage.html">
             
@@ -500,7 +487,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6" data-path="../Code-of-Conduct.html">
+        <li class="chapter " data-level="1.4.5" data-path="../Code-of-Conduct.html">
             
                 <a href="../Code-of-Conduct.html">
             
@@ -513,7 +500,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.7" data-path="../Commit-rules.html">
+        <li class="chapter " data-level="1.4.6" data-path="../Commit-rules.html">
             
                 <a href="../Commit-rules.html">
             
@@ -526,7 +513,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.8" data-path="../Branching-strategy.html">
+        <li class="chapter " data-level="1.4.7" data-path="../Branching-strategy.html">
             
                 <a href="../Branching-strategy.html">
             
@@ -539,7 +526,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.9" data-path="../Versioning.html">
+        <li class="chapter " data-level="1.4.8" data-path="../Versioning.html">
             
                 <a href="../Versioning.html">
             
@@ -552,7 +539,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.10" data-path="../Release-Scenarioo-Viewer-Web-Application.html">
+        <li class="chapter " data-level="1.4.9" data-path="../Release-Scenarioo-Viewer-Web-Application.html">
             
                 <a href="../Release-Scenarioo-Viewer-Web-Application.html">
             
@@ -565,7 +552,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.11" data-path="../Building-the-Docker-Image.html">
+        <li class="chapter " data-level="1.4.10" data-path="../Building-the-Docker-Image.html">
             
                 <a href="../Building-the-Docker-Image.html">
             
@@ -578,7 +565,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.12" data-path="../Release-Scenarioo-Writer-Library.html">
+        <li class="chapter " data-level="1.4.11" data-path="../Release-Scenarioo-Writer-Library.html">
             
                 <a href="../Release-Scenarioo-Writer-Library.html">
             
@@ -591,7 +578,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.13" data-path="../Build-Server.html">
+        <li class="chapter " data-level="1.4.12" data-path="../Build-Server.html">
             
                 <a href="../Build-Server.html">
             
@@ -602,14 +589,33 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.12.1" data-path="../circle-ci.html">
+            
+                <a href="../circle-ci.html">
+            
+                    
+                    Circle CI
+            
+                </a>
+            
+
+            
         </li>
     
-        <li class="chapter " data-level="1.4.14" data-path="./">
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="./">
             
                 <a href="./">
             
                     
-                    CI & Tools Installation/Configuration
+                    Demo Server Installation/Configuration
             
                 </a>
             
@@ -618,51 +624,25 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.14.1" data-path="nginx.html">
+        <li class="chapter " data-level="1.4.13.1" data-path="OVH-Server-Setup.html">
+            
+                <a href="OVH-Server-Setup.html">
+            
+                    
+                    OVH Server Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.13.2" data-path="nginx.html">
             
                 <a href="nginx.html">
             
                     
                     Nginx Proxy
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.14.2" data-path="docker.html">
-            
-                <a href="docker.html">
-            
-                    
-                    Docker Installation
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.14.3" data-path="Elasticsearch.html">
-            
-                <a href="Elasticsearch.html">
-            
-                    
-                    Elasticsearch
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.14.4" data-path="tomcat.html">
-            
-                <a href="tomcat.html">
-            
-                    
-                    Tomcat
             
                 </a>
             
@@ -762,39 +742,9 @@
 <p>We use nginx as a proxy to access all services running on our CI/Demo server.</p>
 <p>Modifying NGINX proxy configuration files to redirect URLs on our demo/build server, can be done as follows:</p>
 <ol>
-<li><p>All the config files are found on the demo VM in following directory:
-/etc/nginx/sites-available</p>
-</li>
-<li><p>Download/Upload config files</p>
-<ul>
-<li>Use SCP to copy files<ul>
-<li>from server: <code>scp ubuntu@54.88.202.24:/etc/nginx/sites-available/* .</code></li>
-<li>to server: <code>scp ./* ubuntu@54.88.202.24:/home/ubuntu/upload/sites-available</code></li>
-</ul>
-</li>
-<li>On windows use putty, pageant and pscp (all from putty)<ul>
-<li>register the key for the VM with pageant</li>
-<li>then use pscp in same way as scp (see above)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>SSH to VM and copy the files from uploaded place to /etc/nginx/sites-available</p>
-<blockquote>
-<p>cd ~/upload/sites-available
-sudo cp ./<changed-file> /etc/nginx/sites-available/<changed-file></changed-file></changed-file></p>
-</blockquote>
-</li>
-<li><p>Only in case of a new config file: Generate link for new server files in <code>sites-enabled</code>:</p>
-<blockquote>
-<p>sudo ln -s /etc/nginx/sites-available/<name-of-new-server-file> /etc/nginx/sites-enabled/</name-of-new-server-file></p>
-</blockquote>
-</li>
-<li><p>Restart the NGINX Server</p>
-<blockquote>
-<p>sudo service nginx restart</p>
-</blockquote>
-</li>
+<li>Edit <a href="https://github.com/scenarioo/scenarioo-infrastructure/blob/master/roles/nginx/templates/demo.scenarioo.org.conf.j2" target="_blank">scenarioo-infrastructure\roles\nginx\templates\demo.scenarioo.org.conf.j2</a></li>
+<li>Commit changes to master branch using a pull request</li>
+<li>Wait for Circle CI build to deploy the new server with configuration.</li>
 </ol>
 
                                 
@@ -823,12 +773,12 @@ sudo cp ./<changed-file> /etc/nginx/sites-available/<changed-file></changed-file
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: CI & Tools Installation/Configuration">
+                <a href="OVH-Server-Setup.html" class="navigation navigation-prev " aria-label="Previous page: OVH Server Setup">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="docker.html" class="navigation navigation-next " aria-label="Next page: Docker Installation">
+                <a href="../../CHANGELOG.html" class="navigation navigation-next " aria-label="Next page: Version Changelog">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -839,7 +789,7 @@ sudo cp ./<changed-file> /etc/nginx/sites-available/<changed-file></changed-file
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Nginx Proxy","level":"1.4.14.1","depth":3,"next":{"title":"Docker Installation","level":"1.4.14.2","depth":3,"path":"contribute/ci-server-setup/docker.md","ref":"contribute/ci-server-setup/docker.md","articles":[]},"previous":{"title":"CI & Tools Installation/Configuration","level":"1.4.14","depth":2,"path":"contribute/ci-server-setup/README.md","ref":"contribute/ci-server-setup/README.md","articles":[{"title":"Nginx Proxy","level":"1.4.14.1","depth":3,"path":"contribute/ci-server-setup/nginx.md","ref":"contribute/ci-server-setup/nginx.md","articles":[]},{"title":"Docker Installation","level":"1.4.14.2","depth":3,"path":"contribute/ci-server-setup/docker.md","ref":"contribute/ci-server-setup/docker.md","articles":[]},{"title":"Elasticsearch","level":"1.4.14.3","depth":3,"path":"contribute/ci-server-setup/Elasticsearch.md","ref":"contribute/ci-server-setup/Elasticsearch.md","articles":[]},{"title":"Tomcat","level":"1.4.14.4","depth":3,"path":"contribute/ci-server-setup/tomcat.md","ref":"contribute/ci-server-setup/tomcat.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/4.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/ci-server-setup/nginx.md","mtime":"2019-05-29T12:09:14.750Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-05-29T12:09:41.573Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Nginx Proxy","level":"1.4.13.2","depth":3,"next":{"title":"Version Changelog","level":"2.1","depth":1,"path":"CHANGELOG.md","ref":"CHANGELOG.md","articles":[]},"previous":{"title":"OVH Server Setup","level":"1.4.13.1","depth":3,"path":"contribute/demo-server-setup/OVH-Server-Setup.md","ref":"contribute/demo-server-setup/OVH-Server-Setup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/4.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/demo-server-setup/nginx.md","mtime":"2019-05-29T12:17:46.554Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-05-29T12:18:23.753Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
