@@ -1,0 +1,932 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Development Environment Setup · Scenarioo Documentation</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-versions/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Developer-Guide.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction & Overview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../examples.html">
+            
+                <a href="../examples.html">
+            
+                    
+                    Scenarioo Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../downloads-and-links.html">
+            
+                <a href="../downloads-and-links.html">
+            
+                    
+                    Downloads and Links
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../tutorial/">
+            
+                <a href="../tutorial/">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../tutorial/How-to-use-Scenarioo-Writer-Library.html">
+            
+                <a href="../tutorial/How-to-use-Scenarioo-Writer-Library.html">
+            
+                    
+                    Write Documentation from Tests
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../tutorial/Quickstart-JS.html">
+            
+                <a href="../tutorial/Quickstart-JS.html">
+            
+                    
+                    Quickstart with ScenariooJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../tutorial/Quickstart-Java.html">
+            
+                <a href="../tutorial/Quickstart-Java.html">
+            
+                    
+                    Quickstart with Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../tutorial/Scenarioo-Viewer-Web-Application-Setup.html">
+            
+                <a href="../tutorial/Scenarioo-Viewer-Web-Application-Setup.html">
+            
+                    
+                    Install Viewer Web App
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../tutorial/Scenarioo-Viewer-Docker-Image.html">
+            
+                <a href="../tutorial/Scenarioo-Viewer-Docker-Image.html">
+            
+                    
+                    Install Viewer Docker Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../tutorial/Publish-Documentation-Data.html">
+            
+                <a href="../tutorial/Publish-Documentation-Data.html">
+            
+                    
+                    Publish Documentation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../tutorial/Configuration.html">
+            
+                <a href="../tutorial/Configuration.html">
+            
+                    
+                    Viewer Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../features/">
+            
+                <a href="../features/">
+            
+                    
+                    Features & Concepts
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../features/Scenarioo-Writer-Documentation-Format.html">
+            
+                <a href="../features/Scenarioo-Writer-Documentation-Format.html">
+            
+                    
+                    Documentation Format
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../features/Safe-Identifiers.html">
+            
+                <a href="../features/Safe-Identifiers.html">
+            
+                    
+                    Safe Identifiers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../features/Labels.html">
+            
+                <a href="../features/Labels.html">
+            
+                    
+                    Labels
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../features/Details.html">
+            
+                <a href="../features/Details.html">
+            
+                    
+                    Details & Object Repository
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../features/validator-component/Scenarioo-Validator.html">
+            
+                <a href="../features/validator-component/Scenarioo-Validator.html">
+            
+                    
+                    Scenarioo Format Validator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../features/diff-viewer/diff-viewer.html">
+            
+                <a href="../features/diff-viewer/diff-viewer.html">
+            
+                    
+                    Diff Viewer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../features/diff-viewer/diff-viewer-rest-api.html">
+            
+                <a href="../features/diff-viewer/diff-viewer-rest-api.html">
+            
+                    
+                    Diff Viewer REST API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../features/full-text-search/">
+            
+                <a href="../features/full-text-search/">
+            
+                    
+                    Full Text Search
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../features/full-text-search/setup.html">
+            
+                <a href="../features/full-text-search/setup.html">
+            
+                    
+                    Full Text Search Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../features/full-text-search/specifications.html">
+            
+                <a href="../features/full-text-search/specifications.html">
+            
+                    
+                    Full Text Search Specs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Contributor Guide
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="Development-Environment-Setup.html">
+            
+                <a href="Development-Environment-Setup.html">
+            
+                    
+                    Development Environment Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="Developer-Guide.html">
+            
+                <a href="Developer-Guide.html">
+            
+                    
+                    Developer Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="Coding-guidelines.html">
+            
+                <a href="Coding-guidelines.html">
+            
+                    
+                    Coding Guidelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="Documentation-and-Webpage.html">
+            
+                <a href="Documentation-and-Webpage.html">
+            
+                    
+                    Documentation & Webpage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="Code-of-Conduct.html">
+            
+                <a href="Code-of-Conduct.html">
+            
+                    
+                    Code of Conduct: Rules & Guidelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="Commit-rules.html">
+            
+                <a href="Commit-rules.html">
+            
+                    
+                    Commit Rules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="Branching-strategy.html">
+            
+                <a href="Branching-strategy.html">
+            
+                    
+                    Branching Strategy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="Versioning.html">
+            
+                <a href="Versioning.html">
+            
+                    
+                    Versioning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="Release-Scenarioo-Viewer-Web-Application.html">
+            
+                <a href="Release-Scenarioo-Viewer-Web-Application.html">
+            
+                    
+                    Release Scenarioo Viewer Web Application
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="Building-the-Docker-Image.html">
+            
+                <a href="Building-the-Docker-Image.html">
+            
+                    
+                    Release Docker Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="Release-Scenarioo-Writer-Library.html">
+            
+                <a href="Release-Scenarioo-Writer-Library.html">
+            
+                    
+                    Release Scenarioo Writer Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="Build-Server.html">
+            
+                <a href="Build-Server.html">
+            
+                    
+                    CI and Demo Server
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.12.1" data-path="circle-ci.html">
+            
+                <a href="circle-ci.html">
+            
+                    
+                    Circle CI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="demo-server-setup/">
+            
+                <a href="demo-server-setup/">
+            
+                    
+                    Demo Server Installation/Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.13.1" data-path="demo-server-setup/OVH-Server-Setup.html">
+            
+                <a href="demo-server-setup/OVH-Server-Setup.html">
+            
+                    
+                    OVH Server Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13.2" data-path="demo-server-setup/nginx.html">
+            
+                <a href="demo-server-setup/nginx.html">
+            
+                    
+                    Nginx Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../CHANGELOG.html">
+            
+                <a href="../CHANGELOG.html">
+            
+                    
+                    Version Changelog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../Migration-Guide.html">
+            
+                <a href="../Migration-Guide.html">
+            
+                    
+                    Migration Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Development Environment Setup</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="development-environment-setup">Development Environment Setup</h1>
+<p>This guide helps you setting up all the tools you need to make a contribution to the Scenarioo source code using
+IntelliJ. </p>
+<p>This is the recommended setup, which means we are most likely able to support you in case of issues.</p>
+<p>There are some additional notes for Ubuntu users documented under <a href="Development-Environment-Ubuntu.md">Development Environment on Ubuntu</a>.</p>
+<h2 id="quick-setup">Quick Setup</h2>
+<h3 id="install-tools">Install Tools</h3>
+<p>The following tools should be installed and running on your computer:</p>
+<ul>
+<li>Git (most recent version)</li>
+<li>Java JDK (1.8)</li>
+<li>Node.js (8.11+)</li>
+<li>IntelliJ IDEA Ultimate (most recent version) <ul>
+<li>Ask @bruderol if you want to use an open source license for it</li>
+</ul>
+</li>
+<li>Docker (recommended)</li>
+</ul>
+<p>To work with the Full Text Search feature, you additionally need one of the following:</p>
+<ul>
+<li>Docker</li>
+<li>Elasticsearch (5+)<ul>
+<li>See the <a href="../features/full-text-search/setup.html">Full Text Search Setup Guide</a> for details on how to setup.</li>
+</ul>
+</li>
+</ul>
+<h3 id="setup-git">Setup Git</h3>
+<ul>
+<li>For most things you will work with the IntelliJ GIT client or use the GIT command line<ul>
+<li>If you have not worked with git before, one way to get familiar with it is the very good (and free) book at <a href="http://git-scm.com/book" target="_blank">http://git-scm.com/book</a></li>
+<li>Also following link might be helpful to understand how to work with the very good git client of IntelliJ: <a href="https://www.jetbrains.com/help/idea/2016.1/using-git-integration.html" target="_blank">https://www.jetbrains.com/help/idea/2016.1/using-git-integration.html</a></li>
+</ul>
+</li>
+<li>Always commit with Unix style line endings<ul>
+<li><strong>For Windows:</strong> We recommend to use following setting to ensure unix style line endings:<pre><code> git config --global core.autocrlf input
+</code></pre>If you don&apos;t want to set this globally, please set it at least for the Scenarioo projects.
+See for more info: <a href="https://help.github.com/articles/dealing-with-line-endings/" target="_blank">https://help.github.com/articles/dealing-with-line-endings/</a></li>
+</ul>
+</li>
+<li><p>Make sure that you personalize your GIT by setting your username and email for commits:</p>
+<pre><code>  git config --global user.name &quot;John Doe&quot;             
+  git config --global user.email johndoe@example.com
+</code></pre><p>  :warning: Make sure to configure the same email as registered in your github account
+  See also here: <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup" target="_blank">https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup</a></p>
+</li>
+<li><p>Please refer to our <a href="Branching-strategy.html">Branching Strategy</a> for more information about how we use branches and create releases</p>
+</li>
+</ul>
+<h3 id="get-the-sources">Get the Sources</h3>
+<p>Clone the Scenarioo viewer application repository:</p>
+<pre><code>git clone https://github.com/scenarioo/scenarioo.git
+</code></pre><p>For working on the viewer application, this is enough. See the <a href="Developer-Guide.html">Developer Guide</a> for more information on how to work with the writer libraries as well.
+For a complete list of all repositories, check <a href="https://github.com/scenarioo" target="_blank">https://github.com/scenarioo</a>.</p>
+<p><strong>For Windows:</strong> In case of troubles with <code>Filename too long</code> errors</p>
+<pre><code>cd scenarioo
+git config core.longpaths true
+git checkout -f HEAD
+</code></pre><p>Also make sure you have an up-to-date version of Git installed.</p>
+<h3 id="install-intellij-plugins-and-import-scenarioo">Install IntelliJ Plugins and import Scenarioo</h3>
+<ul>
+<li><p>Install the following IntelliJ IDEA plugins if you don&apos;t have them already:</p>
+<ul>
+<li>NodeJs</li>
+<li>Karma</li>
+<li>.ignore</li>
+</ul>
+</li>
+<li><p>Import Scenarioo by using &quot;New project from existing sources&quot;:</p>
+<ul>
+<li>Choose &apos;scenarioo&apos; folder</li>
+<li>Import &quot;From external model: Gradle&quot; and use the gradle wrapper (default settings)</li>
+<li>A dialog appears asking whether the existing .idea folder should be overwritten. Select <code>Yes</code>. :warning: This deletes all existing run configurations, thus you need to revert the changes (see next step).</li>
+<li>Do a revert of all changes: Menu <code>VCS &gt; Git &gt; Revert</code> -&gt; <code>Revert</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="install-and-configure-docker">Install and Configure Docker</h3>
+<p>If you want to use the ElasticSearch run configuration in IntelliJ to run the Full Text Search E2E tests, you have to install Docker and configure it correctly. Otherwise you can skip this step.</p>
+<p>After installing Docker you need to make configuration changes for IntelliJ and ElasticSearch to work correctly.</p>
+<p>In Docker Settings:</p>
+<ul>
+<li>&quot;General&quot; &gt; &quot;Expose daemon on tcp://localhost:2375 without TLS&quot;<ul>
+<li>This is needed so that our IntelliJ Docker run configurations can connect to Docker</li>
+</ul>
+</li>
+<li>&quot;Advanced&quot; &gt; &quot;Memory&quot; &gt; 4096MB (or more)<ul>
+<li>The default is 2048MB, this is not enough, because ElasticSearch alone needs 2GB to start.</li>
+</ul>
+</li>
+<li>&quot;Shared Drives&quot; &gt; Share the drive where you checked out the Scenarioo repository<ul>
+<li>This is needed if you want to use the &quot;Scenarioo - Hafenarbeiter komponiert Dev Cluster&quot; run configuration, because it accesses the war and the generated test data. </li>
+</ul>
+</li>
+</ul>
+<h2 id="developer-guide">Developer Guide</h2>
+<p>For more information on how to develop, build and test Scenarioo properly, head over to the <a href="Developer-Guide.html">Developer Guide</a>!</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Contributor Guide">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Developer-Guide.html" class="navigation navigation-next " aria-label="Next page: Developer Guide">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Development Environment Setup","level":"1.4.1","depth":2,"next":{"title":"Developer Guide","level":"1.4.2","depth":2,"path":"contribute/Developer-Guide.md","ref":"contribute/Developer-Guide.md","articles":[]},"previous":{"title":"Contributor Guide","level":"1.4","depth":1,"path":"contribute/README.md","ref":"contribute/README.md","articles":[{"title":"Development Environment Setup","level":"1.4.1","depth":2,"path":"contribute/Development-Environment-Setup.md","ref":"contribute/Development-Environment-Setup.md","articles":[]},{"title":"Developer Guide","level":"1.4.2","depth":2,"path":"contribute/Developer-Guide.md","ref":"contribute/Developer-Guide.md","articles":[]},{"title":"Coding Guidelines","level":"1.4.3","depth":2,"path":"contribute/Coding-guidelines.md","ref":"contribute/Coding-guidelines.md","articles":[]},{"title":"Documentation & Webpage","level":"1.4.4","depth":2,"path":"contribute/Documentation-and-Webpage.md","ref":"contribute/Documentation-and-Webpage.md","articles":[]},{"title":"Code of Conduct: Rules & Guidelines","level":"1.4.5","depth":2,"path":"contribute/Code-of-Conduct.md","ref":"contribute/Code-of-Conduct.md","articles":[]},{"title":"Commit Rules","level":"1.4.6","depth":2,"path":"contribute/Commit-rules.md","ref":"contribute/Commit-rules.md","articles":[]},{"title":"Branching Strategy","level":"1.4.7","depth":2,"path":"contribute/Branching-strategy.md","ref":"contribute/Branching-strategy.md","articles":[]},{"title":"Versioning","level":"1.4.8","depth":2,"path":"contribute/Versioning.md","ref":"contribute/Versioning.md","articles":[]},{"title":"Release Scenarioo Viewer Web Application","level":"1.4.9","depth":2,"path":"contribute/Release-Scenarioo-Viewer-Web-Application.md","ref":"contribute/Release-Scenarioo-Viewer-Web-Application.md","articles":[]},{"title":"Release Docker Image","level":"1.4.10","depth":2,"path":"contribute/Building-the-Docker-Image.md","ref":"contribute/Building-the-Docker-Image.md","articles":[]},{"title":"Release Scenarioo Writer Libraries","level":"1.4.11","depth":2,"path":"contribute/Release-Scenarioo-Writer-Library.md","ref":"contribute/Release-Scenarioo-Writer-Library.md","articles":[]},{"title":"CI and Demo Server","level":"1.4.12","depth":2,"path":"contribute/Build-Server.md","ref":"contribute/Build-Server.md","articles":[{"title":"Circle CI","level":"1.4.12.1","depth":3,"path":"contribute/circle-ci.md","ref":"contribute/circle-ci.md","articles":[]}]},{"title":"Demo Server Installation/Configuration","level":"1.4.13","depth":2,"path":"contribute/demo-server-setup/README.md","ref":"contribute/demo-server-setup/README.md","articles":[{"title":"OVH Server Setup","level":"1.4.13.1","depth":3,"path":"contribute/demo-server-setup/OVH-Server-Setup.md","ref":"contribute/demo-server-setup/OVH-Server-Setup.md","articles":[]},{"title":"Nginx Proxy","level":"1.4.13.2","depth":3,"path":"contribute/demo-server-setup/nginx.md","ref":"contribute/demo-server-setup/nginx.md","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/4.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/Development-Environment-Setup.md","mtime":"2019-06-20T11:17:55.203Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-06-20T11:18:25.861Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-versions/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
