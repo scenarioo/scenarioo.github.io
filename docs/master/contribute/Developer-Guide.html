@@ -474,20 +474,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="e2eTesting.html">
-            
-                <a href="e2eTesting.html">
-            
-                    
-                    End to End Testing
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.5" data-path="Documentation-and-Webpage.html">
+        <li class="chapter " data-level="1.4.4" data-path="Documentation-and-Webpage.html">
             
                 <a href="Documentation-and-Webpage.html">
             
@@ -500,7 +487,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6" data-path="Code-of-Conduct.html">
+        <li class="chapter " data-level="1.4.5" data-path="Code-of-Conduct.html">
             
                 <a href="Code-of-Conduct.html">
             
@@ -513,7 +500,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.7" data-path="Commit-rules.html">
+        <li class="chapter " data-level="1.4.6" data-path="Commit-rules.html">
             
                 <a href="Commit-rules.html">
             
@@ -526,7 +513,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.8" data-path="Branching-strategy.html">
+        <li class="chapter " data-level="1.4.7" data-path="Branching-strategy.html">
             
                 <a href="Branching-strategy.html">
             
@@ -539,7 +526,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.9" data-path="Versioning.html">
+        <li class="chapter " data-level="1.4.8" data-path="Versioning.html">
             
                 <a href="Versioning.html">
             
@@ -552,7 +539,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.10" data-path="Release-Scenarioo-Viewer-Web-Application.html">
+        <li class="chapter " data-level="1.4.9" data-path="Release-Scenarioo-Viewer-Web-Application.html">
             
                 <a href="Release-Scenarioo-Viewer-Web-Application.html">
             
@@ -565,7 +552,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.11" data-path="Building-the-Docker-Image.html">
+        <li class="chapter " data-level="1.4.10" data-path="Building-the-Docker-Image.html">
             
                 <a href="Building-the-Docker-Image.html">
             
@@ -578,7 +565,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.12" data-path="Release-Scenarioo-Writer-Library.html">
+        <li class="chapter " data-level="1.4.11" data-path="Release-Scenarioo-Writer-Library.html">
             
                 <a href="Release-Scenarioo-Writer-Library.html">
             
@@ -591,7 +578,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.13" data-path="Build-Server.html">
+        <li class="chapter " data-level="1.4.12" data-path="Build-Server.html">
             
                 <a href="Build-Server.html">
             
@@ -602,14 +589,33 @@
             
 
             
-        </li>
+            <ul class="articles">
+                
     
-        <li class="chapter " data-level="1.4.14" data-path="ci-server-setup/">
+        <li class="chapter " data-level="1.4.12.1" data-path="circle-ci.html">
             
-                <a href="ci-server-setup/">
+                <a href="circle-ci.html">
             
                     
-                    CI & Tools Installation/Configuration
+                    Circle CI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="demo-server-setup/">
+            
+                <a href="demo-server-setup/">
+            
+                    
+                    Demo Server Installation/Configuration
             
                 </a>
             
@@ -618,51 +624,25 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.14.1" data-path="ci-server-setup/nginx.html">
+        <li class="chapter " data-level="1.4.13.1" data-path="demo-server-setup/OVH-Server-Setup.html">
             
-                <a href="ci-server-setup/nginx.html">
+                <a href="demo-server-setup/OVH-Server-Setup.html">
+            
+                    
+                    OVH Server Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13.2" data-path="demo-server-setup/nginx.html">
+            
+                <a href="demo-server-setup/nginx.html">
             
                     
                     Nginx Proxy
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.14.2" data-path="ci-server-setup/docker.html">
-            
-                <a href="ci-server-setup/docker.html">
-            
-                    
-                    Docker Installation
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.14.3" data-path="ci-server-setup/Elasticsearch-5.html">
-            
-                <a href="ci-server-setup/Elasticsearch-5.html">
-            
-                    
-                    Elasticsearch 5 Installation
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.14.4" data-path="ci-server-setup/Elasticsearch-2.html">
-            
-                <a href="ci-server-setup/Elasticsearch-2.html">
-            
-                    
-                    Deprecated: Elasticsearch 2 Installation
             
                 </a>
             
@@ -760,90 +740,223 @@
                                 
                                 <h1 id="developer-guide">Developer Guide</h1>
 <p>This page describes how to build, test, run the Scenarioo Viewer Webapp locally for developers on their developer machine.</p>
+<h2 id="documentation-for-developers">Documentation for Developers</h2>
+<p>The published documentation under <a href="http://www.scenarioo.org/docs/develop" target="_blank">http://www.scenarioo.org/docs/develop</a> should reflect the most recent changes of Scenarioo 
+development. This is the state of our documentation on the develop branch.</p>
+<p>Alternatively, you can find the newest sources of our documentation here:
+<a href="https://github.com/scenarioo/scenarioo/tree/develop/docs" target="_blank">https://github.com/scenarioo/scenarioo/tree/develop/docs</a> </p>
+<p>If during setup you find some information that is outdated in the documentation please help to improve it and contribute the changes as a Pull Request. 
+You can click the &quot;Edit this page&quot; link on top of these pages to navigate directly to the edit window of said page.</p>
+<p>Thanks a lot!</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>You need a correctly setup development environment for working on Scenarioo as described here: 
 <a href="Development-Environment-Setup.html">Development Environment Setup</a></p>
 <h2 id="build-test-and-run-the-scenarioo-viewer-web-app">Build, Test and Run the Scenarioo Viewer Web App</h2>
-<p>This process describes how you clean update all your sources and build everything needed to properly run the demo locally and to run tests:</p>
 <ol>
-<li><p>You need to have cloned all sources (if not yet):</p>
-<pre><code> git clone https://github.com/scenarioo/scenarioo.git scenarioo
-</code></pre><p> Depending on whether the current development state of the sources needs to have a lates and greates snapshot version of the Scenarioo Writer Library <code>scenarioo-java</code>, you might as well have to clone and build the writer library repo (check <code>scenariooApiVersion</code> property at top of our build file <code>build.gradle</code> to see whether it uses a <code>SNA&#xE8;SHOT</code>-version, or try it without it, if you&apos;re feeling lucky):</p>
+<li><p>Build the viewer application by executing the &quot;Scenarioo - Full Clean Build&quot; run configuration</p>
+<ul>
+<li>or on command-line run: <code>./gradlew clean build bootWar</code></li>
+<li><strong>On Windows:</strong> If you get some Python errors during &quot;npmInstall&quot; task, you can probably ignore this optional npm dependency problems and just try to run it once again (or use something like <code>npm install -g npm-build-tools</code> to fix it)</li>
+</ul>
+</li>
+<li><p>Execute the &quot;Scenarioo - Fruehlingsstiefel&quot; run configuration</p>
+<ul>
+<li><p>or on command-line run: </p>
+<pre><code># Set the path to the example data in your environment variables (system-dependent)
+export SCENARIOO_DATA=&lt;your-project-source-path&gt;/scenarioo-docu-generation-example/build/scenarioDocuExample 
+./gradlew bootRun
+</code></pre></li>
+<li><p>This starts the viewer application backend as a standalone Spring Boot app</p>
+</li>
+<li>You should see in the log output that it is importing the example documentation data properly.</li>
+</ul>
+</li>
+<li><p>Finally, start serving the frontend:</p>
+<pre><code>cd scenarioo-client
+npm install
+npm start
+</code></pre><p>Some remarks about this:</p>
+<ul>
+<li><code>npm install</code>: Installs node.js modules (mainly needed tools) as configured in <code>package.json</code>. They are placed in the folder <code>node_modules</code>.</li>
+<li>This will spawn a webpack development server locally</li>
+</ul>
+</li>
+<li><p>Now you can access the viewer application by browsing to <a href="http://localhost:8500/scenarioo/" target="_blank">http://localhost:8500/scenarioo/</a></p>
+<ul>
+<li>:warning: The <code>/</code> at the end of the URL is mandatory!</li>
+<li>If you change files in the client code, the browser will refresh automatically</li>
+</ul>
+</li>
+<li><p>Before you start to develop, you should check that all <a href="#run-all-unit-tests">unit tests</a> and <a href="#e2e-testing-with-protractor">E2E tests</a> are successful, before you start to break them ;-) Make sure to run these tests regularly when you develop and to keep them successful.</p>
+</li>
+</ol>
+<h2 id="run-all-unit-tests">Run all unit tests</h2>
+<p>On the command-line run: </p>
+<pre><code>   ./gradlew clean test
+</code></pre><p>Or in IntelliJ </p>
+<ul>
+<li>run all java unit tests inside scenarioo/scenarioo-server</li>
+<li>run all java-script karma unit tests inside scenarioo/scenarioo-client with
+  <code>npm test</code></li>
+</ul>
+<h2 id="e2e-testing-with-protractor">E2E Testing with Protractor</h2>
+<p><a href="https://github.com/angular/protractor" target="_blank">Protractor</a> is the UI testing tool for testing AngularJS apps.
+It uses <a href="http://www.seleniumhq.org/" target="_blank">Selenium</a> to control the browser.</p>
+<p>To write your own E2E tests, check our example E2E scenarios in <code>scenarioo-client\test\e2e\specs</code>.</p>
+<p>For more information on Protractor see <a href="http://angular.github.io/protractor/#/api" target="_blank">Protractor API Docs</a>.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Scenarioo Viewer is up and running and test data is generated. The simplest way to do this is follow the instructions in 
+<a href="#build-test-and-run-the-scenarioo-viewer-web-app">Build, Test and Run the Scenarioo Viewer Web App</a>.</p>
+<p>Note: ChromeDriver will automatically be installed / updated when you run the E2E tests using the <code>npm run ...</code> 
+commands.</p>
+<h3 id="run-e2e-tests">Run E2E Tests</h3>
+<p>Change into the client directory:</p>
+<pre><code>   cd scenarioo-client
+</code></pre><p>There are two tasks which can be used to run the E2E tests. The tasks differ in how they execute the tests. You can </p>
+<ul>
+<li><p>run the tests in the background and also generate Scenarioo documentation (uses config file <code>protractor-e2e-scenarioo.conf.js</code>):</p>
+<pre><code> npm run e2e-scenarioo
+</code></pre></li>
+<li><p>or run the tests in the foreground without generating Scenarioo documentation (uses config file <code>protractor-e2e.conf.js</code>).
+This will open a new browser window, run all tests and log test-information to the console.:</p>
+<pre><code> npm run e2e
+</code></pre></li>
+</ul>
+<h3 id="reset-the-test-data">Reset the Test Data</h3>
+<p>To run all tests a second time the test data needs to be reset.
+To do this execute the &quot;Scenarioo - Generate Testdata&quot; run configuration</p>
+<h3 id="debug-e2e-tests-client-side">Debug E2E Tests (client side)</h3>
+<p>Now that we are using async / await in the tests you can just set breakpoints in the IDE.</p>
+<p>For this to work you need to install the <a href="https://chrome.google.com/webstore/detail/jetbrains-ide-support/hmhgeddbohgjknpmjagkdomcpobmllji?hl=en" target="_blank">JetBrains IDE Support Chrome Plugin</a></p>
+<h3 id="debug-e2e-tests-server-side">Debug E2E Tests (server side)</h3>
+<p>To debug the server code during the execution of E2E-Tests, simply set a breakpoint in the IDE and execute the &quot;Scenarioo- Fruehlingsstiefel&quot; run configuration in Debug mode.</p>
+<h3 id="run-a-single-e2e-test">Run a single E2E Test</h3>
+<p>If you want to run only one or a few E2E Tests, you need to replace &apos;.it&apos; with &apos;.fit&apos; in the test case.
+Example:</p>
+<pre><code>scenario(&apos;First visit&apos;)
+            .description(&apos;About dialog open on first access to Scenarioo to welcome new user.&apos;)
+            .fit(async () =&gt; {
+                //Test steps
+            });
+</code></pre><p><strong>Caution!</strong> Do not commit this change!</p>
+<h3 id="run-fulltext-search-e2e-tests">Run Fulltext search E2E Tests</h3>
+<p>If you run the E2E Tests without ElasticSearch, it will result in three failing tests.</p>
+<p>To see those tests passing as well, you need to start ElasticSearch.</p>
+<p>The easiest way to achieve this is to use the &quot;Scenarioo - Hafenarbeiter Gummiband Suche&quot; run configuration. Execute this configuration and wait for ElasticSearch to start. Then restart the &quot;Scenarioo - Fruehlingsstiefel&quot; run configuration.</p>
+<p>To ensure that ElasticSearch works, navigate to <a href="http://localhost:8500/scenarioo/#/manage?tab=configuration" target="_blank">General Settings</a> and verify that &quot;ElasticSearch Status&quot; is &quot;Running and reachable&quot;.</p>
+<p>If it is the first time you started this ElasticSearch image, the search index might not be present yet. To verify this search for &apos;donate.jsp&apos;. If no results appear, <a href="localhost:8500/scenarioo/#/manage?tab=builds" target="_blank">reimport all builds</a>. Or generate the testdata before starting &quot;Scenarioo - Fruehlingsstiefel&quot;.</p>
+<h3 id="manually-update-chromedriver">Manually update ChromeDriver</h3>
+<p>If there&apos;s a problem with ChromeDriver, try the following commands.</p>
+<p>On Linux:</p>
+<pre><code>./node_modules/protractor/bin/webdriver-manager update --chrome
+</code></pre><p>On Windows:</p>
+<pre><code>node node_modules\protractor\node_modules\webdriver-manager update
+</code></pre><h2 id="working-with-the-scenarioo-viewer-web-app">Working with the Scenarioo Viewer Web App</h2>
+<h3 id="hot-code-replacement-in-the-backend">Hot code replacement in the backend</h3>
+<p>When changing server functionality it is possible to get the changes into the server without doing a full rebuild and restart.</p>
+<p>To achieve this do the following:</p>
+<ol>
+<li>Run the &quot;Scenarioo - Fruehlingsstiefel&quot; run configuration in debug mode.</li>
+<li>Change code on the server</li>
+<li>Press <code>Ctrl+F9</code></li>
+<li>Wait for a bit</li>
+<li>A dialog appears: &quot;Reload changed classes for Scenarioo - Fruehlingsstiefel&quot;</li>
+<li>Press OK</li>
+<li>Reload the web page.</li>
+</ol>
+<h3 id="hot-code-replacement-in-the-frontend">Hot code replacement in the frontend</h3>
+<p>This is done automatically when the frontend is deployed with <code>npm start</code>. After a change is saved the web page is automatically reloaded.</p>
+<h3 id="docker-run-configurations">Docker Run Configurations</h3>
+<p>To ease development some Docker run configurations are part of the Scenarioo repository:</p>
+<ul>
+<li><em>Scenarioo - Hafenarbeiter</em>: This is the Docker image that we publish as part of the Scenarioo release. It builds and runs Scenarioo as standalone Spring Boot application.</li>
+<li><em>Scenarioo - Hafenarbeiter Kater</em>: This Docker image builds Scenarioo and runs it inside a Tomcat server.</li>
+<li><em>Scenarioo - Hafenarbeiter Gummiband Suche</em>: This Docker image starts ElasticSearch and exposes it on the default port, so that a running instance of Scenarioo can connect to it.</li>
+<li><em>Scenarioo - Hafenarbeiter komponiert Dev Cluster</em>: This run configuration uses Docker compose to start two Docker images, one with ElasticSearch and one with Tomcat.</li>
+</ul>
+<h4 id="debugging-scenarioo-viewer-running-inside-docker">Debugging Scenarioo Viewer running inside Docker</h4>
+<p>If you use the <em>Scenarioo - Hafenarbeiter komponiert Dev Cluster</em> run configuration and want to debug Scenarioo, you have to do the following:</p>
+<ol>
+<li>In the file <a href="https://github.com/scenarioo/scenarioo/blob/develop/docker/dev-tomcat-elasticsearch-cluster/docker-compose.yml" target="_blank">docker-compose.yml</a> set &quot;JPDA_SUSPEND&quot; to &quot;Y&quot;. <strong>Important:</strong> Do not commit this change.</li>
+<li>Start the run configuration. Tomcat will wait with starting and deploying Scenarioo until a debugging session has been connected. You should see this in the log: &quot;Listening for transport dt_socket at address: 1043&quot;.</li>
+<li>Select the <em>Scenarioo - Debug Docker</em> run configuration and debug it.</li>
+<li>In the Docker log you should see Tomcat and Scenarioo booting up. Execution will stop at breakpoints and you can debug as usual.</li>
+</ol>
+<h3 id="releasing-the-scenarioo-viewer-web-app">Releasing the Scenarioo Viewer Web App</h3>
+<p>This is documented <a href="Release-Scenarioo-Viewer-Web-Application.html">here</a>.    </p>
+<h2 id="working-with-scenarioo-java">Working with scenarioo-java</h2>
+<p>Scenarioo-Server, Scenarioo-Validator and Scenarioo-Docu-Generation-Example all depend on the scenarioo-java writer library. If Scenarioo uses a snapshot version of this library (check <code>scenariooApiVersion</code> property at top of our build file <code>build.gradle</code> to see whether it uses a <code>SNAPSHOT</code>-version), then you need to build it locally for Scenarioo to work. If you want to make changes to scenarioo-java, then you can import it into IntelliJ.</p>
+<h3 id="building-a-snapshot-version-of-scenarioo-java">Building a SNAPSHOT version of scenarioo-java</h3>
+<ol>
+<li><p>You need to clone the sources (if not yet):</p>
 <pre><code> git clone https://github.com/scenarioo/scenarioo-java.git scenarioo-java
 </code></pre></li>
-<li><p>In case current version uses SNAPSHOT version of <code>scenariioo-java</code>: Update and build the writer library and install the newest SNAPSHOT in local maven repo:</p>
+<li><p>Update and build the writer library and install the newest SNAPSHOT in the local maven repo:</p>
 <pre><code>  cd scenarioo-java
   git pull
   ./gradlew clean build test install
 </code></pre></li>
-<li><p>build the server</p>
-<pre><code> cd ~/scenarioo
- git pull
- ./gradlew clean build test war
-</code></pre></li>
-<li><p>Refresh and build in your IDE</p>
-<ul>
-<li>for more information on how to work in IntelliJ see <a href="Development-Environment-Setup.html">Development Environment Setup</a>  </li>
-</ul>
-</li>
-<li><p>Generate the dummy test data:</p>
-<ul>
-<li>This was already done by running all tests.</li>
-<li>But if you just want to clean your test data to a good state again, you can also choose 
-to only run all tests inside project <code>scenarioo-docu-generation-example</code>: 
-this sub module builds all dummy data of the &apos;wikipedia-docu-example&apos; that you need 
-for testing the Scenarioo web app (and running e2e tests later).</li>
-</ul>
-</li>
+<li>Add <code>mavenLocal()</code> to the <code>repositories</code> block in <code>build-java.gradle</code>.</li>
+<li>Now you can continue working with Scenarioo. </li>
 </ol>
+<h3 id="add-scenarioo-java-to-intellij">Add scenarioo-java to IntelliJ</h3>
+<p>To fix issues in scenarioo-java you can import it into IntelliJ by using <strong>&quot;File/New/Module From Existing Sources&quot;</strong>.</p>
+<h3 id="running-all-tests-in-scenarioo-java">Running all tests in scenarioo-java</h3>
+<pre><code>cd scenarioo-java
+./gradlew clean test
+</code></pre><h3 id="switching-to-a-snapshot-version">Switching to a SNAPSHOT version</h3>
 <ol>
-<li><p>Start up the <code>scenarioo-server</code> in Tomcat (usually done in your IDE), see <a href="Development-Environment-Setup.html">Development Environment Setup</a> for more info on that.</p>
-</li>
-<li><p>Build, serve and browse the client of the web app:</p>
-<pre><code> cd ~/scenarioo/scenarioo-client
- npm install
- npm start
-</code></pre><p> Then open the browser to browse the application under <a href="http://localhost:8500/scenarioo/" target="_blank">http://localhost:8500/scenarioo/</a>  (Caution: webpack needs to need the slash in the end!)
- If you change files in the client the browser will refresh automatically</p>
-<p> Some remarks about this:</p>
-<ul>
-<li><code>npm install</code>: Installs node.js modules (mainly needed tools) as configured in <code>package.json</code>. They are placed in the folder <code>node_modules</code>. It also calls the relatively installed bower binary to install frontend dependencies.</li>
-</ul>
-</li>
-<li><p>Configure webapp correctly (if not yet) and browse it:</p>
-<ul>
-<li>Go to the configuration page (under <em>Manage</em> in the top right corner, then choose tab <em>General Settings</em>). You should see some preconfigured values, which means the client was able to reach the server.</li>
-<li>In the field &quot;Documentation Data Directory Path&quot; you see where Scenarioo stores the <code>config.xml</code> file and where it expects documentation data. You can change the folder to a different one, see <a href="../tutorial/Scenarioo-Viewer-Web-Application-Setup.html">Setup of Scenarioo Viewer Web App</a>. You can either add your own <code>config.xml</code> file to this folder or let Scenarioo write the file the first time you save some configuration changes in the <code>Manage</code> section of Scenarioo.</li>
-<li>In the <em>Builds</em> tab on the <em>Manage</em> page of Scenarioo you can click on the <em>Import &amp; Update Builds</em> link in the top right corner. You should see then that Scenarioo is either currently importing the build (state = PROCESSING) or already done with it (state = SUCCESS).</li>
-<li>Reload the page, as soon as the state of the builds are SUCCESS the Branch <em>wikipedia-docu-example</em> and it&apos;s builds should be selectable in the Scenarioo navigation bar. Select the build and navigate the example documentation. If you see a list of use cases, everything should be okay.</li>
-</ul>
-</li>
-<li><p>Before you start to develop, you should check that all unit tests and E2E test are successful, before you start to break them ;-) Make sure to run these tests regularly when you develop and to keep them successful:</p>
-<ul>
-<li>run all unit tests:<ul>
-<li>run all java unit tests inside scenarioo-java</li>
-<li>run all java unit tests inside scenarioo/scenarioo-server</li>
-<li>run all java-script unit tests inside scenarioo/scenarioo-client:
-<code>npm test</code></li>
-</ul>
-</li>
-<li>run all E2E tests (=web tests): see <a href="e2eTesting.html">E2E Testing</a></li>
-</ul>
+<li>Increase the version number in <code>scenarioo-java/build.gradle</code> and append <code>-SNAPSHOT</code> to the <code>version</code> property.</li>
+<li>Build the SNAPSHOT version locally <a href="#building-a-snapshot-version-of-scenarioo-java">see Building a SNAPSHOT version of scenarioo-java</a>  </li>
+<li>Commit the changes in scenarioo-java.</li>
+<li>Update the <code>scenariooApiVersion</code> property at top of our build file <code>build.gradle</code> to the new SNAPSHOT version.</li>
+<li>Add <code>mavenLocal()</code> to the <code>repositories</code> block in <code>build-java.gradle</code>.</li>
+<li>Run all tests (including E2E tests)</li>
+<li>Commit the changes in scenarioo in a branch and create a pull request.</li>
+</ol>
+<h3 id="releasing-scenario-java">Releasing scenario-java</h3>
+<p>This is documented <a href="https://github.com/scenarioo/scenarioo-java/blob/develop/docs/release-new-api.md" target="_blank">here</a> in the scenarioo-java project.    </p>
+<h2 id="working-with-scenarioo-js">Working with scenarioo-js</h2>
+<p>Scenarioo-Client depends on scenarioo-js. The version used is defined in <code>package.json</code>. It is possible to use a scenarioo-js version from a specific branch, to check that the changes will still be compatible with scenarioo:</p>
+<pre><code>&quot;scenarioo-js&quot;: &quot;github:scenarioo/scenarioo-js#feature/scenarioo-676-remove-control-flow&quot;,
+</code></pre><h3 id="add-scenarioo-js-to-intellij">Add scenarioo-js to IntelliJ</h3>
+<p>To fix issues in scenarioo-js you can import it into IntelliJ.</p>
+<ol>
+<li><p>You need to clone the sources (if not yet):</p>
+<pre><code>git clone https://github.com/scenarioo/scenarioo-js.git scenarioo-js
+</code></pre></li>
+<li><p>Import it into IntelliJ by using <strong>&quot;File/New/Module From Existing Sources&quot;</strong>.</p>
 </li>
 </ol>
-<p><strong>Well done, now you&apos;re ready to code!</strong></p>
-<p>Now have fun improving and extending Scenarioo, we are awaiting for your first pull request soon ;-)</p>
-<h2 id="build-war-file-for-server-deployement">Build WAR File for Server Deployement</h2>
-<p>The following command creates a war file which contains the server and the client code.</p>
-<pre><code>./gradlew war
+<h3 id="building-scenarioo-js">Building scenarioo-js</h3>
+<pre><code>cd scenarioo-js
+npm install
+npm run build
+</code></pre><h3 id="running-all-tests-in-scenarioo-js">Running all tests in scenarioo-js</h3>
+<pre><code>cd scenarioo-js
+npm run test
+</code></pre><h3 id="running-all-e2e-tests-in-scenarioo-js">Running all e2e tests in scenarioo-js</h3>
+<p>Scenarioo-js contains example e2e tests. To ensure that changes in scenarioo-js did not cause unexpected side effects, these e2e tests should also be run.</p>
+<p>This is documented <a href="https://github.com/scenarioo/scenarioo-js/blob/develop/example/README.MD" target="_blank">here</a> in the scenarioo-js project.</p>
+<h3 id="releasing-scenario-js">Releasing scenario-js</h3>
+<p>This is documented <a href="https://github.com/scenarioo/scenarioo-js/blob/develop/docs/contribute/release.md" target="_blank">here</a> in the scenarioo-js project.</p>
+<h2 id="installing-tomcat">Installing Tomcat</h2>
+<p>With Spring Boot it is no longer necessary to install Tomcat separately. However, before a release it might be sensible to check that Scenarioo also works when it is deployed into an external Tomcat.</p>
+<ul>
+<li>Download and install the latest version of Tomcat 8.5.x.</li>
+<li>Edit the &quot;Scenarioo - Kater&quot; run configuration so that it points to this Tomcat Application Server.</li>
+</ul>
+<h2 id="deploying-scenarioo-into-a-standalone-tomcat-in-intellij">Deploying Scenarioo into a standalone Tomcat in IntelliJ</h2>
+<ul>
+<li>Execute the &quot;Scenarioo - Kater&quot; run configuration</li>
+</ul>
+<h2 id="build-war-file-for-external-server-deployement">Build WAR File for external Server Deployement</h2>
+<p>The following command creates an executable war file which contains a tomcat server as well as the server and the client code.</p>
+<pre><code>./gradlew bootWar
 </code></pre><h2 id="client-package-update-strategy-packagejson">Client package update strategy (package.json)</h2>
 <p>Packages should b specified statically. 
 Example: <code>&quot;gulp-ng-annotate&quot;: &quot;2.0.2&quot;</code>.</p>
-<p><strong>Remark by Rolf:</strong> I changed this to from <code>2.0.x</code> to <code>2.0.2</code> to use the specific version even for minor version.
-Reason: we should never automatically use newer minor versions - experiences sho that it can always happen that even a minor update of a dependency makes Scenarioo not work anymore - and this is not acceptable that somebody can not work because just the day before they introduced a bug in a minor version --&gt; Murphies Law! 
-Therefore I think we should use fix versions for all dependencies! 
-(this replaced old comment, which was: &quot;Only the bugfix version shall be dynamic. This will make our builds more stable. Specify the dynamic version by using the &apos;x&apos; character.&quot;)</p>
-<p>Npm packages may be checked by using the command <code>npm outdated</code>. You can update outdated packages by using <code>npm update</code> - but if you do so, you have to ensure that everything still works (e2e tests?) and inform developers in case new npm version is needed!</p>
+<p>Npm packages may be checked by using the command <code>npm outdated</code>. You can update outdated packages by using <code>npm update</code> - but if you do so, you have to ensure that everything still works (e2e tests) and inform developers in case a new npm version is needed!</p>
 
                                 
                                 </section>
@@ -887,7 +1000,7 @@ Therefore I think we should use fix versions for all dependencies!
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Developer Guide","level":"1.4.2","depth":2,"next":{"title":"Coding Guidelines","level":"1.4.3","depth":2,"path":"contribute/Coding-guidelines.md","ref":"contribute/Coding-guidelines.md","articles":[]},"previous":{"title":"Development Environment Setup","level":"1.4.1","depth":2,"path":"contribute/Development-Environment-Setup.md","ref":"contribute/Development-Environment-Setup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0","selected":true},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/4.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"3.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/Developer-Guide.md","mtime":"2018-12-05T14:10:15.597Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-12-05T14:10:42.927Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Developer Guide","level":"1.4.2","depth":2,"next":{"title":"Coding Guidelines","level":"1.4.3","depth":2,"path":"contribute/Coding-guidelines.md","ref":"contribute/Coding-guidelines.md","articles":[]},"previous":{"title":"Development Environment Setup","level":"1.4.1","depth":2,"path":"contribute/Development-Environment-Setup.md","ref":"contribute/Development-Environment-Setup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/5.0","text":"Version 5.0","selected":true},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0"},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/5.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"5.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/Developer-Guide.md","mtime":"2019-07-03T12:23:20.428Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-07-03T12:23:52.293Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
