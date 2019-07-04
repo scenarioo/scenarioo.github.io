@@ -737,20 +737,30 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="scenarioo-viewer-migration-guide">Scenarioo Viewer Migration Guide</h1>
-<p>Guide on how to upgrade for major versions of scenarioo.</p>
+<p>Guide on how to upgrade major versions of Scenarioo.</p>
 <h2 id="4x-to-5x">4.x to 5.x</h2>
-<h3 id="migration-to-spring-boot">Migration to Spring Boot</h3>
+<h3 id="breaking-changes">Breaking Changes</h3>
 <ul>
-<li>The Scenarioo viewer has been migrated to a Spring Boot application. You can now run Scenarioo as a standalone WAR file in addition to deploying it to a webserver.<ul>
-<li>Refer to the <a href="tutorial/Scenarioo-Viewer-Web-Application-Setup.html">Scenarioo setup guide</a> for more information about the different ways to run Scenarioo.</li>
+<li>Security mechanism for authentication to secured REST endpoint has changed. You need to follow the steps below to ensure the new deployed version has the same username and password as before.</li>
+</ul>
+<h3 id="migration">Migration</h3>
+<p>Follow these simple steps to migrate:</p>
+<ol>
+<li><p>Update the Scenarioo application:</p>
+<ul>
+<li>refer to the <a href="tutorial/Scenarioo-Viewer-Web-Application-Setup.html">Scenarioo Setup Guide</a> for details</li>
+<li>consider that there is a new option to also run Scenarioo as a standalone web application (if you prefer), instead of deploying the WAR to a web server or running it as a docker (as before)</li>
 </ul>
 </li>
-<li>The mechanism for securing the REST resource for build uploads has changed.<ul>
-<li>User and password for the HTTP authentication can no longer be set in <code>tomcat-users.xml</code>.</li>
-<li>If you were using this feature before, read the section on <a href="tutorial/Publish-Documentation-Data.html#b-http-post-request">how to publish documentation data</a> to see how this is done now.</li>
+<li><p>Make sure you configure the same username and password for REST endpoints in the new way:</p>
+<ul>
+<li>User and password for the HTTP authentication were usually configured in <code>tomcat-users.xml</code>, which will not be considered any longer.</li>
+<li>Instead, you can configure the same username and password in a new way. This is explained in detail here: <a href="tutorial/Configuration.html#authentication-for-secured-rest-api">Configuration of Authentication for Secured REST API</a></li>
 </ul>
 </li>
-</ul>
+<li><p>Restart the Scenarioo server/app and enjoy the new version :-)</p>
+</li>
+</ol>
 <h2 id="3x-to-4x">3.x to 4.x</h2>
 <h3 id="breaking-changes">Breaking Changes:</h3>
 <ul>
@@ -873,7 +883,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Migration Guide","level":"2.2","depth":1,"previous":{"title":"Version Changelog","level":"2.1","depth":1,"path":"CHANGELOG.md","ref":"CHANGELOG.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/5.0","text":"Version 5.0","selected":true},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0"},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"5.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"Migration-Guide.md","mtime":"2019-07-04T06:40:12.619Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-07-04T06:40:45.953Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Migration Guide","level":"2.2","depth":1,"previous":{"title":"Version Changelog","level":"2.1","depth":1,"path":"CHANGELOG.md","ref":"CHANGELOG.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/5.0","text":"Version 5.0","selected":true},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0"},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"5.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"Migration-Guide.md","mtime":"2019-07-04T12:39:41.952Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-07-04T12:40:10.160Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
