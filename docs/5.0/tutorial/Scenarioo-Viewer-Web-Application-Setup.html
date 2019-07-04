@@ -740,39 +740,43 @@
                                 
                                 <h1 id="setup-of-scenarioo-viewer-web-app">Setup of Scenarioo Viewer Web App</h1>
 <h2 id="use-as-docker-image">Use as Docker Image</h2>
-<p>Instead of installing the Scenarioo Viewer web app by yourself (as described below) you can simply run Scenarioo as a docker image: See <a href="Scenarioo-Viewer-Docker-Image.html">Scenarioo Viewer Docker Image</a> for instructions.</p>
-<h2 id="download-as-war">Download as WAR</h2>
+<p>Instead of installing the Scenarioo Viewer web application by yourself (as described below) you can simply run Scenarioo as a docker image: See <a href="Scenarioo-Viewer-Docker-Image.html">Scenarioo Viewer Docker Image</a> for instructions.</p>
+<h2 id="download">Download</h2>
 <p>The latest stable Scenarioo web application WAR file can be downloaded from the release section:
 <a href="https://github.com/scenarioo/scenarioo/releases" target="_blank">Scenarioo Webapplication Releases</a></p>
-<p>Scenarioo requires Java 8 or higher.</p>
+<p>Scenarioo requires Java 8 or higher. </p>
+<p>You can directly run the standalone runnable WAR without needing to install any application server, or you can choose to deploy it to your application server of choice (e.g. Tomcat), this is up to you. See the next section about installation and setup.</p>
 <p>Further Release Candidate Versions are available through <a href="../downloads-and-links.html">Downloads &amp; Links</a>, if you want to to test newer versions not yet officially released.</p>
 <h2 id="installation-and-setup">Installation and Setup</h2>
-<h3 id="running-scenarioo-as-standalone-application">Running Scenarioo as standalone application</h3>
+<p>Choose one of the two following setups explained in the following sections:</p>
+<ul>
+<li><strong><a href="#setup-1---running-as-standalone-application">Setup 1 - Running as Standalone Application</a>:</strong> Scenarioo is packaged as Spring Boot application with an included Tomcat web server to run it directly without the need to install and deploy to a web server. </li>
+<li><strong><a href="#setup-2---deploy-war-on-web-server">Setup 2 - Deploy WAR on Web Server</a>:</strong> This works the same way as before the standalone runner was available, you need to have a web server (like e.g. Tomcat) you can deploy to.</li>
+</ul>
+<h3 id="setup-1---running-as-standalone-application">Setup 1 - Running as Standalone Application</h3>
+<p>Run Scenarioo directly without the need to install a web server.</p>
 <ol>
-<li><p><strong>Configure the context</strong> under which the app should be deployed by creating the file <code>application.properties</code> next to the downloaded war, with the following entry</p>
-<pre><code>  server.servlet.contextPath=/scenarioo
-</code></pre><p>  If this file is missing, the app can be reached under the default context <code>scenarioo</code>.</p>
-<p>  The Tomcat access log can also be enabled using <code>application.properties</code>. Just add the following entries:</p>
-<pre><code>  server.tomcat.accesslog.enabled=true
-  server.tomcat.accesslog.directory=&lt;absolute path to log-directory&gt;
-</code></pre></li>
 <li><p><strong>Configure the Scenarioo data directory</strong> where Scenarioo can store and read its data. By default Scenarioo is using a folder <code>.scenarioo</code> in your &quot;user.home&quot;-directory.</p>
-<p> To configure a different directory to use add the following line to <code>application.properties</code> next to the downloaded war:  </p>
+<p> To configure a different data directory either set the environment variable <code>SCENARIOO_DATA</code> or add the following line to <code>application.properties</code> next to the downloaded war:  </p>
 <pre><code> scenarioo.data=&lt;path to a directory where scenarioo can store its data&gt;
 </code></pre></li>
 <li><p><strong>Execute the WAR</strong> file with Java, e.g </p>
 <pre><code>  cd &lt;war-location&gt;
   java -jar scenarioo.war
 </code></pre></li>
+<li><p><strong>Startup Scenarioo Viewer Web App</strong> through your browser using the following URL: <a href="http://{your-ip-address-and-port-or-host-url}/scenarioo" target="_blank">http://{your-ip-address-and-port-or-host-url}/scenarioo</a> (e.g. <a href="http://localhost:8080/scenarioo" target="_blank">http://localhost:8080/scenarioo</a> )</p>
+</li>
+<li><p><strong>Configure your Viewer and advanced features (optional)</strong> as described in <a href="Configuration.html">Viewer Configuration</a>.</p>
+</li>
 </ol>
-<h3 id="installing-scenarioo-into-a-webserver">Installing Scenarioo into a Webserver</h3>
-<p>Alternatively you can install your favorite Webserver and deploy the WAR into it.</p>
+<h3 id="setup-2---deploy-war-on-web-server">Setup 2 - Deploy WAR on Web Server</h3>
+<p>Alternatively you can deploy the Scenarioo WAR file into your favorite webserver (e.g.Tomcat).</p>
 <ol>
-<li><p><strong>Install a Tomcat Webserver</strong> or any other favourite Java webserver (Tomcat 8.5.31+ or 9 should all work with Scenarioo). You can download and unzip one from from <a href="http://tomcat.apache.org/" target="_blank">http://tomcat.apache.org/</a> </p>
+<li><p><strong>Install a Tomcat webserver</strong> or any other favorite Java webserver (Tomcat 8.5.31+ or 9 should all work with Scenarioo). You can download and unzip one from here: <a href="http://tomcat.apache.org/" target="_blank">http://tomcat.apache.org/</a> </p>
 </li>
 <li><p><strong>Configure the Scenarioo data directory</strong> where Scenarioo can store and read its data. By default Scenarioo is using a folder <code>.scenarioo</code> in your &quot;user.home&quot;-directory.</p>
 <ul>
-<li>To configure a different directory to use add the following line to context.xml in your webserver&apos;s installation directory (usually located in folder &apos;conf&apos; of your tomcat installation):<br><code>&lt;Parameter name=&quot;scenariooDataDirectory&quot; value=&quot;&gt;&gt;&gt;path to a directory where scenarioo can store its data&lt;&lt;&lt;&quot; override=&quot;true&quot; description=&quot;Location of Scenarioo data&quot;/&gt;</code></li>
+<li>To configure a different directory to use, add the following line to context.xml in your webserver&apos;s installation directory (usually located in folder &apos;conf&apos; of your Tomcat installation):<br><code>&lt;Parameter name=&quot;scenariooDataDirectory&quot; value=&quot;&gt;&gt;&gt;path to a directory where scenarioo can store its data&lt;&lt;&lt;&quot; override=&quot;true&quot; description=&quot;Location of Scenarioo data&quot;/&gt;</code></li>
 <li>Alternatively you can set an environment variable called <code>SCENARIOO_DATA</code> for the user under which Tomcat is running and define the path there</li>
 <li>Make sure that the Tomcat user has the correct access rights for the folder (permission to create files and directories inside). Under linux systems you can do this with following commands:<pre><code>sudo chown -R tomcat: &lt;scenarioo-docu-directory&gt;
 sudo chmod ug+rws &lt;scenarioo-docu-directory&gt;
@@ -780,7 +784,7 @@ sudo chmod ug+rws &lt;scenarioo-docu-directory&gt;
 <li>The config.xml file will be created for you automatically in this directory by the Scenarioo Viewer Web Application when you do some configuration changes inside the webapplication for the first time and save it.</li>
 </ul>
 </li>
-<li><p><strong>Deploy the WAR</strong> file into it, e.g. simply copy the WAR file into the webapps folder on tomcat. </p>
+<li><p><strong>Deploy the WAR</strong> file into it, e.g. simply copy the WAR file into the webapps folder in Tomcat. </p>
 <ul>
 <li>If you use a release candidate WAR file that has the version in the name, then make sure to rename the war to simply <code>scenarioo.war</code> before deploying it, because the name defines the context under which you can access the app.</li>
 </ul>
@@ -835,7 +839,7 @@ sudo chmod ug+rws &lt;scenarioo-docu-directory&gt;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Install Viewer Web App","level":"1.2.2","depth":2,"next":{"title":"Install Viewer Docker Image","level":"1.2.3","depth":2,"path":"tutorial/Scenarioo-Viewer-Docker-Image.md","ref":"tutorial/Scenarioo-Viewer-Docker-Image.md","articles":[]},"previous":{"title":"Quickstart with Java","level":"1.2.1.2","depth":3,"path":"tutorial/Quickstart-Java.md","ref":"tutorial/Quickstart-Java.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/5.0","text":"Version 5.0","selected":true},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0"},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/5.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"5.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"tutorial/Scenarioo-Viewer-Web-Application-Setup.md","mtime":"2019-07-04T06:52:23.418Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-07-04T06:52:57.543Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Install Viewer Web App","level":"1.2.2","depth":2,"next":{"title":"Install Viewer Docker Image","level":"1.2.3","depth":2,"path":"tutorial/Scenarioo-Viewer-Docker-Image.md","ref":"tutorial/Scenarioo-Viewer-Docker-Image.md","articles":[]},"previous":{"title":"Quickstart with Java","level":"1.2.1.2","depth":3,"path":"tutorial/Quickstart-Java.md","ref":"tutorial/Quickstart-Java.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/5.0","text":"Version 5.0","selected":true},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0"},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/5.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"5.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"tutorial/Scenarioo-Viewer-Web-Application-Setup.md","mtime":"2019-07-04T12:30:14.538Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-07-04T12:30:54.797Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

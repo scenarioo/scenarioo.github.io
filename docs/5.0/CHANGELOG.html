@@ -740,21 +740,37 @@
                                 
                                 <h1 id="scenarioo-release-notes">Scenarioo Release Notes</h1>
 <h2 id="version-500">Version 5.0.0</h2>
-<h3 id="migration-to-a-spring-boot-based-application">Migration to a Spring Boot based application</h3>
+<h3 id="scenarioo-standalone-runner">Scenarioo Standalone Runner</h3>
 <ul>
-<li><a href="https://github.com/scenarioo/scenarioo/issues/724" target="_blank">#724 - Migration to Spring Boot</a></li>
-<li><a href="https://github.com/scenarioo/scenarioo/issues/788" target="_blank">#778 - Use Spring Security for REST endpoints</a></li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/724" target="_blank">#724 - Scenarioo Standalone Runner</a>: From now on you can run scnenarioo without needing to install a Tomcat or similar java application server, just refer to our <a href="tutorial/Scenarioo-Viewer-Web-Application-Setup.html">Scenarioo Setup Guide</a> </li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/788" target="_blank">#778 - Secured REST Endpoints using Spring Security</a>: The way the api key (or password) for using secured REST endpoints has to be configured has fundamentaly changed by introducing Spring Security. For more details, please refer to the <a href="Migration-Guide.html">Migration Guide</a> </li>
 </ul>
-<p>With version 5, the Scenarioo application has been migrated to Spring Boot. 
-Because of the switch, the security mechanism for uploading a build via REST endpoint has changed.
-For more details, please refer to the <a href="Migration-Guide.html">Migration Guide</a></p>
-<h3 id="bugfixes">Bugfixes</h3>
+<h3 id="small-fixes-and-improvements">Small Fixes and Improvements</h3>
 <ul>
-<li><a href="https://github.com/scenarioo/scenarioo/issues/727" target="_blank">#727 - Build Import: UI issues</a>: Information displayed while a build is being imported was improved.</li>
-<li><a href="https://github.com/scenarioo/scenarioo/issues/717" target="_blank">#717 - Diff Viewer: Styling and UI issues</a>: Various usability improvements. </li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/717" target="_blank">#717 - Diff Viewer: Styling and UI issues</a>: Various usability improvements.</li>
+<li><a href="https://github.com/scenarioo/scenarioo/issues/727" target="_blank">#727 - Build Import: UI issues</a>: Information displayed while a build is being imported was improved. </li>
 <li><a href="https://github.com/scenarioo/scenarioo/issues/895" target="_blank">#895 - Share this page Screenshot link broken for Sketch</a>: The share this page dialog shows the correct image link again when sharing sketches.</li>
 <li><a href="https://github.com/scenarioo/scenarioo/issues/900" target="_blank">#900 - Application Info Popup disappears if query parameters were not provided</a>: The application information popup will now also be shown if the application is visited for the first time without query parameters.</li>
 </ul>
+<h3 id="breaking-changes-and-backwards-compatibility">Breaking Changes and Backwards Compatibility</h3>
+<ul>
+<li><strong>Changed Configuration of password for secured REST API calls:</strong> 
+The security mechanism for secured REST endpoints (e.g. to upload a build via REST call) has changed. Therefore the password for these rest endpoints needs to be configured differently. For more details, please refer to the <a href="Migration-Guide.html">Migration Guide</a> on how to adjust this configuration when migrating.</li>
+</ul>
+<p>Apart from this small config change there are no other breaking changes. </p>
+<p>You can still deploy Scenarioo as a WAR to your Tomcat, although this is not needed anymore by using the new standalone deployment, as mentioned above. </p>
+<h3 id="supported-scenarioo-format">Supported Scenarioo Format</h3>
+<ul>
+<li>The used Scenarioo Data format is still version 2.1. You can safely use Scenarioo 5.0 with the same data format as before and do not have to upgrade the used Scenarioo writer library to use the new Scenarioo viewer version. </li>
+<li>The internal format has not been changed either, so you do not even have to reimport your builds that have been imported with the previous version in the data directory. All build and comparison data will still work with the new version.</li>
+</ul>
+<h3 id="fixed-issues">Fixed Issues</h3>
+<p>All issues fixed in this release: <a href="https://github.com/scenarioo/scenarioo/milestone/36?closed=1" target="_blank">List of Fixed Issues</a>.</p>
+<h3 id="known-issues">Known Issues</h3>
+<p>Please visit our <a href="https://github.com/scenarioo/scenarioo/issues?q=is%3Aopen+is%3Aissue+label%3A%22known+issue%22" target="_blank">List of Known Issues on GitHub</a>.</p>
+<h3 id="feedback-and-support">Feedback and Support</h3>
+<p>Don&apos;t hesitate to open new issues if you find a bug or problem, or have feedback or questions:
+<a href="https://github.com/scenarioo/scenarioo/issues/new?labels=feedback" target="_blank">https://github.com/scenarioo/scenarioo/issues/new?labels=feedback</a></p>
 <h2 id="version-401">Version 4.0.1</h2>
 <h3 id="bugfixes">Bugfixes</h3>
 <ul>
@@ -813,7 +829,7 @@ does not even have to be reimported after the upgrade and will continue to work 
 <h3 id="fixed-issues">Fixed Issues</h3>
 <p>All issues fixed in this release: <a href="https://github.com/scenarioo/scenarioo/milestone/33?closed=1" target="_blank">List of Fixed Issues</a>.</p>
 <h3 id="known-issues">Known Issues</h3>
-<p>Please visit our <a href="https://github.com/scenarioo/scenarioo/labels/known-issue" target="_blank">List of Known Issues on GitHub</a>.</p>
+<p>Please visit our <a href="https://github.com/scenarioo/scenarioo/issues?q=is%3Aopen+is%3Aissue+label%3A%22known+issue%22" target="_blank">List of Known Issues on GitHub</a>.</p>
 <h3 id="feedback-and-support">Feedback and Support</h3>
 <p>Don&apos;t hesitate to open new issues if you find a bug or problem, or have feedback or questions:
 <a href="https://github.com/scenarioo/scenarioo/issues/new?labels=feedback" target="_blank">https://github.com/scenarioo/scenarioo/issues/new?labels=feedback</a></p>
@@ -862,7 +878,7 @@ does not even have to be reimported after the upgrade and will continue to work 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Version Changelog","level":"2.1","depth":1,"next":{"title":"Migration Guide","level":"2.2","depth":1,"path":"Migration-Guide.md","ref":"Migration-Guide.md","articles":[]},"previous":{"title":"Nginx Proxy","level":"1.4.13.2","depth":3,"path":"contribute/demo-server-setup/nginx.md","ref":"contribute/demo-server-setup/nginx.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/5.0","text":"Version 5.0","selected":true},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0"},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/5.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"5.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"CHANGELOG.md","mtime":"2019-07-04T06:52:23.402Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-07-04T06:52:57.543Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Version Changelog","level":"2.1","depth":1,"next":{"title":"Migration Guide","level":"2.2","depth":1,"path":"Migration-Guide.md","ref":"Migration-Guide.md","articles":[]},"previous":{"title":"Nginx Proxy","level":"1.4.13.2","depth":3,"path":"contribute/demo-server-setup/nginx.md","ref":"contribute/demo-server-setup/nginx.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/5.0","text":"Version 5.0","selected":true},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0"},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/5.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"5.0.0"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"CHANGELOG.md","mtime":"2019-07-04T12:30:14.538Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-07-04T12:30:54.797Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
