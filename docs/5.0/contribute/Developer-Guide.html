@@ -772,13 +772,21 @@ export SCENARIOO_DATA=&lt;your-project-source-path&gt;/scenarioo-docu-generation
 </ul>
 </li>
 <li><p>Finally, start serving the frontend:</p>
+<p>Using npm directly:</p>
 <pre><code>cd scenarioo-client
 npm install
 npm start
+</code></pre><p>Or using gradle tasks:</p>
+<pre><code>./gradlew npmInstall
+./gradlew npm_start
 </code></pre><p>Some remarks about this:</p>
 <ul>
 <li><code>npm install</code>: Installs node.js modules (mainly needed tools) as configured in <code>package.json</code>. They are placed in the folder <code>node_modules</code>.</li>
-<li>This will spawn a webpack development server locally</li>
+<li><code>npm start</code>: spawns a webpack development server locally</li>
+<li>The gradle tasks are using the gradle-node-plugin to execute the same npm tasks described above. Using the gradle-node-plugin makes sure that always the correct node and npm versions are used to build. Also you don&apos;t need to have Node.js installed separately.<ul>
+<li>All npm tasks defined in<code>package.json</code> can be invoked by running <code>./gradlew npm_run_&lt;TASK&gt;</code></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>Now you can access the viewer application by browsing to <a href="http://localhost:8500/scenarioo/" target="_blank">http://localhost:8500/scenarioo/</a></p>
@@ -796,8 +804,7 @@ npm start
 </code></pre><p>Or in IntelliJ </p>
 <ul>
 <li>run all java unit tests inside scenarioo/scenarioo-server</li>
-<li>run all java-script karma unit tests inside scenarioo/scenarioo-client with
-  <code>npm test</code></li>
+<li>run all java-script karma unit tests inside scenarioo/scenarioo-client with <code>npm test</code> or <code>./gradlew npm_test</code></li>
 </ul>
 <h2 id="e2e-testing-with-protractor">E2E Testing with Protractor</h2>
 <p><a href="https://github.com/angular/protractor" target="_blank">Protractor</a> is the UI testing tool for testing AngularJS apps.
@@ -807,8 +814,6 @@ It uses <a href="http://www.seleniumhq.org/" target="_blank">Selenium</a> to con
 <h3 id="prerequisites">Prerequisites</h3>
 <p>Scenarioo Viewer is up and running and test data is generated. The simplest way to do this is follow the instructions in 
 <a href="#build-test-and-run-the-scenarioo-viewer-web-app">Build, Test and Run the Scenarioo Viewer Web App</a>.</p>
-<p>Note: ChromeDriver will automatically be installed / updated when you run the E2E tests using the <code>npm run ...</code> 
-commands.</p>
 <h3 id="run-e2e-tests">Run E2E Tests</h3>
 <p>Change into the client directory:</p>
 <pre><code>   cd scenarioo-client
@@ -822,6 +827,10 @@ This will open a new browser window, run all tests and log test-information to t
 <pre><code> npm run e2e
 </code></pre></li>
 </ul>
+<p>Both tasks can also be executed using gradle in the scenarioo root directory:</p>
+<pre><code>./gradlew npm_run_e2e-scenarioo
+./gradlew npm_run_e2e
+</code></pre><p>Note: ChromeDriver will automatically be installed / updated when you run the E2E tests using the gradle or npm commands above.</p>
 <h3 id="reset-the-test-data">Reset the Test Data</h3>
 <p>To run all tests a second time the test data needs to be reset.
 To do this execute the &quot;Scenarioo - Generate Testdata&quot; run configuration</p>
@@ -851,6 +860,8 @@ Example:</p>
 <pre><code>./node_modules/protractor/bin/webdriver-manager update --chrome
 </code></pre><p>On Windows:</p>
 <pre><code>node node_modules\protractor\node_modules\webdriver-manager update
+</code></pre><p>Or you can run the following gradle task on Linux/Windows:</p>
+<pre><code>./gradlew npm_run_webdriver-manager_update
 </code></pre><h2 id="working-with-the-scenarioo-viewer-web-app">Working with the Scenarioo Viewer Web App</h2>
 <h3 id="hot-code-replacement-in-the-backend">Hot code replacement in the backend</h3>
 <p>When changing server functionality it is possible to get the changes into the server without doing a full rebuild and restart.</p>
@@ -865,7 +876,7 @@ Example:</p>
 <li>Reload the web page.</li>
 </ol>
 <h3 id="hot-code-replacement-in-the-frontend">Hot code replacement in the frontend</h3>
-<p>This is done automatically when the frontend is deployed with <code>npm start</code>. After a change is saved the web page is automatically reloaded.</p>
+<p>This is done automatically when the frontend is deployed with <code>npm start</code> or <code>./gradlew npm_start</code>. After a change is saved the web page is automatically reloaded.</p>
 <h3 id="docker-run-configurations">Docker Run Configurations</h3>
 <p>To ease development some Docker run configurations are part of the Scenarioo repository:</p>
 <ul>
@@ -956,7 +967,7 @@ npm run test
 </code></pre><h2 id="client-package-update-strategy-packagejson">Client package update strategy (package.json)</h2>
 <p>Packages should b specified statically. 
 Example: <code>&quot;gulp-ng-annotate&quot;: &quot;2.0.2&quot;</code>.</p>
-<p>Npm packages may be checked by using the command <code>npm outdated</code>. You can update outdated packages by using <code>npm update</code> - but if you do so, you have to ensure that everything still works (e2e tests) and inform developers in case a new npm version is needed!</p>
+<p>Npm packages may be checked by using the command <code>npm outdated</code> or <code>./gradlew npm_outdated</code>. You can update outdated packages by using <code>npm update</code> or <code>./gradlew npm_update</code> - but if you do so, you have to ensure that everything still works (e2e tests) and inform developers in case a new npm version is needed!</p>
 
                                 
                                 </section>
@@ -1000,7 +1011,7 @@ Example: <code>&quot;gulp-ng-annotate&quot;: &quot;2.0.2&quot;</code>.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Developer Guide","level":"1.4.2","depth":2,"next":{"title":"Coding Guidelines","level":"1.4.3","depth":2,"path":"contribute/Coding-guidelines.md","ref":"contribute/Coding-guidelines.md","articles":[]},"previous":{"title":"Development Environment Setup","level":"1.4.1","depth":2,"path":"contribute/Development-Environment-Setup.md","ref":"contribute/Development-Environment-Setup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/5.0","text":"Version 5.0","selected":true},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0"},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/release/5.0/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"5.0.1"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/Developer-Guide.md","mtime":"2019-07-17T12:42:20.245Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-07-17T12:42:58.283Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Developer Guide","level":"1.4.2","depth":2,"next":{"title":"Coding Guidelines","level":"1.4.3","depth":2,"path":"contribute/Coding-guidelines.md","ref":"contribute/Coding-guidelines.md","articles":[]},"previous":{"title":"Development Environment Setup","level":"1.4.1","depth":2,"path":"contribute/Development-Environment-Setup.md","ref":"contribute/Development-Environment-Setup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","edit-link","github","expandable-chapters","sitemap","puml","ga","versions"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/scenarioo/scenarioo/"},"puml":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"highlight":{},"sitemap":{"hostname":"http://scenarioo.org"},"ga":{"configuration":"auto","token":"UA-21795453-5"},"versions":{"type":"branches","gitbookConfigURL":"https://raw.githubusercontent.com/scenarioo/scenarioo/master/docs/book.json","options":[{"value":"http://scenarioo.org/docs/develop","text":"Developer Version (Unreleased)"},{"value":"http://scenarioo.org/docs/5.0","text":"Version 5.0","selected":true},{"value":"http://scenarioo.org/docs/4.0","text":"Version 4.0"},{"value":"http://scenarioo.org/docs/3.0","text":"Version 3.0"}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/scenarioo/scenarioo/edit/develop/docs/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"version":"5.0.1"},"title":"Scenarioo Documentation","gitbook":"3.2.2"},"file":{"path":"contribute/Developer-Guide.md","mtime":"2019-07-17T12:43:56.848Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-07-17T12:44:31.894Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
